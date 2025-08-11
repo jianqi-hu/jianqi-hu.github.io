@@ -36,24 +36,35 @@ const Team: React.FC = () => {
       avatar: 'https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=150&h=150&fit=crop&crop=face'
     },
     {
-      name: 'Chen (PhD Student)',
-      title: 'PhD Student',
-      role: 'PhD Student (3rd Year)',
-      education: 'Master in Computer Science, HKU',
-      research: ['Computer Vision', 'Image Processing', 'Pattern Recognition'],
-      email: 'chen.phd@student.edu',
+      name: 'Ou Shaoyuan',
+      title: '欧绍源',
+      role: 'PhD Student',
+      education: ['Bachelor in Optoelectronic Information Science and Engineering, Sun Yat-Sen University(SYSU)','Master in Electrical Engineering, University of Southern California(USC)'],
+      research: ['Optical computing', 'Integrated photonics'],
+      email: 'oushaoyu@usc.edu',
       publications: 8,
-      avatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face'
+      avatar: '/Shaoyuan.jpg'
+    },
+
+    {
+      name: 'Wang Yuzhong',
+      title: '王禹忠',
+      role: 'PhD Student',
+      education: ['Bachelor in Electromagnetic Fields and Wireless Technologies, HIT'],
+      research: ['Microwave Photonics', 'Optical Computing', 'Electromagnetic Sensing'],
+      email: 'hitwyz@stu.hit.edu.cn',
+      publications: 3,
+      avatar: '/Yuzhong.jpg'
     },
     {
-      name: 'Zhao (Master Student)',
-      title: 'Master Student',
-      role: 'Master Student (2nd Year)',
-      education: 'Bachelor in Computer Science, HKU',
-      research: ['Internet of Things', 'Edge Computing', 'Sensor Networks'],
-      email: 'zhao.ms@student.edu',
+      name: 'Pan Xiaofu',
+      title: '潘孝夫',
+      role: 'PhD Student',
+      education: ['Bachelor in Optoelectronic Information Science and Engineering, HUST','Master in Electronic Information, ZJU'],
+      research: ['Integrated photonics', 'Optical comunication'],
+      email: '22230092@zju.edu.cn',
       publications: 3,
-      avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=face'
+      avatar: '/Xiaofu.jpg'
     }
   ];
 
@@ -120,7 +131,11 @@ const Team: React.FC = () => {
                       <img 
                         src={member.avatar} 
                         alt={member.name}
-                        className="w-full h-full object-cover"
+                        className={`w-full h-full object-cover ${
+                          member.name === 'Pan Xiaofu' ? 'object-top' : 
+                          member.name === 'Wang Yuzhong' ? 'object-[center_top]' : 'object-center'
+                        }`}
+                        style={member.name === 'Wang Yuzhong' ? { objectPosition: 'center 30%' } : {}}
                         onError={(e) => {
                           const target = e.target as HTMLImageElement;
                           target.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(member.name)}&background=1a4327&color=fff&size=150`;

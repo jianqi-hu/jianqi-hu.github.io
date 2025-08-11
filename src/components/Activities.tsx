@@ -1,49 +1,50 @@
 import React from 'react';
 
+
 const Activities: React.FC = () => {
   const activities = [
     {
-      title: 'Academic Conference Group Photo',
-      description: 'Team members attending international optics conference, exchanging latest research findings with fellow scholars',
+      title: 'Laboratory Establishment Ceremony',
+      description: 'Our laboratory was officially established, marking a new beginning for photonics research',
       image: 'https://images.unsplash.com/photo-1511578314322-379afb476865?w=600&h=400&fit=crop',
-      date: 'March 2024',
-      location: 'Hong Kong Convention and Exhibition Centre'
+      date: 'August 2025',
+      location: 'University of Hong Kong Hu-photonics Lab'
     },
-    {
-      title: 'Laboratory Team Building',
-      description: 'Outdoor team building activity for all research group members to enhance team cohesion and friendship',
-      image: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=600&h=400&fit=crop',
-      date: 'February 2024',
-      location: 'HKU Campus'
-    },
-    {
-      title: 'New Year Dinner',
-      description: 'Research group New Year dinner celebrating past year achievements and planning for the new year',
-      image: 'https://images.unsplash.com/photo-1544148103-0773bf10d330?w=600&h=400&fit=crop',
-      date: 'January 2024',
-      location: 'Central Hong Kong Restaurant'
-    },
-    {
-      title: 'Laboratory Open Day',
-      description: 'Showcasing laboratory equipment and research projects to visiting scholars and students',
-      image: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=600&h=400&fit=crop',
-      date: 'December 2023',
-      location: 'Optics Laboratory'
-    },
-    {
-      title: 'PhD Defense Celebration',
-      description: 'Celebrating successful PhD defense of our research group graduate student',
-      image: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=600&h=400&fit=crop',
-      date: 'November 2023',
-      location: 'University of Hong Kong'
-    },
-    {
-      title: 'Mid-Autumn Festival Gathering',
-      description: 'Research group Mid-Autumn Festival gathering, enjoying mooncakes and sharing festive joy',
-      image: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&h=400&fit=crop',
-      date: 'September 2023',
-      location: 'Laboratory Lounge'
-    }
+    // {
+    //   title: 'Laboratory Team Building',
+    //   description: 'Outdoor team building activity for all research group members to enhance team cohesion and friendship',
+    //   image: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=600&h=400&fit=crop',
+    //   date: 'February 2024',
+    //   location: 'HKU Campus'
+    // },
+    // {
+    //   title: 'New Year Dinner',
+    //   description: 'Research group New Year dinner celebrating past year achievements and planning for the new year',
+    //   image: 'https://images.unsplash.com/photo-1544148103-0773bf10d330?w=600&h=400&fit=crop',
+    //   date: 'January 2024',
+    //   location: 'Central Hong Kong Restaurant'
+    // },
+    // {
+    //   title: 'Laboratory Open Day',
+    //   description: 'Showcasing laboratory equipment and research projects to visiting scholars and students',
+    //   image: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=600&h=400&fit=crop',
+    //   date: 'December 2023',
+    //   location: 'Optics Laboratory'
+    // },
+    // {
+    //   title: 'PhD Defense Celebration',
+    //   description: 'Celebrating successful PhD defense of our research group graduate student',
+    //   image: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=600&h=400&fit=crop',
+    //   date: 'November 2023',
+    //   location: 'University of Hong Kong'
+    // },
+    // {
+    //   title: 'Mid-Autumn Festival Gathering',
+    //   description: 'Research group Mid-Autumn Festival gathering, enjoying mooncakes and sharing festive joy',
+    //   image: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&h=400&fit=crop',
+    //   date: 'September 2023',
+    //   location: 'Laboratory Lounge'
+    // }
   ];
 
   return (
