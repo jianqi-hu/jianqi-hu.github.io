@@ -17,130 +17,130 @@ const News: React.FC = () => {
   const newsItems: NewsItem[] = [
     {
       id: 1,
-      title: '课题组在顶级期刊发表重要研究成果',
-      summary: '我们的最新研究在人工智能领域取得重大突破，相关论文已被Nature期刊接收。',
-      content: `我们很高兴地宣布，课题组在人工智能领域的最新研究成果已被Nature期刊正式接收并发表。这项研究聚焦于深度学习在复杂系统建模中的应用，提出了一种全新的神经网络架构。
+      title: 'Research Group Publishes Breakthrough Results in Top-tier Journal',
+      summary: 'Our latest research achieves major breakthrough in artificial intelligence, with the paper accepted by Nature journal.',
+      content: `We are delighted to announce that our research group's latest findings in artificial intelligence have been officially accepted and published by Nature journal. This research focuses on the application of deep learning in complex system modeling, proposing a novel neural network architecture.
 
-该研究的主要贡献包括：
-1. 提出了创新的多层次特征融合机制
-2. 在多个基准数据集上实现了最先进的性能
-3. 为相关领域的后续研究提供了重要的理论基础
+The main contributions of this research include:
+1. Proposed an innovative multi-level feature fusion mechanism
+2. Achieved state-of-the-art performance on multiple benchmark datasets
+3. Provided important theoretical foundations for future research in related fields
 
-这一成果是课题组全体成员共同努力的结果，特别感谢参与研究的博士生和硕士生们的辛勤工作。我们将继续在这一方向上深入探索，为学术界和工业界贡献更多有价值的研究成果。`,
+This achievement is the result of collective efforts from all members of our research group, with special thanks to the hard work of participating PhD and Master's students. We will continue to explore deeply in this direction, contributing more valuable research outcomes to both academia and industry.`,
       date: '2024-01-15',
-      category: '学术成果',
+      category: 'Academic Achievement',
       image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=400&fit=crop',
       author: 'Prof. Hu Jianqi'
     },
     {
       id: 2,
-      title: '课题组获得国家自然科学基金重点项目资助',
-      summary: '我们成功获得了国家自然科学基金重点项目资助，将在未来四年内开展前沿技术研究。',
-      content: `经过激烈的竞争和严格的评审，我们的课题组成功获得了国家自然科学基金重点项目的资助。该项目总资助金额为300万元，研究周期为4年。
+      title: 'Research Group Receives Major National Science Foundation Grant',
+      summary: 'We successfully secured a key project grant from the National Natural Science Foundation for cutting-edge technology research over the next four years.',
+      content: `After intense competition and rigorous review, our research group has successfully obtained funding from the National Natural Science Foundation key project. The total funding amount is 3 million RMB with a research period of 4 years.
 
-项目主要研究内容：
-• 智能系统的理论基础研究
-• 新型算法的设计与优化
-• 实际应用场景的验证与推广
+Main research areas of the project:
+• Theoretical foundation research of intelligent systems
+• Design and optimization of novel algorithms
+• Validation and promotion in practical application scenarios
 
-这一资助将为我们的研究提供强有力的支持，使我们能够购买先进的实验设备，招聘优秀的研究人员，并与国际顶尖研究机构开展合作。我们将充分利用这一机会，力争在相关领域取得更多突破性进展。`,
+This funding will provide strong support for our research, enabling us to purchase advanced experimental equipment, recruit excellent researchers, and collaborate with top international research institutions. We will make full use of this opportunity to strive for more breakthrough progress in related fields.`,
       date: '2024-01-10',
-      category: '项目资助',
+      category: 'Project Funding',
       image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&h=400&fit=crop',
       author: 'Prof. Hu Jianqi'
     },
     {
       id: 3,
-      title: '博士生李明在国际会议上获得最佳论文奖',
-      summary: '课题组博士生李明在ICML 2024会议上凭借出色的研究工作获得了最佳论文奖。',
-      content: `我们非常自豪地宣布，课题组博士生李明在国际机器学习大会（ICML 2024）上获得了最佳论文奖。这是对他在机器学习理论研究方面杰出贡献的认可。
+      title: 'PhD Student Li Ming Wins Best Paper Award at International Conference',
+      summary: 'Our PhD student Li Ming received the Best Paper Award at ICML 2024 conference for his outstanding research work.',
+      content: `We are extremely proud to announce that our PhD student Li Ming has won the Best Paper Award at the International Conference on Machine Learning (ICML 2024). This recognition acknowledges his outstanding contributions to machine learning theory research.
 
-获奖论文详情：
-• 论文题目："Novel Approaches to Deep Learning Optimization"
-• 主要创新：提出了一种新的优化算法，显著提升了深度学习模型的训练效率
-• 实验结果：在多个标准数据集上验证了算法的有效性
+Award-winning paper details:
+• Paper title: "Novel Approaches to Deep Learning Optimization"
+• Main innovation: Proposed a new optimization algorithm that significantly improves the training efficiency of deep learning models
+• Experimental results: Validated the algorithm's effectiveness on multiple standard datasets
 
-李明同学自加入课题组以来，一直专注于机器学习理论的研究，这次获奖是他努力的回报，也是课题组培养优秀人才的体现。我们期待他在未来的研究中取得更多成就。`,
+Since joining our research group, Li Ming has been dedicated to machine learning theory research. This award is a reward for his hard work and demonstrates our group's commitment to cultivating excellent talent. We look forward to his future achievements in research.`,
       date: '2024-01-05',
-      category: '学生荣誉',
+      category: 'Student Honor',
       image: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=600&h=400&fit=crop',
       author: 'Li Ming'
     },
     {
       id: 4,
-      title: '课题组与知名企业签署产学研合作协议',
-      summary: '我们与多家知名科技企业建立了深度合作关系，共同推进技术创新和产业化应用。',
-      content: `近日，我们的课题组与几家知名科技企业正式签署了产学研合作协议，这标志着我们在产业化应用方面迈出了重要一步。
+      title: 'Research Group Signs Industry-Academia Collaboration Agreements',
+      summary: 'We have established deep partnerships with several renowned technology companies to jointly advance technological innovation and industrial applications.',
+      content: `Recently, our research group has officially signed industry-academia collaboration agreements with several renowned technology companies, marking an important step forward in industrial applications.
 
-合作内容包括：
-1. 联合技术研发项目
-2. 人才培养与交流计划
-3. 实验室共建与资源共享
-4. 知识产权共同开发
+Collaboration areas include:
+1. Joint technology R&D projects
+2. Talent development and exchange programs
+3. Laboratory co-construction and resource sharing
+4. Joint intellectual property development
 
-通过这些合作，我们将能够：
-• 将理论研究成果转化为实际应用
-• 为学生提供更多实习和就业机会
-• 获得产业界的实际需求反馈
-• 推动科技成果的产业化进程
+Through these collaborations, we will be able to:
+• Transform theoretical research results into practical applications
+• Provide more internship and employment opportunities for students
+• Receive feedback on actual industry needs
+• Promote the industrialization of scientific and technological achievements
 
-我们相信，这种产学研深度融合的模式将为双方带来互利共赢的结果，也将为社会创造更大的价值。`,
+We believe that this deep integration model of industry, academia, and research will bring mutually beneficial results for both parties and create greater value for society.`,
       date: '2023-12-28',
-      category: '合作交流',
+      category: 'Collaboration',
       image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop',
       author: 'Prof. Hu Jianqi'
     },
     {
       id: 5,
-      title: '课题组举办首届国际学术研讨会',
-      summary: '我们成功举办了首届国际学术研讨会，来自世界各地的专家学者齐聚一堂，共同探讨前沿技术。',
-      content: `2023年12月15-17日，我们的课题组成功举办了首届国际学术研讨会。本次会议吸引了来自美国、欧洲、亚洲等地区的50多位知名专家学者参与。
+      title: 'Research Group Hosts First International Academic Symposium',
+      summary: 'We successfully organized our first international academic symposium, bringing together experts and scholars from around the world to discuss cutting-edge technologies.',
+      content: `From December 15-17, 2023, our research group successfully hosted the first international academic symposium. The conference attracted over 50 renowned experts and scholars from the United States, Europe, Asia, and other regions.
 
-会议亮点：
-• 20场主题演讲，涵盖人工智能、机器学习、数据科学等多个领域
-• 30余篇高质量学术论文展示
-• 深入的学术讨论和思想碰撞
-• 建立了广泛的国际合作网络
+Conference highlights:
+• 20 keynote speeches covering artificial intelligence, machine learning, data science, and other fields
+• Over 30 high-quality academic paper presentations
+• In-depth academic discussions and intellectual exchanges
+• Establishment of extensive international collaboration networks
 
-与会专家对我们课题组的研究工作给予了高度评价，并表达了进一步合作的意愿。会议期间，我们还与多个国际研究机构签署了合作备忘录，为未来的国际合作奠定了基础。
+Participating experts highly praised our research group's work and expressed willingness for further collaboration. During the conference, we also signed cooperation memorandums with multiple international research institutions, laying the foundation for future international partnerships.
 
-这次会议的成功举办，不仅提升了课题组的国际影响力，也为香港大学在相关领域的学术声誉做出了贡献。`,
+The successful organization of this conference not only enhanced our research group's international influence but also contributed to the University of Hong Kong's academic reputation in related fields.`,
       date: '2023-12-20',
-      category: '学术活动',
+      category: 'Academic Activity',
       image: 'https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=600&h=400&fit=crop',
       author: 'Prof. Hu Jianqi'
     },
     {
       id: 6,
-      title: '新实验室正式启用，研究条件大幅提升',
-      summary: '经过半年的筹备和建设，我们的新实验室正式启用，为研究工作提供了更好的硬件支持。',
-      content: `经过半年的精心筹备和建设，我们的新实验室于2023年12月1日正式启用。新实验室占地面积500平方米，配备了最先进的研究设备和计算资源。
+      title: 'New Laboratory Officially Opens, Significantly Enhancing Research Capabilities',
+      summary: 'After six months of preparation and construction, our new laboratory is officially operational, providing better hardware support for research work.',
+      content: `After six months of careful preparation and construction, our new laboratory officially opened on December 1, 2023. The new laboratory covers an area of 500 square meters and is equipped with the most advanced research equipment and computing resources.
 
-新实验室特色：
-• 高性能计算集群，包含100个GPU节点
-• 专业的数据存储和处理系统
-• 现代化的办公和讨论空间
-• 完善的安全和环境控制系统
+New laboratory features:
+• High-performance computing cluster with 100 GPU nodes
+• Professional data storage and processing systems
+• Modern office and discussion spaces
+• Comprehensive security and environmental control systems
 
-设备清单：
-1. NVIDIA A100 GPU服务器 × 10台
-2. 高速网络交换设备
-3. 专业级工作站 × 20台
-4. 大容量存储阵列
-5. 各类专业测试仪器
+Equipment inventory:
+1. NVIDIA A100 GPU servers × 10 units
+2. High-speed network switching equipment
+3. Professional workstations × 20 units
+4. Large-capacity storage arrays
+5. Various professional testing instruments
 
-新实验室的启用将大大提升我们的研究能力，特别是在大规模数据处理和复杂模型训练方面。我们期待在这个新的研究环境中取得更多突破性成果。`,
+The opening of the new laboratory will greatly enhance our research capabilities, especially in large-scale data processing and complex model training. We look forward to achieving more breakthrough results in this new research environment.`,
       date: '2023-12-01',
-      category: '实验室建设',
+      category: 'Lab Construction',
       image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&h=400&fit=crop',
       author: 'Prof. Hu Jianqi'
     }
   ];
 
-  const categories = ['全部', '学术成果', '项目资助', '学生荣誉', '合作交流', '学术活动', '实验室建设'];
-  const [selectedCategory, setSelectedCategory] = useState('全部');
+  const categories = ['All', 'Academic Achievement', 'Project Funding', 'Student Honor', 'Collaboration', 'Academic Activity', 'Lab Construction'];
+  const [selectedCategory, setSelectedCategory] = useState('All');
 
-  const filteredNews = selectedCategory === '全部' 
+  const filteredNews = selectedCategory === 'All' 
     ? newsItems 
     : newsItems.filter(item => item.category === selectedCategory);
 
@@ -156,9 +156,9 @@ const News: React.FC = () => {
     <section id="news" className="py-20 bg-white dark:bg-gray-800 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="section-title">最新动态</h2>
+          <h2 className="section-title">Latest News</h2>
           <p className="section-subtitle max-w-3xl mx-auto">
-            了解课题组的最新研究进展、学术成果和重要活动
+            Stay updated with our latest research progress, academic achievements, and important activities
           </p>
         </div>
 
@@ -221,10 +221,10 @@ const News: React.FC = () => {
 
                 <div className="flex items-center justify-between">
                   <span className="text-gray-500 dark:text-gray-400 text-sm">
-                    作者: {news.author}
+                    Author: {news.author}
                   </span>
                   <button className="text-hku-green hover:text-hku-gold font-medium text-sm transition-colors duration-200">
-                    阅读更多 →
+                    Read More →
                   </button>
                 </div>
               </div>
@@ -283,10 +283,10 @@ const News: React.FC = () => {
                 <div className="mt-8 pt-6 border-t border-gray-200 dark:border-gray-700">
                   <div className="flex items-center justify-between">
                     <span className="text-gray-600 dark:text-gray-400">
-                      作者: {selectedNews.author}
+                      Author: {selectedNews.author}
                     </span>
                     <span className="text-gray-600 dark:text-gray-400">
-                      发布时间: {selectedNews.date}
+                      Published: {selectedNews.date}
                     </span>
                   </div>
                 </div>
