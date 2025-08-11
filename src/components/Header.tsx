@@ -6,7 +6,7 @@ const Header: React.FC = () => {
 
   const navItems = [
     { name: 'Home', href: '#home' },
-
+    { name: 'News', href: '#news' },
     { name: 'Research', href: '#research' },
     { name: 'Publications', href: '#publications' },
     { name: 'Team', href: '#team' },

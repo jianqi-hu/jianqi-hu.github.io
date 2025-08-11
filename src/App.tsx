@@ -1,6 +1,6 @@
 import Header from './components/Header';
 import Hero from './components/Hero';
-
+import News from './components/News';
 import Research from './components/Research';
 import Publications from './components/Publications';
 import Team from './components/Team';
@@ -16,7 +16,7 @@ function App() {
       <Header />
       <main>
         <Hero />
-
+        <News />
         <Research />
         <Publications />
         <Team />
