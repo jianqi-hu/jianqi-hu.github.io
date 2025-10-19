@@ -15,7 +15,8 @@ const Header: React.FC = () => {
   ];
 
   return (
-    <header className="bg-white dark:bg-vahala-blue border-b border-gray-200 dark:border-gray-700 fixed w-full top-0 z-50 transition-colors duration-300">
+-    <header className="bg-white dark:bg-vahala-blue border-b border-gray-200 dark:border-gray-700 fixed w-full top-0 z-50 transition-colors duration-300">
++    <header className="bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700 fixed w-full top-0 z-50 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="pt-4 pb-1">
           {/* 第一行：左侧 Logo，仅保留左侧内容 */}
@@ -23,7 +24,8 @@ const Header: React.FC = () => {
             <div className="flex items-center ml-4">
               <Link to="/" className="flex items-center">
                 <img src="/hku_logo_color.jpg" alt="HKU Logo" className="h-16 w-auto mr-3" />
-                <span className="text-black font-bold text-3xl">HKU Ultrafast Nonlinear Optical Laboratory</span>
+-                <span className="text-black font-bold text-3xl">HKU Ultrafast Nonlinear Optical Laboratory</span>
++                <span className="text-black dark:text-white font-bold text-3xl">HKU Ultrafast Nonlinear Optical Laboratory</span>
               </Link>
             </div>
 
