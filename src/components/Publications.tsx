@@ -1,9 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 const Publications: React.FC = () => {
-  const [selectedYear, setSelectedYear] = useState('all');
-  const [selectedType, setSelectedType] = useState('all');
-
   const publications = [
     {
       title: 'Optical next generation reservoir computing',
@@ -266,130 +263,47 @@ const Publications: React.FC = () => {
     }
   ];
 
-  const years = ['all', ...Array.from(new Set(publications.map(p => p.year))).sort((a, b) => b - a)];
-  const types = ['all', 'journal', 'conference'];
+  // 按年份降序排序并分组
+  const years = Array.from(new Set(publications.map(p => p.year))).sort((a, b) => b - a);
+  const byYear = (year: number) => publications.filter(p => p.year === year);
 
-  const filteredPublications = publications
-    .filter(pub => {
-      const yearMatch = selectedYear === 'all' || pub.year.toString() === selectedYear;
-      const typeMatch = selectedType === 'all' || pub.type === selectedType;
-      return yearMatch && typeMatch;
-    })
-    .sort((a, b) => b.year - a.year);
-
-  const stats = {
-    total: publications.length,
-    journal: publications.filter(p => p.type === 'journal').length,
-    conference: publications.filter(p => p.type === 'conference').length,
-    recent: publications.filter(p => p.year >= 2024).length
-  };
+  // 生成 Google Scholar 搜索链接（如果没有具体链接）
+  const scholarLink = (title: string) => `https://scholar.google.com/scholar?q=${encodeURIComponent(title)}`;
 
   return (
-    <section id="publications" className="py-20 bg-white dark:bg-gray-900 transition-colors duration-300">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+    <section className="pt-40 pb-20 bg-white dark:bg-gray-900 transition-colors duration-300 scroll-mt-40">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12">
           <h2 className="section-title">Publications</h2>
-          <p className="section-subtitle max-w-3xl mx-auto">
-            Our research results are published in top international journals and conferences, driving academic development
-          </p>
+          {/* 副标题移除：原有 Google Scholar 提示文字删除 */}
         </div>
 
-        {/* Statistics */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-          <div className="bg-gradient-to-r from-hku-green to-hku-darkGreen text-white rounded-xl p-6 text-center">
-            <div className="text-3xl font-bold mb-2">{stats.total}</div>
-            <div className="text-hku-gold">Total Publications</div>
-          </div>
-          <div className="bg-gradient-to-r from-hku-lightGreen to-hku-green text-white rounded-xl p-6 text-center">
-            <div className="text-3xl font-bold mb-2">{stats.journal}</div>
-            <div className="text-green-100">Journal Papers</div>
-          </div>
-          <div className="bg-gradient-to-r from-green-600 to-hku-green text-white rounded-xl p-6 text-center">
-            <div className="text-3xl font-bold mb-2">{stats.conference}</div>
-            <div className="text-green-100">Conference Papers</div>
-          </div>
-          <div className="bg-gradient-to-r from-green-500 to-hku-lightGreen text-white rounded-xl p-6 text-center">
-            <div className="text-3xl font-bold mb-2">{stats.recent}</div>
-            <div className="text-green-100">Since 2024</div>
-          </div>
-        </div>
-
-        {/* Filters */}
-        <div className="flex flex-col sm:flex-row gap-4 mb-8">
-          <div className="flex-1">
-            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Filter by Year</label>
-            <select
-              value={selectedYear}
-              onChange={(e) => setSelectedYear(e.target.value)}
-              className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 dark:bg-gray-800 dark:text-white rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
-            >
-              {years.map(year => (
-                <option key={year} value={year}>
-                  {year === 'all' ? 'All Years' : year}
-                </option>
-              ))}
-            </select>
-          </div>
-          <div className="flex-1">
-            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Filter by Type</label>
-            <select
-              value={selectedType}
-              onChange={(e) => setSelectedType(e.target.value)}
-              className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 dark:bg-gray-800 dark:text-white rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
-            >
-              {types.map(type => (
-                <option key={type} value={type}>
-                  {type === 'all' ? 'All Types' : type === 'journal' ? 'Journal' : 'Conference'}
-                </option>
-              ))}
-            </select>
-          </div>
-        </div>
-
-        {/* Publications List */}
-        <div className="space-y-6">
-          {filteredPublications.map((pub, index) => (
-            <div key={index} className="card hover:shadow-xl transition-all duration-300">
-              <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between">
-                <div className="flex-1">
-                  <div className="flex items-start justify-between mb-3">
-                    <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2 flex-1">{pub.title}</h3>
-                    <div className="flex flex-col items-end ml-4">
-                      <span className="bg-primary-100 text-primary-800 px-3 py-1 rounded-full text-sm font-medium">
-                        {pub.year}
-                      </span>
-                    </div>
+        {/* 年份分组列表 */}
+        {years.map((year) => (
+          <div key={year} className={`mb-12 ${year === 2025 ? '-mt-4' : ''}`}>
+            <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">{year}</h3>
+            <div className="space-y-6">
+              {byYear(year).map((pub, index) => (
+                <div key={`${year}-${index}`}>
+                  <div className="text-lg font-semibold text-gray-800 dark:text-gray-200">
+                    {pub.title}
                   </div>
-                  
-                  <div className="mb-3">
-                    <span className="text-gray-600 dark:text-gray-400">Authors: </span>
-                    <span className="text-gray-900 dark:text-gray-200">{pub.authors.join(', ')}</span>
+                  <div className="italic text-gray-600 dark:text-gray-400">
+                    {pub.authors.join(', ')}
                   </div>
-                  
-                  <div className="mb-3">
-                    <span className="text-gray-600 dark:text-gray-400">Journal: </span>
-                    <span className="text-gray-900 dark:text-gray-200 font-medium">{pub.journal}</span>
-                  </div>
+                  <a
+                    href={scholarLink(pub.title)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-caltech-orange dark:text-caltech-orange hover:text-caltech-orange hover:underline"
+                  >
+                    {pub.journal} ({pub.year})
+                  </a>
                 </div>
-              </div>
-              
-              <div className="flex flex-wrap gap-2 mt-4">
-                <span className="bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-3 py-1 rounded-full text-sm">
-                  {pub.category}
-                </span>
-                <span className="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm capitalize">
-                  {pub.type}
-                </span>
-              </div>
+              ))}
             </div>
-          ))}
-        </div>
-
-        {filteredPublications.length === 0 && (
-          <div className="text-center py-12">
-            <div className="text-gray-400 text-lg">No publications found matching the criteria</div>
           </div>
-        )}
+        ))}
       </div>
     </section>
   );

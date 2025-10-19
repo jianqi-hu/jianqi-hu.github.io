@@ -45,17 +45,15 @@ const Contact: React.FC = () => {
 
 
   return (
-    <section id="contact" className="py-20 bg-white dark:bg-gray-900 transition-colors duration-300">
+    <section id="contact-us" className="pt-40 scroll-mt-40">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="section-title">Contact Us</h2>
-          <p className="section-subtitle max-w-3xl mx-auto">
-            Welcome to contact us to discuss academic collaboration, research opportunities, or any related questions
-          </p>
+          <h1 className="text-3xl font-bold">Contact Us</h1>
+          <p className="mt-4 text-gray-600 dark:text-gray-400">Reach out to our research group for inquiries.</p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
-          {/* Contact Information */}
+        <div className="grid lg:grid-cols-2 gap-12 -mt-4">
+          {/* Contact info card and map card */}
           <div>
             <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-8">Contact Information</h3>
             <div className="space-y-6">
@@ -95,6 +93,21 @@ const Contact: React.FC = () => {
                 Pokfulam Road, Hong Kong
               </p>
             </div>
+          </div>
+        </div>
+        {/* Join Our Team CTA (moved from Activities) */}
+        <div className="text-center mt-16">
+          <div className="bg-gradient-to-r from-hku-green to-hku-darkGreen rounded-lg p-8 text-white">
+            <h3 className="text-2xl font-bold mb-4">Join Our Team</h3>
+            <p className="text-green-100 mb-6 max-w-2xl mx-auto">
+              We welcome scholars and students passionate about optical research to join our family, exploring the mysteries of science and creating wonderful memories together
+            </p>
+            <a 
+              href="#contact" 
+              className="inline-block bg-white text-hku-green px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-200"
+            >
+              Contact Us
+            </a>
           </div>
         </div>
       </div>

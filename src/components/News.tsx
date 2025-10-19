@@ -1,4 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import integratedOptics from '../assets/integrated-optics.jpg';
+import photonicComputing from '../assets/photonic-computing.png';
+import nonlinearPhotonics from '../assets/nonlinear-photonics.jpg';
 
 interface NewsItem {
   id: number;
@@ -13,6 +16,16 @@ interface NewsItem {
 
 const News: React.FC = () => {
   const [selectedNews, setSelectedNews] = useState<NewsItem | null>(null);
+
+  // 锁定背景滚动，避免滚动穿透到 News 页面
+  useEffect(() => {
+    if (selectedNews) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => { document.body.style.overflow = ''; };
+  }, [selectedNews]);
 
   const newsItems: NewsItem[] = [
     {
@@ -29,7 +42,7 @@ The main contributions of this research include:
 This achievement is the result of collective efforts from all members of our research group, with special thanks to the hard work of participating PhD and Master's students. We will continue to explore deeply in this direction, contributing more valuable research outcomes to both academia and industry.`,
       date: '2024-01-15',
       category: 'Academic Achievement',
-      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=400&fit=crop',
+      image: integratedOptics,
       author: 'Prof. Hu Jianqi'
     },
     {
@@ -46,7 +59,7 @@ Main research areas of the project:
 This funding will provide strong support for our research, enabling us to purchase advanced experimental equipment, recruit excellent researchers, and collaborate with top international research institutions. We will make full use of this opportunity to strive for more breakthrough progress in related fields.`,
       date: '2024-01-10',
       category: 'Project Funding',
-      image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&h=400&fit=crop',
+      image: photonicComputing,
       author: 'Prof. Hu Jianqi'
     },
     {
@@ -63,12 +76,12 @@ Award-winning paper details:
 Since joining our research group, Li Ming has been dedicated to machine learning theory research. This award is a reward for his hard work and demonstrates our group's commitment to cultivating excellent talent. We look forward to his future achievements in research.`,
       date: '2024-01-05',
       category: 'Student Honor',
-      image: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=600&h=400&fit=crop',
+      image: nonlinearPhotonics,
       author: 'Li Ming'
     }
   ];
 
-  const categories = ['All', 'Academic Achievement', 'Project Funding', 'Student Honor', 'Collaboration', 'Academic Activity', 'Lab Construction'];
+  const categories: string[] = [];
   const [selectedCategory, setSelectedCategory] = useState('All');
 
   const filteredNews = selectedCategory === 'All' 
@@ -84,17 +97,15 @@ Since joining our research group, Li Ming has been dedicated to machine learning
   };
 
   return (
-    <section id="news" className="py-20 bg-white dark:bg-gray-800 transition-colors duration-300">
+    <section className="py-20 bg-white dark:bg-gray-800 transition-colors duration-300 pt-40 scroll-mt-40">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <div className="text-center mb-8">
           <h2 className="section-title">Latest News</h2>
-          <p className="section-subtitle max-w-3xl mx-auto">
-            Stay updated with our latest research progress, academic achievements, and important activities
-          </p>
+          <p className="section-subtitle max-w-3xl mx-auto"></p>
         </div>
 
         {/* Category Filter */}
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
+        <div className={`flex flex-wrap justify-center gap-4 ${categories.length ? 'mb-8' : 'mb-0'}`}>
           {categories.map((category) => (
             <button
               key={category}
@@ -119,108 +130,67 @@ Since joining our research group, Li Ming has been dedicated to machine learning
               onClick={() => openNewsDetail(news)}
             >
               {/* Image */}
-              <div className="h-48 overflow-hidden">
+              <div className="h-56 w-full overflow-hidden">
                 <img
                   src={news.image}
                   alt={news.title}
-                  className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
-                  onError={(e) => {
-                    const target = e.target as HTMLImageElement;
-                    target.src = 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=400&fit=crop';
-                  }}
+                  className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-300"
                 />
               </div>
 
               {/* Content */}
               <div className="p-6">
-                <div className="flex items-center justify-between mb-3">
-                  <span className="bg-hku-green text-white px-3 py-1 rounded-full text-sm font-medium">
-                    {news.category}
-                  </span>
-                  <span className="text-gray-500 dark:text-gray-400 text-sm">
-                    {news.date}
+                <div className="mb-3">
+                  <span className="text-gray-500 dark:text-gray-300 text-sm">
+                    {new Date(news.date).toLocaleDateString()}
                   </span>
                 </div>
-
-                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3 line-clamp-2">
-                  {news.title}
-                </h3>
-
-                <p className="text-gray-600 dark:text-gray-300 mb-4 line-clamp-3">
-                  {news.summary}
-                </p>
-
-                <div className="flex items-center justify-between">
-                  <span className="text-gray-500 dark:text-gray-400 text-sm">
-                    Author: {news.author}
-                  </span>
-                  <button className="text-hku-green hover:text-hku-gold font-medium text-sm transition-colors duration-200">
-                    Read More →
-                  </button>
-                </div>
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">{news.title}</h3>
+                <p className="text-gray-600 dark:text-gray-300 mb-4">{news.summary}</p>
+                <button className="btn-secondary">Read More</button>
               </div>
             </div>
           ))}
         </div>
 
-        {/* News Detail Modal */}
+        {/* Modal */}
         {selectedNews && (
-          <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
-            <div className="bg-white dark:bg-gray-800 rounded-lg max-w-4xl max-h-[90vh] overflow-y-auto">
+          <div
+            className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 overflow-y-auto p-4"
+            onClick={closeNewsDetail}
+          >
+            <div
+              className="bg-white dark:bg-gray-800 rounded-lg max-w-3xl w-full mx-4 max-h-[85vh] overflow-y-auto"
+              onClick={e => e.stopPropagation()}
+              role="dialog"
+              aria-modal="true"
+            >
               {/* Modal Header */}
-              <div className="sticky top-0 bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 p-6">
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center space-x-4">
-                    <span className="bg-hku-green text-white px-3 py-1 rounded-full text-sm font-medium">
-                      {selectedNews.category}
-                    </span>
-                    <span className="text-gray-500 dark:text-gray-400 text-sm">
-                      {selectedNews.date}
-                    </span>
-                  </div>
-                  <button
-                    onClick={closeNewsDetail}
-                    className="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200"
-                  >
-                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                  </button>
-                </div>
-              </div>
+              <div className="p-6 border-b border-gray-200 dark:border-gray-700 flex justify-between items-center">
+                 <div>
+                   <h3 className="text-2xl font-semibold text-gray-900 dark:text-white">{selectedNews.title}</h3>
+                   <p className="text-gray-500 dark:text-gray-300 text-sm mt-1">{new Date(selectedNews.date).toLocaleDateString()}</p>
+                 </div>
+                 <button onClick={closeNewsDetail} className="text-gray-500 hover:text-gray-700 dark:text-gray-300 dark:hover:text-white">
+                   ✕
+                 </button>
+               </div>
 
               {/* Modal Content */}
               <div className="p-6">
-                <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
-                  {selectedNews.title}
-                </h2>
-
-                <div className="mb-6">
-                  <img
-                    src={selectedNews.image}
-                    alt={selectedNews.title}
-                    className="w-full h-64 object-cover rounded-lg"
-                  />
+                <div className="h-64 w-full overflow-hidden rounded-lg mb-6">
+                  <img src={selectedNews.image} alt={selectedNews.title} className="w-full h-full object-cover" />
                 </div>
-
                 <div className="prose dark:prose-invert max-w-none">
-                  {selectedNews.content.split('\n').map((paragraph, index) => (
-                    <p key={index} className="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
-                      {paragraph}
-                    </p>
+                  {selectedNews.content.split('\n').map((paragraph, idx) => (
+                    <p key={idx}>{paragraph}</p>
                   ))}
                 </div>
+              </div>
 
-                <div className="mt-8 pt-6 border-t border-gray-200 dark:border-gray-700">
-                  <div className="flex items-center justify-between">
-                    <span className="text-gray-600 dark:text-gray-400">
-                      Author: {selectedNews.author}
-                    </span>
-                    <span className="text-gray-600 dark:text-gray-400">
-                      Published: {selectedNews.date}
-                    </span>
-                  </div>
-                </div>
+              {/* Modal Footer */}
+              <div className="p-6 border-t border-gray-200 dark:border-gray-700">
+                <button onClick={closeNewsDetail} className="btn-secondary">Close</button>
               </div>
             </div>
           </div>

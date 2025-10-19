@@ -4,23 +4,12 @@ const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
 
   const quickLinks = [
-    { name: 'Home', href: '#home' },
-    { name: 'News', href: '#news' },
-    { name: 'Research', href: '#research' },
-    { name: 'Publications', href: '#publications' },
-    { name: 'Team', href: '#team' },
-    { name: 'Activities', href: '#activities' },
-    { name: 'Contact', href: '#contact' }
+    { name: 'Google Scholar', href: 'https://scholar.google.com/citations?user=LYfEMQYAAAAJ&hl=zh-CN' },
+    { name: 'The University of Hong Kong', href: 'https://www.hku.hk/' },
+    { name: 'Department of Electrical and Electronic Engineering', href: 'https://www.eee.hku.hk/' }
   ];
 
-  const researchAreas = [
-    { name: 'Artificial Intelligence', href: '#research' },
-    { name: 'Machine Learning', href: '#research' },
-    { name: 'Data Science', href: '#research' },
-    { name: 'IoT Technology', href: '#research' },
-    { name: 'Cybersecurity', href: '#research' },
-    { name: 'Cloud Computing', href: '#research' }
-  ];
+
 
   const socialLinks = [
     {
@@ -56,22 +45,18 @@ const Footer: React.FC = () => {
   ];
 
   return (
-    <footer className="bg-hku-darkGreen dark:bg-gray-900 text-white transition-colors duration-300">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+    <footer className="mt-8 md:mt-12 bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200 transition-colors duration-300">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div className="grid grid-cols-[max-content_max-content] justify-center gap-y-6 gap-x-[17.5rem]">
           {/* About Section */}
-          <div className="lg:col-span-2">
-            <div className="mb-6">
-              <h3 className="text-2xl font-bold text-hku-gold mb-2">Prof. Hu's Research Group, HKU</h3>
-              <p className="text-green-100 mb-4">
-                We are a research team at the University of Hong Kong dedicated to cutting-edge technology research, 
-                committed to advancing innovation in artificial intelligence, machine learning, and data science. 
-                Through industry-academia collaboration, we contribute wisdom and strength to social development.
-              </p>
+          <div>
+            <div className="mb-1">
+              <h3 className="text-xl font-bold text-hku-gold mb-1">Prof. Hu's Research Group, HKU</h3>
+
             </div>
             
             {/* Contact Info */}
-            <div className="space-y-2 text-gray-300 dark:text-gray-400">
+            <div className="space-y-1.5 text-gray-700 dark:text-gray-400">
               <div className="flex items-center">
                 <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
@@ -96,13 +81,13 @@ const Footer: React.FC = () => {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-lg font-semibold text-hku-gold mb-4">Quick Links</h4>
-            <ul className="space-y-2">
+            <h4 className="text-xl font-bold text-hku-gold mb-1">Quick Links</h4>
+            <ul className="space-y-1.5">
               {quickLinks.map((link, index) => (
                 <li key={index}>
                   <a 
                     href={link.href} 
-                    className="text-green-200 hover:text-hku-gold transition-colors duration-200"
+                    className="text-gray-700 hover:text-hku-gold transition-colors duration-200 dark:text-gray-300"
                   >
                     {link.name}
                   </a>
@@ -111,45 +96,14 @@ const Footer: React.FC = () => {
             </ul>
           </div>
 
-          {/* Research Areas */}
-          <div>
-            <h4 className="text-lg font-semibold text-hku-gold mb-4">Research Areas</h4>
-            <ul className="space-y-2">
-              {researchAreas.map((area, index) => (
-                <li key={index}>
-                  <a 
-                    href={area.href} 
-                    className="text-green-200 hover:text-hku-gold transition-colors duration-200"
-                  >
-                    {area.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
         </div>
 
         {/* Social Links and Copyright */}
         <div className="border-t border-hku-green dark:border-gray-700 mt-8 pt-8 transition-colors duration-300">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="flex space-x-4 mb-4 md:mb-0">
-              {socialLinks.map((social, index) => (
-                <a
-                  key={index}
-                  href={social.href}
-                  className="text-green-300 hover:text-hku-gold transition-colors duration-200"
-                  title={social.name}
-                >
-                  {social.icon}
-                </a>
-              ))}
-            </div>
-            
-            <div className="text-center md:text-right text-green-200 dark:text-gray-400">
-              <p className="mb-1">
-                © {currentYear} Prof. Hu's Research Group, HKU. All rights reserved.
-              </p>
-            </div>
+          <div className="flex justify-center items-center">
+            <p className="text-sm text-gray-700 dark:text-gray-400 text-center">
+              © {currentYear} Prof. Hu's Research Group, HKU. All rights reserved.
+            </p>
           </div>
         </div>
       </div>

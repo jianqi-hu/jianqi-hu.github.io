@@ -4,6 +4,7 @@ const Team: React.FC = () => {
   const teamMembers = [
     {
       name: 'Dr. Jianqi Hu',
+      chineseName: '胡剑琦',
       title: 'Research Group Leader',
       role: 'Assistant Professor',
       education: [
@@ -73,132 +74,130 @@ const Team: React.FC = () => {
     { name: 'Students', members: teamMembers.filter(m => m.role.includes('Student')) }
   ];
 
+  const isChinese = (txt?: string) => !!txt && /[\u4e00-\u9fff]/.test(txt);
+
+  const formatEdu = (raw: string) => {
+    const s = raw.replace(/\s+/g, ' ').trim();
+    let degree = '';
+    if (/\b(Doctor of Philosophy|Ph\.?D\.?)\b/i.test(s)) degree = 'PhD';
+    else if (/\b(Master|M\.?Sc\.?|M\.?S\.?|Master of Science)\b/i.test(s)) degree = 'MS';
+    else if (/\b(Bachelor|B\.?Sc\.?|B\.?S\.?|Bachelor of Science)\b/i.test(s)) degree = 'BS';
+    else if (/\b(M\.?Eng\.?|Master of Engineering|MEng)\b/i.test(s)) degree = 'MEng';
+
+    const yearMatch = s.match(/\b(19|20)\d{2}\b/);
+    const year = yearMatch ? yearMatch[0] : '';
+
+    let noParens = s.replace(/\([^)]*\)/g, '').trim();
+    noParens = noParens.replace(/,?\s*\b(19|20)\d{2}\b/, '').trim();
+
+    const parts = noParens.split(',');
+    const university = parts.length > 1 ? parts[parts.length - 1].trim() : noParens;
+
+    return `${degree ? degree + ', ' : ''}${university}${year ? ` (${year})` : ''}`;
+  };
+
   return (
-    <section id="team" className="py-20 bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
+    <section className="py-20 bg-white dark:bg-gray-900 transition-colors duration-300 pt-40 scroll-mt-40">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="section-title">Team Members</h2>
-          <p className="section-subtitle max-w-3xl mx-auto">
-            We have a diverse team composed of senior professors, excellent researchers, and promising students
-          </p>
+          {/* 副标题移除 */}
         </div>
 
-        {/* Team Statistics */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-          <div className="bg-white dark:bg-gray-800 rounded-xl p-6 text-center shadow-lg">
-            <div className="text-3xl font-bold text-primary-600 mb-2">
-              {teamMembers.filter(m => m.role.includes('Professor')).length}
-            </div>
-            <div className="text-gray-600 dark:text-gray-300">Professors</div>
-          </div>
-          <div className="bg-white dark:bg-gray-800 rounded-xl p-6 text-center shadow-lg">
-            <div className="text-3xl font-bold text-green-600 mb-2">
-              {teamMembers.filter(m => m.role.includes('Researcher') || m.role.includes('Engineer')).length}
-            </div>
-            <div className="text-gray-600 dark:text-gray-300">Researchers/Engineers</div>
-          </div>
-          <div className="bg-white rounded-xl p-6 text-center shadow-lg">
-            <div className="text-3xl font-bold text-purple-600 mb-2">
-              {teamMembers.filter(m => m.role.includes('Student')).length}
-            </div>
-            <div className="text-gray-600 dark:text-gray-300">Students</div>
-          </div>
-          <div className="bg-white rounded-xl p-6 text-center shadow-lg">
-            <div className="text-3xl font-bold text-orange-600 mb-2">
-              {teamMembers.reduce((sum, member) => sum + member.publications, 0)}
-            </div>
-            <div className="text-gray-600 dark:text-gray-300">Total Publications</div>
-          </div>
-        </div>
+        {/* Team Statistics removed per request */}
 
         {/* Team Members by Category */}
         {categories.map((category, categoryIndex) => (
-          <div key={categoryIndex} className="mb-16">
-            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-8 text-center">{category.name}</h3>
-            <div className={`${
-              category.members.length === 1 
-                ? 'flex justify-center' 
-                : category.members.length === 2
-                ? 'flex flex-wrap justify-center gap-8'
-                : 'grid md:grid-cols-2 lg:grid-cols-3 gap-8'
-            }`}>
-              {category.members.map((member, index) => (
-                 <div key={index} className={`card hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 ${
-                   category.members.length <= 2 ? 'max-w-md' : ''
-                 }`}>
-                  <div className="text-center mb-6">
-                    <div className="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden bg-gray-200">
-                      <img 
-                        src={member.avatar} 
-                        alt={member.name}
-                        className={`w-full h-full object-cover ${
-                          member.name === 'Pan Xiaofu' ? 'object-top' : 
-                          member.name === 'Wang Yuzhong' ? 'object-[center_top]' : 'object-center'
-                        }`}
-                        style={member.name === 'Wang Yuzhong' ? { objectPosition: 'center 30%' } : {}}
-                        onError={(e) => {
-                          const target = e.target as HTMLImageElement;
-                          target.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(member.name)}&background=1a4327&color=fff&size=150`;
-                        }}
+          <div
+            key={categoryIndex}
+            className={`mb-16 ${categoryIndex === 0 ? '-mt-4' : ''}`}
+          >
+            <h2 className="text-2xl font-semibold mb-6 border-b pb-2">{category.name}</h2>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {category.members.map((member, memberIndex) => (
+                <div key={memberIndex} className="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-6 border border-gray-200 dark:border-gray-700">
+                  <div className="text-center mb-4">
+                    <div className="w-80 aspect-square max-w-full mx-auto mb-3 rounded-lg overflow-hidden bg-gray-200">
+                      <img
+                        src={member.avatar || "/professor-avatar.jpg"}
+                        alt={`${member.name} Avatar`}
+                        className="w-full h-full object-cover"
                       />
                     </div>
-                    <h4 className="text-xl font-bold text-gray-900 dark:text-white mb-1">{member.name}</h4>
-                    <p className="text-hku-green font-medium mb-2">{member.title}</p>
-                    <p className="text-gray-600 dark:text-gray-400 text-sm">{member.role}</p>
-                  </div>
-                  
-                  <div className="space-y-4">
-                    <div>
-                      <h5 className="font-semibold text-gray-900 dark:text-white text-sm mb-2">Education</h5>
-                      {Array.isArray(member.education) ? (
-                        <ul className="text-gray-600 dark:text-gray-300 text-sm space-y-1">
-                          {member.education.map((edu, eduIndex) => (
-                            <li key={eduIndex} className="flex items-start">
-                              <div className="w-1.5 h-1.5 bg-hku-green rounded-full mr-2 mt-2 flex-shrink-0"></div>
-                              {edu}
-                            </li>
-                          ))}
-                        </ul>
+                    <h3 className="text-lg font-semibold">{member.name}</h3>
+                    {member.chineseName && (
+                      <p className="text-sm text-gray-600 dark:text-gray-400">
+                        <span className="font-hei">{member.chineseName}</span>
+                      </p>
+                    )}
+                    <p className="text-sm text-gray-600 dark:text-gray-400">
+                      {isChinese(member.title) ? (
+                        <span className="font-hei">{member.title}</span>
                       ) : (
-                        <p className="text-gray-600 dark:text-gray-300 text-sm">{member.education}</p>
+                        member.title
                       )}
-                    </div>
-                    
-                    <div>
-                      <h5 className="font-semibold text-gray-900 dark:text-white text-sm mb-2">Research Areas</h5>
-                      <div className="flex flex-wrap gap-1">
-                        {member.research.map((area, areaIndex) => (
-                          <span key={areaIndex} className="bg-green-100 dark:bg-green-900 text-hku-green dark:text-green-300 px-2 py-1 rounded text-xs">
-                            {area}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                    
-                    {/* Email section for students, publications for others */}
-                    {category.name === 'Students' ? (
+                    </p>
+                  </div>
+
+                  <div className="space-y-3">
+                    {member.education && (
                       <div>
-                        <h5 className="font-semibold text-gray-900 text-sm mb-2">Email</h5>
-                        <p className="text-gray-600 text-sm">{member.email}</p>
+                        <p className="text-sm font-medium">Education</p>
+                        {Array.isArray(member.education) ? (
+                          <div className="text-sm text-gray-600 dark:text-gray-400 space-y-1">
+                            {member.education.map((edu: string, i: number) => (
+                              <p key={i}>{formatEdu(edu)}</p>
+                            ))}
+                          </div>
+                        ) : (
+                          <p className="text-sm text-gray-600 dark:text-gray-400">
+                            {formatEdu(String(member.education))}
+                          </p>
+                        )}
                       </div>
-                    ) : (
-                      <div className="flex justify-between items-center pt-4 border-t border-gray-100">
-                        <div className="text-center">
-                          <div className="text-lg font-bold text-gray-900">{member.publications}</div>
-                          <div className="text-xs text-gray-600">Publications</div>
-                        </div>
-                        <a 
-                          href={`mailto:${member.email}`}
-                          className="text-hku-green hover:text-hku-darkGreen transition-colors duration-200"
-                          title="Send Email"
-                        >
-                          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                          </svg>
-                        </a>
+                    )}
+
+                    {category.name !== 'Students' && member.email && (
+                      <div>
+                        <p className="text-sm font-medium">Email</p>
+                        <p className="text-sm text-gray-600 dark:text-gray-400">{member.email}</p>
+                      </div>
+                    )}
+
+                    {category.name === 'Students' && member.email && (
+                      <div>
+                        <p className="text-sm font-medium">Email</p>
+                        <p className="text-sm text-gray-600 dark:text-gray-400">{member.email}</p>
                       </div>
                     )}
                   </div>
+
+                  {/* Email icon for non-students */}
+                  {category.name !== 'Students' && member.email && (
+                    <div className="mt-4">
+                      <a
+                        href={`mailto:${member.email}`}
+                        className="inline-flex items-center text-blue-600 hover:text-blue-800"
+                        aria-label={`Email ${member.name}`}
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          strokeWidth={1.5}
+                          stroke="currentColor"
+                          className="w-5 h-5"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25H4.5a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.06 1.916l-7.5 4.5a2.25 2.25 0 01-2.28 0l-7.5-4.5A2.25 2.25 0 012.25 6.993V6.75"
+                          />
+                        </svg>
+                        <span className="ml-2 text-sm">Send email</span>
+                      </a>
+                    </div>
+                  )}
                 </div>
               ))}
             </div>

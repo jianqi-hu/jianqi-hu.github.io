@@ -13,11 +13,11 @@
 
 @layer components {
   .btn-primary {
-    @apply bg-hku-green hover:bg-hku-darkGreen text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200;
+    @apply bg-caltech-orange hover:bg-orange-600 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200;
   }
 
   .btn-secondary {
-    @apply bg-hku-gold hover:bg-yellow-600 text-hku-green font-medium py-2 px-4 rounded-lg transition-colors duration-200;
+    @apply bg-vahala-blue hover:bg-blue-800 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200;
   }
 
   .card {
@@ -30,5 +30,10 @@
 
   .section-subtitle {
     @apply text-lg text-gray-600 dark:text-gray-300 mb-8;
+  }
+
+  /* Chinese Heiti font stack */
+  .font-hei {
+    font-family: 'Noto Sans SC', 'Microsoft YaHei', 'PingFang SC', 'Heiti SC', 'SimHei', system-ui, sans-serif;
   }
 }
