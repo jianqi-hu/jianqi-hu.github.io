@@ -6,7 +6,11 @@ const Footer: React.FC = () => {
   const quickLinks = [
     { name: 'Google Scholar', href: 'https://scholar.google.com/citations?user=LYfEMQYAAAAJ&hl=zh-CN' },
     { name: 'The University of Hong Kong', href: 'https://www.hku.hk/' },
-    { name: 'Department of Electrical and Electronic Engineering', href: 'https://www.eee.hku.hk/' }
+    { name: 'Department of Electrical and Electronic Engineering', href: 'https://www.eee.hku.hk/' },
+    { name: 'Hong Kong PhD Fellowship', href: 'https://www.ugc.edu.hk/eng/rgc/funding_opport/hkpfs/index.html' },
+    { name: 'HKU Presidential PhD Scholar Programme', href: 'https://gradsch.hku.hk/prospective_students/fees_scholarships_and_financial_support/hku_presidential_phd_scholar_programme' },
+    { name: 'Postgraduate Scholarship (PGS)', href: 'https://gradsch.hku.hk/prospective_students/fees_scholarships_and_financial_support/postgraduate_scholarships' },
+    { name: 'RGC Postdoctoral Fellowship', href: 'https://www.ugc.edu.hk/eng/rgc/funding_opport/pdfs/' }
   ];
 
 
@@ -17,7 +21,7 @@ const Footer: React.FC = () => {
           {/* About Section */}
           <div>
             <div className="mb-1">
-              <h3 className="text-xl font-bold text-hku-gold mb-1">Prof. Hu's Research Group, HKU</h3>
+              <h3 className="text-xl font-bold text-hku-green mb-1">Prof. Hu's Research Group, HKU</h3>
 
             </div>
             
@@ -47,7 +51,7 @@ const Footer: React.FC = () => {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-xl font-bold text-hku-gold mb-1">Quick Links</h4>
+            <h4 className="text-xl font-bold text-hku-green mb-1">Quick Links</h4>
             <ul className="space-y-1.5">
               {quickLinks.map((link, index) => (
                 <li key={index}>
@@ -76,15 +80,15 @@ const Footer: React.FC = () => {
 
       {/* Back to top button */}
       <div className="fixed bottom-6 right-6">
-        <a
-          href="#home"
+        <button
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           className="bg-hku-green hover:bg-hku-darkGreen text-white p-3 rounded-full shadow-lg transition-all duration-300 transform hover:scale-110 flex items-center justify-center"
           title="Back to top"
         >
           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 15l7-7 7 7" />
           </svg>
-        </a>
+        </button>
       </div>
     </footer>
   );

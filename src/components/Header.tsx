@@ -1,16 +1,17 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navItems = [
     { name: 'Home', href: '/' },
-    { name: 'News', href: '/news' },
+    { name: 'Research', href: '/research' },
     { name: 'Publications', href: '/publications' },
+    { name: 'Conference', href: '/conference' },
     { name: 'Team', href: '/team' },
     { name: 'Activities', href: '/activities' },
-    { name: 'Contact', href: '/contact' },
+    { name: 'Join us', href: '/contact' },
   ];
 
   return (
@@ -21,9 +22,8 @@ const Header: React.FC = () => {
           <div className="flex items-center justify-between">
             <div className="flex items-center ml-4">
               <Link to="/" className="flex items-center">
-                <img src="/hku_logo.jpg" alt="HKU Logo" className="h-16 w-auto mr-3" />
-                <span className="text-caltech-orange font-bold text-3xl">HKU</span>
-                <span className="text-gray-600 dark:text-gray-300 font-semibold text-3xl ml-3">Hujianqi‘s Lab</span>
+                <img src="/hku_logo_color.jpg" alt="HKU Logo" className="h-16 w-auto mr-3" />
+                <span className="text-black font-bold text-3xl">HKU Ultrafast Nonlinear Optical Laboratory</span>
               </Link>
             </div>
 
@@ -31,7 +31,7 @@ const Header: React.FC = () => {
             <div className="md:hidden ml-auto">
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="text-gray-700 dark:text-gray-200 hover:text-caltech-orange dark:hover:text-caltech-orange focus:outline-none"
+                className="text-gray-700 dark:text-gray-200 hover:text-hku-green dark:hover:text-hku-green focus:outline-none"
               >
                 <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   {isMenuOpen ? (
@@ -54,13 +54,17 @@ const Header: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <nav className="hidden md:flex justify-center items-center space-x-12 pt-1">
             {navItems.map((item) => (
-              <Link
+              <NavLink
                 key={item.name}
                 to={item.href}
-                className="text-gray-700 dark:text-gray-200 hover:text-caltech-orange dark:hover:text-caltech-orange px-5 py-2 text-lg font-medium transition-colors duration-200"
+                className={({ isActive }) =>
+                  isActive
+                    ? 'px-5 py-2 text-lg transition-colors duration-200 border-b-4 font-bold text-gray-900 dark:text-white border-black dark:border-white'
+                    : 'px-5 py-2 text-lg transition-colors duration-200 border-b-4 font-medium text-gray-700 dark:text-gray-200 border-transparent hover:text-hku-green dark:hover:text-hku-green'
+                }
               >
                 {item.name}
-              </Link>
+              </NavLink>
             ))}
           </nav>
         </div>
@@ -71,14 +75,18 @@ const Header: React.FC = () => {
         <div className="md:hidden">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-gray-50 dark:bg-gray-700 rounded-lg mb-4 transition-colors duration-300">
             {navItems.map((item) => (
-              <Link
+              <NavLink
                 key={item.name}
                 to={item.href}
-                className="text-gray-700 dark:text-gray-200 hover:text-caltech-orange dark:hover:text-caltech-orange block px-3 py-2 text-base font-medium transition-colors duration-200"
+                className={({ isActive }) =>
+                  isActive
+                    ? 'block px-3 py-2 text-base transition-colors duration-200 border-b-4 font-bold text-gray-900 dark:text-white border-black dark:border-white'
+                    : 'block px-3 py-2 text-base transition-colors duration-200 border-b-4 font-medium text-gray-700 dark:text-gray-200 hover:text-hku-green dark:hover:text-hku-green border-transparent'
+                }
                 onClick={() => setIsMenuOpen(false)}
               >
                 {item.name}
-              </Link>
+              </NavLink>
             ))}
           </div>
         </div>

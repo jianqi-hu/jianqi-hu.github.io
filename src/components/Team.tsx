@@ -177,7 +177,7 @@ const Team: React.FC = () => {
                     <div className="mt-4">
                       <a
                         href={`mailto:${member.email}`}
-                        className="inline-flex items-center text-blue-600 hover:text-blue-800"
+                        className="inline-flex items-center text-hku-green hover:text-hku-darkGreen"
                         aria-label={`Email ${member.name}`}
                       >
                         <svg

@@ -97,9 +97,9 @@ const Contact: React.FC = () => {
         </div>
         {/* Join Our Team CTA (moved from Activities) */}
         <div className="text-center mt-16">
-          <div className="bg-gradient-to-r from-hku-green to-hku-darkGreen rounded-lg p-8 text-white">
+          <div className="rounded-lg p-8 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-sm text-gray-900 dark:text-white">
             <h3 className="text-2xl font-bold mb-4">Join Our Team</h3>
-            <p className="text-green-100 mb-6 max-w-2xl mx-auto">
+            <p className="mb-6 max-w-2xl mx-auto text-gray-600 dark:text-gray-300">
               We welcome scholars and students passionate about optical research to join our family, exploring the mysteries of science and creating wonderful memories together
             </p>
             <a 

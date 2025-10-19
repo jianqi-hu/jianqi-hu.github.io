@@ -5,6 +5,8 @@ import nonlinearPhotonics from '../assets/nonlinear-photonics.jpg';
 import photonicComputing from '../assets/photonic-computing.png';
 import structuredLight from '../assets/structured-light.png';
 import centennialCampus from '../assets/centennial-campus.jpg';
+import News from './News';
+import { Link } from 'react-router-dom';
 
 interface GalleryCardProps {
   title: string;
@@ -152,7 +154,7 @@ const Home: React.FC = () => {
           </div>
 
           {/* 中心卡：跨两行，按当前高度再减半 → 提高纵横比 */}
-          <div className="md:col-span-6 md:col-start-4 md:row-span-2">
+          <div className="md:col-span-6 md:col-start-4 md:row-span-2 md:relative md:before:content-[''] md:before:absolute md:before:inset-y-0 md:before:-left-4 md:before:border-l md:before:border-gray-200 dark:md:before:border-gray-700 md:after:content-[''] md:after:absolute md:after:inset-y-0 md:after:-right-4 md:after:border-l md:after:border-gray-200 dark:md:after:border-gray-700">
             <GalleryCard
               title="Lab & Campus"
               description="The University of Hong Kong Campus and our Lab facilities."
@@ -160,6 +162,26 @@ const Home: React.FC = () => {
               aspect="aspect-[8/5]"
               onClick={() => openArticle('Lab & Campus')}
             />
+          </div>
+        </div>
+
+        {/* Divider below cards */}
+        <div className="border-t border-gray-200 dark:border-gray-700 my-12" />
+
+        {/* Embedded News cards */}
+        <News embedded />
+
+        {/* Divider below news */}
+        <div className="border-t border-gray-200 dark:border-gray-700 my-12" />
+
+        {/* Join Us card */}
+        <div className="max-w-3xl mx-auto">
+          <div className="rounded-lg p-8 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-sm text-gray-900 dark:text-white text-center">
+            <h3 className="text-2xl font-bold mb-3">Join Us</h3>
+            <p className="mb-6 text-gray-600 dark:text-gray-300">
+              We welcome outstanding students and researchers to join our group.
+            </p>
+            <Link to="/contact#contact-us" className="inline-block bg-hku-green hover:bg-hku-darkGreen text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200">Learn more</Link>
           </div>
         </div>
 

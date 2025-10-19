@@ -14,7 +14,7 @@ interface NewsItem {
   author: string;
 }
 
-const News: React.FC = () => {
+const News: React.FC<{ embedded?: boolean }> = ({ embedded = false }) => {
   const [selectedNews, setSelectedNews] = useState<NewsItem | null>(null);
 
   // 锁定背景滚动，避免滚动穿透到 News 页面
@@ -96,33 +96,48 @@ Since joining our research group, Li Ming has been dedicated to machine learning
     setSelectedNews(null);
   };
 
-  return (
-    <section className="py-20 bg-white dark:bg-gray-800 transition-colors duration-300 pt-40 scroll-mt-40">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-8">
-          <h2 className="section-title">Latest News</h2>
-          <p className="section-subtitle max-w-3xl mx-auto"></p>
-        </div>
+  // Embedded 模式下卡片尺寸与网格密度调整
+  const gridClasses = embedded
+    ? 'grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6'
+    : 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8';
+  const imageHeightClass = embedded ? 'h-40' : 'h-56';
+  const paddingClass = embedded ? 'p-4' : 'p-6';
+  const titleSizeClass = embedded ? 'text-lg' : 'text-xl';
+  const summarySizeClass = embedded
+    ? 'text-sm text-gray-600 dark:text-gray-300'
+    : 'text-gray-600 dark:text-gray-300';
+  const showSummary = !embedded;
 
-        {/* Category Filter */}
-        <div className={`flex flex-wrap justify-center gap-4 ${categories.length ? 'mb-8' : 'mb-0'}`}>
-          {categories.map((category) => (
-            <button
-              key={category}
-              onClick={() => setSelectedCategory(category)}
-              className={`px-6 py-2 rounded-full font-medium transition-all duration-200 ${
-                selectedCategory === category
-                  ? 'bg-hku-green text-white'
-                  : 'bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600'
-              }`}
-            >
-              {category}
-            </button>
-          ))}
-        </div>
+  return (
+    <section className={`${embedded ? 'py-8' : 'py-20 pt-40 scroll-mt-40'} bg-white dark:bg-gray-800 transition-colors duration-300`}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {!embedded && (
+          <div className="text-center mb-8">
+            <h2 className="section-title">Latest News</h2>
+            <p className="section-subtitle max-w-3xl mx-auto"></p>
+          </div>
+        )}
+
+        {!embedded && (
+          <div className={`flex flex-wrap justify-center gap-4 ${categories.length ? 'mb-8' : 'mb-0'}`}>
+            {categories.map((category) => (
+              <button
+                key={category}
+                onClick={() => setSelectedCategory(category)}
+                className={`px-6 py-2 rounded-full font-medium transition-all duration-200 ${
+                  selectedCategory === category
+                    ? 'bg-hku-green text-white'
+                    : 'bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600'
+                }`}
+              >
+                {category}
+              </button>
+            ))}
+          </div>
+        )}
 
         {/* News Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className={gridClasses}>
           {filteredNews.map((news) => (
             <div
               key={news.id}
@@ -130,7 +145,7 @@ Since joining our research group, Li Ming has been dedicated to machine learning
               onClick={() => openNewsDetail(news)}
             >
               {/* Image */}
-              <div className="h-56 w-full overflow-hidden">
+              <div className={`${imageHeightClass} w-full overflow-hidden`}>
                 <img
                   src={news.image}
                   alt={news.title}
@@ -139,15 +154,15 @@ Since joining our research group, Li Ming has been dedicated to machine learning
               </div>
 
               {/* Content */}
-              <div className="p-6">
+              <div className={paddingClass}>
                 <div className="mb-3">
                   <span className="text-gray-500 dark:text-gray-300 text-sm">
                     {new Date(news.date).toLocaleDateString()}
                   </span>
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">{news.title}</h3>
-                <p className="text-gray-600 dark:text-gray-300 mb-4">{news.summary}</p>
-                <button className="btn-secondary">Read More</button>
+                <h3 className={`${titleSizeClass} font-semibold text-gray-900 dark:text-white mb-2`}>{news.title}</h3>
+                {showSummary && <p className={`${summarySizeClass} mb-4`}>{news.summary}</p>}
+                <button className="text-hku-green dark:text-hku-gold hover:underline transition-colors duration-200 font-medium">Read More</button>
               </div>
             </div>
           ))}
