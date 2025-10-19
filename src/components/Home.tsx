@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 
 import integratedOptics from '../assets/integrated-optics.jpg';
 import nonlinearPhotonics from '../assets/nonlinear-photonics.jpg';
