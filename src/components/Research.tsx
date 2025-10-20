@@ -13,20 +13,18 @@ const Research: React.FC = () => {
           <h2 className="section-title">Research</h2>
         </div>
 
-        {/* PIXlab focuses 段落（保留）*/}
+        {/* UNOlab overview */}
         <div className="max-w-4xl mx-auto -mt-4">
-          <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">PIXlab focuses</h3>
+          <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Ultrafast Nonlinear Optical Laboratory (UNOlab)</h3>
           <div className="space-y-4 text-gray-700 dark:text-gray-300 leading-relaxed">
             <p>
-              Integration of photonic components on chip delivers strong benefits in size, weight, power and cost.
-              Dense co-integration with electronics further enhances the capability and functionality of photonic integrated circuits.
+              UNOlab focuses on ultrafast nonlinear optics and integrated photonics. Integration of photonic components on chip delivers strong benefits in size, weight, power and cost, while dense co‑integration with electronics further enhances the capability and functionality of photonic integrated circuits.
             </p>
             <p>
-              Silicon photonics has emerged as a leading platform for both device research and system demonstrations.
-              Lasers, modulators, photodetectors and passive devices together provide a complete toolkit for next-generation photonic applications.
+              We leverage silicon photonics and emerging platforms including silicon nitride, III–V/Si heterogeneous integration and thin‑film lithium niobate to realize ultrafast sources, modulators, photodetectors and nonlinear devices. These building blocks enable next‑generation applications in frequency combs, communications and sensing.
             </p>
             <p>
-              Our lab aims to deliver high‑performance and low‑cost photonic integrated circuits for a wide range of applications.
+              Our goal is to deliver high‑performance, energy‑efficient and cost‑effective photonic integrated systems for science and industry, driven by four directions: integrated nonlinear photonics, integrated ultrafast photonics, photonic computing, and structured light.
             </p>
           </div>
         </div>
