@@ -71,7 +71,7 @@ const Team: React.FC = () => {
 
   const categories = [
     { name: 'Professors', members: teamMembers.filter(m => m.role.includes('Professor')) },
-    { name: 'Students', members: teamMembers.filter(m => m.role.includes('Student')) }
+    { name: 'PhD Students', members: teamMembers.filter(m => m.role.includes('Student')) }
   ];
 
   const isChinese = (txt?: string) => !!txt && /[\u4e00-\u9fff]/.test(txt);
@@ -157,14 +157,14 @@ const Team: React.FC = () => {
                       </div>
                     )}
 
-                    {category.name !== 'Students' && member.email && (
+                    {category.name !== 'PhD Students' && member.email && (
                       <div>
                         <p className="text-sm font-medium">Email</p>
                         <p className="text-sm text-gray-600 dark:text-gray-400">{member.email}</p>
                       </div>
                     )}
 
-                    {category.name === 'Students' && member.email && (
+                    {category.name === 'PhD Students' && member.email && (
                       <div>
                         <p className="text-sm font-medium">Email</p>
                         <p className="text-sm text-gray-600 dark:text-gray-400">{member.email}</p>
@@ -173,7 +173,7 @@ const Team: React.FC = () => {
                   </div>
 
                   {/* Email icon for non-students */}
-                  {category.name !== 'Students' && member.email && (
+                  {category.name !== 'PhD Students' && member.email && (
                     <div className="mt-4">
                       <a
                         href={`mailto:${member.email}`}
@@ -204,6 +204,16 @@ const Team: React.FC = () => {
           </div>
         ))}
 
+        {/* Visiting Students Card */}
+        <div className="max-w-3xl mx-auto">
+          <div className="rounded-lg p-8 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-sm text-gray-900 dark:text-white text-center">
+            <h3 className="text-2xl font-bold mb-3">Visiting Students</h3>
+            <p className="mb-6 text-gray-600 dark:text-gray-300">
+              We welcome visiting PhD/MSc students for short-term research stays and collaboration. If you are interested, please get in touch.
+            </p>
+            <a href="/contact#contact-us" className="inline-block bg-hku-green hover:bg-hku-darkGreen text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200">Contact us</a>
+          </div>
+        </div>
 
       </div>
     </section>
