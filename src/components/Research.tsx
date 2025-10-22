@@ -1,8 +1,6 @@
 import React from 'react';
 import integratedOptics from '../assets/integrated-optics.jpg';
 import nonlinearPhotonics from '../assets/nonlinear-photonics.jpg';
-import photonicComputing from '../assets/photonic-computing.png';
-import structuredLight from '../assets/structured-light.png';
 
 const Research: React.FC = () => {
   return (
@@ -15,7 +13,7 @@ const Research: React.FC = () => {
 
         {/* UNOlab overview */}
         <div className="max-w-4xl mx-auto -mt-4">
-          <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Ultrafast Nonlinear Optical Laboratory (UNOlab)</h3>
+          <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Laboratory of Ultrafast and Nonlinear Integrated Optics (UNIO)</h3>
           <div className="space-y-4 text-gray-700 dark:text-gray-300 leading-relaxed">
             <p>
               UNOlab focuses on ultrafast nonlinear optics and integrated photonics. Integration of photonic components on chip delivers strong benefits in size, weight, power and cost, while dense co‑integration with electronics further enhances the capability and functionality of photonic integrated circuits.
@@ -31,12 +29,12 @@ const Research: React.FC = () => {
 
         <div className="border-t border-gray-200 dark:border-gray-700 my-12" />
 
-        {/* Integrated nonlinear photonic */}
+        {/* Integrated nonlinear photonics */}
         <div className="max-w-6xl mx-auto">
-          <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Integrated nonlinear photonic</h3>
+          <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Integrated nonlinear photonics</h3>
           <div className="grid md:grid-cols-2 gap-6 mb-6">
             <div className="rounded-lg overflow-hidden bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
-              <img src={nonlinearPhotonics} alt="Integrated nonlinear photonic" className="w-full h-full object-cover" />
+              <img src="/Integrated nonlinear photonics.png" alt="Integrated nonlinear photonics" className="w-full h-full object-cover" />
             </div>
             <div className="rounded-lg overflow-hidden bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
               <img src={integratedOptics} alt="On-chip nonlinear devices" className="w-full h-full object-cover" />
@@ -44,7 +42,7 @@ const Research: React.FC = () => {
           </div>
           <div className="space-y-4 text-gray-700 dark:text-gray-300 leading-relaxed">
             <p>
-              We investigate chip-scale nonlinear processes and devices enabling efficient frequency conversion, parametric gain, and advanced light control on silicon platforms.
+              Integrated nonlinear photonics merges the principles of nonlinear optics with photonic integrated circuits. With highly nonlinear optical materials, tightly confined modes, and flexible dispersion engineering, integrated photonics provides an ideal platform for studying nonlinear optics phenomena. Our research focuses on the fundamentals and applications of various χ^((2)) and  χ^((3)) nonlinear effects in microresonators across different material platform. One of our interests is on photo-induced χ^((2)) nonlinear effects in silicon nitride photonics. 
             </p>
           </div>
         </div>
@@ -56,7 +54,7 @@ const Research: React.FC = () => {
           <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Integrated ultrafast photonics</h3>
           <div className="grid md:grid-cols-2 gap-6 mb-6">
             <div className="rounded-lg overflow-hidden bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
-              <img src={integratedOptics} alt="Integrated ultrafast photonics" className="w-full h-full object-cover" />
+              <img src="/Integrated ultrafast photonics.png" alt="Integrated ultrafast photonics" className="w-full h-full object-cover" />
             </div>
             <div className="rounded-lg overflow-hidden bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
               <img src={nonlinearPhotonics} alt="Ultrafast photonics devices" className="w-full h-full object-cover" />
@@ -64,7 +62,7 @@ const Research: React.FC = () => {
           </div>
           <div className="space-y-4 text-gray-700 dark:text-gray-300 leading-relaxed">
             <p>
-              Our work targets integrated sources and components for femtosecond-to-picosecond light generation and manipulation, supporting precision metrology and high-speed communications.
+              Integrated ultrafast photonics enables the generation and processing of ultrafast optical waveforms in integrated photonics platforms. To date, the performance of chipscale mode-locked lasers still lag behind their bulk counterparts, limiting their wide range of applications. We aim to fill this gap by developing femtosecond lasers based on ion-doped integrated waveguides. In addition, we are also interested in leveraging photonic integrated circuits for ultrafast information processing. 
             </p>
           </div>
         </div>
@@ -76,7 +74,7 @@ const Research: React.FC = () => {
           <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Photonic computing</h3>
           <div className="grid md:grid-cols-2 gap-6 mb-6">
             <div className="rounded-lg overflow-hidden bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
-              <img src={photonicComputing} alt="Photonic computing" className="w-full h-full object-cover" />
+              <img src="/Photonic computing.png" alt="Photonic computing" className="w-full h-full object-cover" />
             </div>
             <div className="rounded-lg overflow-hidden bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
               <img src={integratedOptics} alt="Integrated photonic circuits" className="w-full h-full object-cover" />
@@ -84,7 +82,7 @@ const Research: React.FC = () => {
           </div>
           <div className="space-y-4 text-gray-700 dark:text-gray-300 leading-relaxed">
             <p>
-              We explore computing architectures using light for high throughput and energy efficiency, leveraging integrated photonics for matrix operations and signal processing.
+              Photonic computing harnesses photons to perform computation. Compared to conventional electronic processors, photonics offers potential advantages in speed, bandwidth and energy efficiency, making it a promising platform for neuromorphic computing. Our research focuses on developing next-generation photonic computing systems, preferably based on photonic integrated circuits. 
             </p>
           </div>
         </div>
@@ -96,7 +94,7 @@ const Research: React.FC = () => {
           <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Structured light</h3>
           <div className="grid md:grid-cols-2 gap-6 mb-6">
             <div className="rounded-lg overflow-hidden bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
-              <img src={structuredLight} alt="Structured light beams" className="w-full h-full object-cover" />
+              <img src="/Structured light.png" alt="Structured light" className="w-full h-full object-cover" />
             </div>
             <div className="rounded-lg overflow-hidden bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
               <img src={nonlinearPhotonics} alt="On-chip beam shaping" className="w-full h-full object-cover" />
@@ -104,7 +102,7 @@ const Research: React.FC = () => {
           </div>
           <div className="space-y-4 text-gray-700 dark:text-gray-300 leading-relaxed">
             <p>
-              We design and control structured light fields for sensing and manipulation, focusing on compact, integrated implementations.
+              Structured light refers to the shaping of light waves across one or more degrees of freedom. By controlling optical fields in space and/or time, structured light finds applications in optical imaging, classical and quantum information processing. Our approach leverages the famous space-time duality to develop new methods for generating, processing and measuring structured light fields. We are also keen in realizing these functions with integrated photonics. 
             </p>
           </div>
         </div>
