@@ -37,7 +37,7 @@ const Team: React.FC = () => {
       avatar: 'https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=150&h=150&fit=crop&crop=face'
     },
     {
-      name: 'Ou Shaoyuan',
+      name: 'Shaoyuan Ou',
       title: '欧绍源',
       role: 'PhD Student',
       education: ['Bachelor in Optoelectronic Information Science and Engineering, Sun Yat-Sen University(SYSU)','Master in Electrical Engineering, University of Southern California(USC)'],
@@ -48,7 +48,7 @@ const Team: React.FC = () => {
     },
 
     {
-      name: 'Wang Yuzhong',
+      name: 'Yuzhong Wang',
       title: '王禹忠',
       role: 'Visiting PhD Student',
       education: ['Bachelor in Electromagnetic Fields and Wireless Technologies, HIT'],
@@ -58,7 +58,7 @@ const Team: React.FC = () => {
       avatar: '/Yuzhong.jpg'
     },
     {
-      name: 'Pan Xiaofu',
+      name: 'Xiaofu Pan',
       title: '潘孝夫',
       role: 'PhD Student',
       education: ['Bachelor in Optoelectronic Information Science and Engineering, HUST','Master in Electronic Information, ZJU'],
@@ -141,7 +141,7 @@ const Team: React.FC = () => {
                   </div>
 
                   <div className="space-y-3">
-                    {member.education && (
+                    {category.name !== 'Professors' && member.education && (
                       <div>
                         <p className="text-sm font-medium">Education</p>
                         {Array.isArray(member.education) ? (
@@ -155,6 +155,13 @@ const Team: React.FC = () => {
                             {formatEdu(String(member.education))}
                           </p>
                         )}
+                      </div>
+                    )}
+
+                    {category.name === 'Professors' && member.email && (
+                      <div>
+                        <p className="text-sm font-medium">Email</p>
+                        <p className="text-sm text-gray-600 dark:text-gray-400">{member.email}</p>
                       </div>
                     )}
 
