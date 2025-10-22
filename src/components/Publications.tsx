@@ -7,8 +7,9 @@ const Publications: React.FC = () => {
 
   // 当前年份与分组：将 2025 置于顶部，其余归为 “Prior to HKU”
   const currentYear = 2025;
-  const currentPublications = publications.filter(p => p.year === currentYear);
-  const priorPublications = publications.filter(p => p.year !== currentYear);
+  const journalPublications = publications.filter(p => p.type === 'journal');
+  const currentPublications = journalPublications.filter(p => p.year === currentYear);
+  const priorPublications = journalPublications.filter(p => p.year !== currentYear);
   const priorYears = Array.from(new Set(priorPublications.map(p => p.year))).sort((a, b) => b - a);
 
   // 仅保留期刊视图，不在页面内展示 Conference 菜单

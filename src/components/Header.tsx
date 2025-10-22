@@ -20,10 +20,10 @@ const Header: React.FC = () => {
         <div className="pt-4 pb-1">
           {/* 第一行：左侧 Logo，仅保留左侧内容 */}
           <div className="flex items-center justify-between">
-            <div className="flex items-center ml-4">
+            <div className="flex items-center ml-16">
               <Link to="/" className="flex items-center">
                 <img src="/hku_logo_color.jpg" alt="HKU Logo" className="h-16 w-auto mr-3" />
-                <span className="text-black dark:text-white font-bold text-3xl">HKU Ultrafast Nonlinear Optical Laboratory</span>
+                <span className="text-black dark:text-white font-bold text-3xl">Laboratory of Ultrafast and Nonlinear Integrated Optics</span>
               </Link>
             </div>
 

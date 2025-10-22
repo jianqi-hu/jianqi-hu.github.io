@@ -63,7 +63,7 @@ const Team: React.FC = () => {
       role: 'PhD Student',
       education: ['Bachelor in Optoelectronic Information Science and Engineering, HUST','Master in Electronic Information, ZJU'],
       research: ['Integrated photonics', 'Optical comunication'],
-      email: '22230092@zju.edu.cn',
+      email: 'xiaofupan@connect.hku.hk',
       publications: 3,
       avatar: '/Xiaofu.jpg'
     }

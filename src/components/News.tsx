@@ -141,8 +141,8 @@ Since joining our research group, Li Ming has been dedicated to machine learning
           {filteredNews.map((news) => (
             <div
               key={news.id}
-              className="bg-white dark:bg-gray-700 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden cursor-pointer"
-              onClick={() => openNewsDetail(news)}
+              className={`bg-white dark:bg-gray-700 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden ${embedded ? '' : 'cursor-pointer'}`}
+              onClick={embedded ? undefined : () => openNewsDetail(news)}
             >
               {/* Image */}
               <div className={`${imageHeightClass} w-full overflow-hidden`}>
@@ -162,7 +162,9 @@ Since joining our research group, Li Ming has been dedicated to machine learning
                 </div>
                 <h3 className={`${titleSizeClass} font-semibold text-gray-900 dark:text-white mb-2`}>{news.title}</h3>
                 {showSummary && <p className={`${summarySizeClass} mb-4`}>{news.summary}</p>}
-                <button className="text-hku-green dark:text-hku-gold hover:underline transition-colors duration-200 font-medium">Read More</button>
+                {!embedded && (
+                  <button className="text-hku-green dark:text-hku-gold hover:underline transition-colors duration-200 font-medium">Read More</button>
+                )}
               </div>
             </div>
           ))}

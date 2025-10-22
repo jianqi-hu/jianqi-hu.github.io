@@ -4,8 +4,8 @@ import React from 'react';
 const Activities: React.FC = () => {
   const activities = [
     {
-      title: 'Laboratory Establishment Ceremony',
-      description: 'Our laboratory was officially established, marking a new beginning for photonics research',
+      title: 'This project is under construction.',
+      description: 'This project is under construction.',
       image: 'https://images.unsplash.com/photo-1511578314322-379afb476865?w=600&h=400&fit=crop',
       date: 'August 2025',
       location: 'University of Hong Kong Hu-photonics Lab'

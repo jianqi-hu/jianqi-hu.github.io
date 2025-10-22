@@ -11,7 +11,7 @@ const Contact: React.FC = () => {
         </svg>
       ),
       title: 'Address',
-      content: 'Room 508, Building A\nComputer Science Department\nThe University of Hong Kong'
+      content: 'Room 719, Building Chow Yei Ching ，\nThe University of Hong Kong'
     },
     {
       icon: (
@@ -20,7 +20,7 @@ const Contact: React.FC = () => {
         </svg>
       ),
       title: 'Phone',
-      content: '+852 2859-2180\n+852 2559-8447 (Fax)'
+      content: '3917 2707'
     },
     {
       icon: (
@@ -29,7 +29,7 @@ const Contact: React.FC = () => {
         </svg>
       ),
       title: 'Email',
-      content: 'contact@researchgroup.hku.hk\ninfo@researchgroup.hku.hk'
+      content: 'jianqi@hku.hk'
     },
     {
       icon: (
@@ -49,10 +49,23 @@ const Contact: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h1 className="text-3xl font-bold">Contact Us</h1>
-          <p className="mt-4 text-gray-600 dark:text-gray-400">Reach out to our research group for inquiries.</p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 -mt-4">
+        <div className="max-w-5xl w-[78%] mx-auto -mt-8">
+          <div className="space-y-4 text-gray-700 dark:text-gray-300 leading-relaxed">
+            <p>
+              We are always seeking highly motivated and talented students/postdocs/visitors to join our group. Prior experience in research areas such as integrated (nonlinear) photonics, lasers, photonic computing and structured light is preferred but not required.
+            </p>
+            <p>
+              If you are passionate about pushing the frontiers of photonics with us, please contact Dr. Jianqi Hu (
+              <a href="mailto:jianqi@hku.hk" className="text-hku-green hover:underline">jianqi@hku.hk</a>
+              ).
+            </p>
+          </div>
+          <div className="border-t border-gray-200 dark:border-gray-700 my-6" />
+        </div>
+
+        <div className="grid lg:grid-cols-2 gap-x-8 gap-y-12 -mt-4 max-w-5xl w-[78%] mx-auto">
           {/* Contact info card and map card */}
           <div>
             <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-8">Contact Information</h3>
@@ -88,26 +101,10 @@ const Contact: React.FC = () => {
             </div>
             <div className="mt-4 text-center">
               <p className="text-sm text-gray-600 dark:text-gray-300">
-                <strong>The University of Hong Kong</strong><br />
-                Computer Science Department, Room 508, Building A<br />
-                Pokfulam Road, Hong Kong
+                Room 719, Building Chow Yei Ching ，<br />
+                The University of Hong Kong
               </p>
             </div>
-          </div>
-        </div>
-        {/* Join Our Team CTA (moved from Activities) */}
-        <div className="text-center mt-16">
-          <div className="rounded-lg p-8 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-sm text-gray-900 dark:text-white">
-            <h3 className="text-2xl font-bold mb-4">Join Our Team</h3>
-            <p className="mb-6 max-w-2xl mx-auto text-gray-600 dark:text-gray-300">
-              We welcome scholars and students passionate about optical research to join our family, exploring the mysteries of science and creating wonderful memories together
-            </p>
-            <a 
-              href="#contact" 
-              className="inline-block bg-white text-hku-green px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-200"
-            >
-              Contact Us
-            </a>
           </div>
         </div>
       </div>
