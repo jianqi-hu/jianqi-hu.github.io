@@ -1,6 +1,4 @@
 import React from 'react';
-import integratedOptics from '../assets/integrated-optics.jpg';
-import nonlinearPhotonics from '../assets/nonlinear-photonics.jpg';
 
 const Research: React.FC = () => {
   return (
@@ -32,12 +30,9 @@ const Research: React.FC = () => {
         {/* Integrated nonlinear photonics */}
         <div className="max-w-6xl mx-auto">
           <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Integrated nonlinear photonics</h3>
-          <div className="grid md:grid-cols-2 gap-6 mb-6">
+          <div className="grid md:grid-cols-1 gap-6 mb-6">
             <div className="rounded-lg overflow-hidden bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
               <img src="/Integrated nonlinear photonics.png" alt="Integrated nonlinear photonics" className="w-full h-full object-cover" />
-            </div>
-            <div className="rounded-lg overflow-hidden bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
-              <img src={integratedOptics} alt="On-chip nonlinear devices" className="w-full h-full object-cover" />
             </div>
           </div>
           <div className="space-y-4 text-gray-700 dark:text-gray-300 leading-relaxed">
@@ -52,12 +47,9 @@ const Research: React.FC = () => {
         {/* Integrated ultrafast photonics */}
         <div className="max-w-6xl mx-auto">
           <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Integrated ultrafast photonics</h3>
-          <div className="grid md:grid-cols-2 gap-6 mb-6">
+          <div className="grid md:grid-cols-1 gap-6 mb-6">
             <div className="rounded-lg overflow-hidden bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
               <img src="/Integrated ultrafast photonics.png" alt="Integrated ultrafast photonics" className="w-full h-full object-cover" />
-            </div>
-            <div className="rounded-lg overflow-hidden bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
-              <img src={nonlinearPhotonics} alt="Ultrafast photonics devices" className="w-full h-full object-cover" />
             </div>
           </div>
           <div className="space-y-4 text-gray-700 dark:text-gray-300 leading-relaxed">
@@ -72,12 +64,9 @@ const Research: React.FC = () => {
         {/* Photonic computing */}
         <div className="max-w-6xl mx-auto">
           <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Photonic computing</h3>
-          <div className="grid md:grid-cols-2 gap-6 mb-6">
+          <div className="grid md:grid-cols-1 gap-6 mb-6">
             <div className="rounded-lg overflow-hidden bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
               <img src="/Photonic computing.png" alt="Photonic computing" className="w-full h-full object-cover" />
-            </div>
-            <div className="rounded-lg overflow-hidden bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
-              <img src={integratedOptics} alt="Integrated photonic circuits" className="w-full h-full object-cover" />
             </div>
           </div>
           <div className="space-y-4 text-gray-700 dark:text-gray-300 leading-relaxed">
@@ -92,12 +81,9 @@ const Research: React.FC = () => {
         {/* Structured light */}
         <div className="max-w-6xl mx-auto">
           <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Structured light</h3>
-          <div className="grid md:grid-cols-2 gap-6 mb-6">
+          <div className="grid md:grid-cols-1 gap-6 mb-6">
             <div className="rounded-lg overflow-hidden bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
               <img src="/Structured light.png" alt="Structured light" className="w-full h-full object-cover" />
-            </div>
-            <div className="rounded-lg overflow-hidden bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
-              <img src={nonlinearPhotonics} alt="On-chip beam shaping" className="w-full h-full object-cover" />
             </div>
           </div>
           <div className="space-y-4 text-gray-700 dark:text-gray-300 leading-relaxed">
