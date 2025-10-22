@@ -51,7 +51,7 @@ const Contact: React.FC = () => {
           <h1 className="text-3xl font-bold">Contact Us</h1>
         </div>
 
-        <div className="max-w-5xl w-[78%] mx-auto -mt-8">
+        <div id="join-section" className="max-w-5xl w-[78%] mx-auto -mt-8 scroll-mt-40">
           <div className="space-y-4 text-gray-700 dark:text-gray-300 leading-relaxed">
             <p>
               We are always seeking highly motivated and talented students/postdocs/visitors to join our group. Prior experience in research areas such as integrated (nonlinear) photonics, lasers, photonic computing and structured light is preferred but not required.

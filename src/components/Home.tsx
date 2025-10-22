@@ -4,40 +4,11 @@ import integratedOptics from '../assets/integrated-optics.jpg';
 import nonlinearPhotonics from '../assets/nonlinear-photonics.jpg';
 import photonicComputing from '../assets/photonic-computing.png';
 import structuredLight from '../assets/structured-light.png';
-import centennialCampus from '../assets/centennial-campus.jpg';
+
 import News from './News';
 import { Link } from 'react-router-dom';
 
-interface GalleryCardProps {
-  title: string;
-  description: string;
-  image: string;
-  to?: string; // optional now
-  aspect?: string; // tailwind aspect class, e.g. 'aspect-[4/3]'
-  onClick?: () => void;
-}
 
-const GalleryCard: React.FC<GalleryCardProps> = ({ title, description, image, aspect = 'aspect-[4/3]', onClick }) => {
-  return (
-    <div
-      className={`block ${onClick ? 'cursor-pointer' : 'cursor-default'}`}
-      role={onClick ? 'button' : undefined}
-      tabIndex={onClick ? 0 : undefined}
-      onClick={onClick}
-      onKeyDown={(e) => { if (onClick && (e.key === 'Enter' || e.key === ' ')) onClick(); }}
-    >
-      <div className="bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden">
-        <div className={`w-full ${aspect} overflow-hidden`}>
-          <img src={image} alt={title} className="w-full h-full object-cover" />
-        </div>
-        <div className="p-4">
-          <h3 className="text-lg font-semibold text-gray-900 dark:text-white">{title}</h3>
-          <p className="text-sm text-gray-600 dark:text-gray-300 mt-1">{description}</p>
-        </div>
-      </div>
-    </div>
-  );
-};
 
 const Home: React.FC = () => {
   // Intro slider images
@@ -121,7 +92,7 @@ const Home: React.FC = () => {
             <p className="mb-6 text-gray-600 dark:text-gray-300">
               We welcome outstanding students and researchers to join our group.
             </p>
-            <Link to="/contact" className="inline-block bg-hku-green hover:bg-hku-darkGreen text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200">Learn more</Link>
+            <Link to="/contact#join-section" className="inline-block bg-hku-green hover:bg-hku-darkGreen text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200">Learn more</Link>
           </div>
         </div>
 
