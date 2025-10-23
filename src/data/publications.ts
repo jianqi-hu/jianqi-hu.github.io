@@ -13,22 +13,8 @@ export const preprints: Publication[] = [];
 
 
 export const publications: Publication[] = [
-  {
-    title: 'Optical next generation reservoir computing',
-    authors: ['Hao Wang', 'Jianqi Hu', 'YoonSeok Baek', 'Sylvain Gigan'],
-    journal: 'Light Science & Applications',
-    year: 2025,
-    category: 'Photonics',
-    type: 'journal'
-  },
-  {
-    title: 'Arrayed waveguide gratings in lithium tantalate integrated photonics',
-    authors: ['Shivaprasad Umesh Hulyal', 'Jianqi Hu', 'Chengli Wang', 'Tobias J. Kippenberg'],
-    journal: 'Optica',
-    year: 2025,
-    category: 'Photonics',
-    type: 'journal'
-  },
+
+
   {
     title: 'High-pulse-energy integrated mode-locked lasers based on a Mamyshev oscillator',
     authors: ['Z. Qiu†', 'J. Hu†', 'X. Yang†', 'Z. Liu', 'Y. Zhang', 'X. Ji', 'J. Sun', 'G. Lihachev', 'X. Li', 'Z. Li', 'U. Kentsch', 'T. J. Kippenberg∗'],
