@@ -9,7 +9,8 @@ import { Link } from 'react-router-dom';
 
 const Home: React.FC = () => {
   // Intro slider images (from public/)
-  const images = ['/slider-1.png', '/slider-2.jpg', '/slider-3.jpg', '/slider-4.png'];
+  const images = ['/slider-1.png', '/slider-2.png', '/slider-3.png', '/slider-4.png'];
+  const fallbackImages = ['/integrated-optics.jpg', '/nonlinear-photonics.jpg', '/photonic-computing.png', '/structured-light.png'];
   const [currentIndex, setCurrentIndex] = useState(0);
 
   // 自动轮播：每 15 秒向右滑动一张
@@ -47,9 +48,14 @@ const Home: React.FC = () => {
              >
               {images.map((src, idx) => (
                 <div key={idx} className="min-w-full aspect-[17/9]">
-                                <img src={src} alt={`Slide ${idx + 1}`} className="w-full h-full object-cover" />
-                              </div>
-                            ))}
+                  <img
+                    src={src}
+                    onError={(e) => { e.currentTarget.src = fallbackImages[idx] || fallbackImages[0]; }}
+                    alt={`Slide ${idx + 1}`}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              ))}
              </div>
            </div>
            <button aria-label="Previous slide" onClick={prevSlide} className="absolute left-2 top-1/2 -translate-y-1/2 bg-transparent text-white drop-shadow-lg filter p-0 text-4xl focus:outline-none">

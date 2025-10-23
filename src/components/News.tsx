@@ -30,54 +30,17 @@ const News: React.FC<{ embedded?: boolean }> = ({ embedded = false }) => {
   const newsItems: NewsItem[] = [
     {
       id: 1,
-      title: 'Research Group Publishes Breakthrough Results in Top-tier Journal',
-      summary: 'Our latest research achieves major breakthrough in artificial intelligence, with the paper accepted by Nature journal.',
-      content: `We are delighted to announce that our research group's latest findings in artificial intelligence have been officially accepted and published by Nature journal. This research focuses on the application of deep learning in complex system modeling, proposing a novel neural network architecture.
+      title: 'Our Paper Featured on the Cover of Nature Computational Science',
+      summary: 'Our research group’s paper has been selected as the issue cover of Nature Computational Science.',
+      content: `We are thrilled to share that our paper was featured on the cover of Nature Computational Science. This recognition highlights our team’s contributions at the intersection of photonics and computation and reflects the collaborative effort across the UNIO Lab.
 
-The main contributions of this research include:
-1. Proposed an innovative multi-level feature fusion mechanism
-2. Achieved state-of-the-art performance on multiple benchmark datasets
-3. Provided important theoretical foundations for future research in related fields
+Cover date: 14 June 2024.
 
-This achievement is the result of collective efforts from all members of our research group, with special thanks to the hard work of participating PhD and Master's students. We will continue to explore deeply in this direction, contributing more valuable research outcomes to both academia and industry.`,
-      date: '2024-01-15',
+We extend our appreciation to all collaborators and supporters who made this milestone possible.`,
+      date: '2024-06-14',
       category: 'Academic Achievement',
-      image: integratedOptics,
-      author: 'Prof. Hu Jianqi'
-    },
-    {
-      id: 2,
-      title: 'Research Group Receives Major National Science Foundation Grant',
-      summary: 'We successfully secured a key project grant from the National Natural Science Foundation for cutting-edge technology research over the next four years.',
-      content: `After intense competition and rigorous review, our research group has successfully obtained funding from the National Natural Science Foundation key project. The total funding amount is 3 million RMB with a research period of 4 years.
-
-Main research areas of the project:
-• Theoretical foundation research of intelligent systems
-• Design and optimization of novel algorithms
-• Validation and promotion in practical application scenarios
-
-This funding will provide strong support for our research, enabling us to purchase advanced experimental equipment, recruit excellent researchers, and collaborate with top international research institutions. We will make full use of this opportunity to strive for more breakthrough progress in related fields.`,
-      date: '2024-01-10',
-      category: 'Project Funding',
-      image: photonicComputing,
-      author: 'Prof. Hu Jianqi'
-    },
-    {
-      id: 3,
-      title: 'PhD Student Li Ming Wins Best Paper Award at International Conference',
-      summary: 'Our PhD student Li Ming received the Best Paper Award at ICML 2024 conference for his outstanding research work.',
-      content: `We are extremely proud to announce that our PhD student Li Ming has won the Best Paper Award at the International Conference on Machine Learning (ICML 2024). This recognition acknowledges his outstanding contributions to machine learning theory research.
-
-Award-winning paper details:
-• Paper title: "Novel Approaches to Deep Learning Optimization"
-• Main innovation: Proposed a new optimization algorithm that significantly improves the training efficiency of deep learning models
-• Experimental results: Validated the algorithm's effectiveness on multiple standard datasets
-
-Since joining our research group, Li Ming has been dedicated to machine learning theory research. This award is a reward for his hard work and demonstrates our group's commitment to cultivating excellent talent. We look forward to his future achievements in research.`,
-      date: '2024-01-05',
-      category: 'Student Honor',
-      image: nonlinearPhotonics,
-      author: 'Li Ming'
+      image: '/nsc_cover.png',
+      author: 'UNIO Lab'
     }
   ];
 
