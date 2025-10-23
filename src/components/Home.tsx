@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 
 const Home: React.FC = () => {
   // Intro slider images (from public/)
-  const images = ['/图片2.png', '/图片3.jpg', '/图片4.jpg', '/图片1.png'];
+  const images = ['/slider-1.png', '/slider-2.jpg', '/slider-3.jpg', '/slider-4.png'];
   const [currentIndex, setCurrentIndex] = useState(0);
 
   // 自动轮播：每 15 秒向右滑动一张
