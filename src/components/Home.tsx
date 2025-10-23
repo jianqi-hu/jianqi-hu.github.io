@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-import integratedOptics from '../assets/integrated-optics.jpg';
-import nonlinearPhotonics from '../assets/nonlinear-photonics.jpg';
-import photonicComputing from '../assets/photonic-computing.png';
-import structuredLight from '../assets/structured-light.png';
+
 
 import News from './News';
 import { Link } from 'react-router-dom';
@@ -11,8 +8,8 @@ import { Link } from 'react-router-dom';
 
 
 const Home: React.FC = () => {
-  // Intro slider images
-  const images = [integratedOptics, nonlinearPhotonics, photonicComputing, structuredLight];
+  // Intro slider images (from public/)
+  const images = ['/图片2.png', '/图片3.jpg', '/图片4.jpg', '/图片1.png'];
   const [currentIndex, setCurrentIndex] = useState(0);
 
   // 自动轮播：每 15 秒向右滑动一张
