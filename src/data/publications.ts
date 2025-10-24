@@ -15,10 +15,11 @@ export const preprints: Publication[] = [
   {
     title: 'High-pulse-energy integrated mode-locked lasers based on a Mamyshev oscillator',
     authors: ['Z. Qiu†', 'J. Hu†', 'X. Yang†', 'Z. Liu', 'Y. Zhang', 'X. Ji', 'J. Sun', 'G. Lihachev', 'X. Li', 'Z. Li', 'U. Kentsch', 'T. J. Kippenberg∗'],
-    journal: 'submitted',
+    journal: 'arXiv:2509.05133',
     year: 2025,
     category: 'Photonics',
-    type: 'preprint'
+    type: 'preprint',
+    url: 'https://arxiv.org/abs/2509.05133'
   },
   {
     title: 'Integrated tunable green light source on silicon nitride',
