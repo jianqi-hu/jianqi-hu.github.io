@@ -15,6 +15,26 @@ const Publications: React.FC = () => {
   // Insert a 2025 section under "Prior to HKU"
   const priorYearsWith2025 = [currentYear, ...priorYears];
 
+  // Helper to sort 2022 publications in desired order
+  const sort2022 = (list: Publication[]) => {
+    const order: Record<string, number> = {
+      'Science Advances': 0,
+      'Laser & Photonics Reviews': 1,
+      'Optics Express': 2,
+      'Optics Letters': 3,
+      'Nature Photonics': 4,
+    };
+    return [...list].sort((a, b) => (order[a.journal] ?? 999) - (order[b.journal] ?? 999));
+  };
+
+  // Get list for a year with custom 2022 sorting
+  const getYearList = (year: number) => {
+    const base = (year === currentYear
+      ? journalPublications.filter(p => p.year === year)
+      : priorPublications.filter(p => p.year === year));
+    return year === 2022 ? sort2022(base) : base;
+  };
+
   // 仅保留期刊视图，不在页面内展示 Conference 菜单
 
   // 生成 Google Scholar 搜索链接（如果没有具体链接）
@@ -84,9 +104,7 @@ const Publications: React.FC = () => {
   // 计算“Publications”列表的全局编号（底部为 [1]，向上编号递增）
   const orderedPublications: Publication[] = [];
   priorYearsWith2025.forEach((year) => {
-    const list = (year === currentYear
-      ? journalPublications.filter(p => p.year === year)
-      : priorPublications.filter(p => p.year === year));
+    const list = getYearList(year);
     list.forEach(p => orderedPublications.push(p));
   });
   const totalCount = orderedPublications.length;
@@ -197,7 +215,7 @@ const Publications: React.FC = () => {
             <div key={year} className="mb-12">
               <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">{year}</h3>
               <div className="space-y-6">
-                {(year === currentYear ? journalPublications.filter(p => p.year === year) : priorPublications.filter(p => p.year === year)).map((pub, index) => (
+                {getYearList(year).map((pub, index) => (
                   <div key={`${year}-${index}`}>
                     <div className="text-lg font-normal text-gray-800 dark:text-gray-200">
                       <span className="mr-2">[{getNumber(pub)}]</span>
