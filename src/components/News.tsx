@@ -1,7 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import integratedOptics from '../assets/integrated-optics.jpg';
-import photonicComputing from '../assets/photonic-computing.png';
-import nonlinearPhotonics from '../assets/nonlinear-photonics.jpg';
 
 interface NewsItem {
   id: number;
@@ -13,6 +10,15 @@ interface NewsItem {
   image: string;
   author: string;
 }
+
+// 辅助：固定为 yyyy/M/d 显示格式
+const formatDate = (iso: string) => {
+  const d = new Date(iso);
+  const y = d.getFullYear();
+  const m = d.getMonth() + 1;
+  const day = d.getDate();
+  return `${y}/${m}/${day}`;
+};
 
 const News: React.FC<{ embedded?: boolean }> = ({ embedded = false }) => {
   const [selectedNews, setSelectedNews] = useState<NewsItem | null>(null);
@@ -30,17 +36,13 @@ const News: React.FC<{ embedded?: boolean }> = ({ embedded = false }) => {
   const newsItems: NewsItem[] = [
     {
       id: 1,
-      title: 'Our Paper Featured on the Cover of Nature Computational Science',
-      summary: 'Our research group’s paper has been selected as the issue cover of Nature Computational Science.',
-      content: `We are thrilled to share that our paper was featured on the cover of Nature Computational Science. This recognition highlights our team’s contributions at the intersection of photonics and computation and reflects the collaborative effort across the UNIO Lab.
-
-Cover date: 14 June 2024.
-
-We extend our appreciation to all collaborators and supporters who made this milestone possible.`,
-      date: '2024-06-14',
-      category: 'Academic Achievement',
-      image: '/nsc_cover.png',
-      author: 'UNIO Lab'
+      title: 'UNN Lab has been established!',
+      summary: '',
+      content: '',
+      date: '2025-08-01',
+      category: 'Announcement',
+      image: '',
+      author: 'UNN Lab'
     }
   ];
 
@@ -107,20 +109,22 @@ We extend our appreciation to all collaborators and supporters who made this mil
               className={`bg-white dark:bg-gray-700 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden ${embedded ? '' : 'cursor-pointer'}`}
               onClick={embedded ? undefined : () => openNewsDetail(news)}
             >
-              {/* Image */}
-              <div className={`${imageHeightClass} w-full overflow-hidden`}>
-                <img
-                  src={news.image}
-                  alt={news.title}
-                  className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-300"
-                />
-              </div>
+              {/* Image (hidden in embedded mode) */}
+              {!embedded && (
+                <div className={`${imageHeightClass} w-full overflow-hidden`}>
+                  <img
+                    src={news.image}
+                    alt={news.title}
+                    className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+              )}
 
               {/* Content */}
               <div className={paddingClass}>
                 <div className="mb-3">
                   <span className="text-gray-500 dark:text-gray-300 text-sm">
-                    {new Date(news.date).toLocaleDateString()}
+                    {formatDate(news.date)}
                   </span>
                 </div>
                 <h3 className={`${titleSizeClass} font-semibold text-gray-900 dark:text-white mb-2`}>{news.title}</h3>
@@ -149,7 +153,7 @@ We extend our appreciation to all collaborators and supporters who made this mil
               <div className="p-6 border-b border-gray-200 dark:border-gray-700 flex justify-between items-center">
                  <div>
                    <h3 className="text-2xl font-semibold text-gray-900 dark:text-white">{selectedNews.title}</h3>
-                   <p className="text-gray-500 dark:text-gray-300 text-sm mt-1">{new Date(selectedNews.date).toLocaleDateString()}</p>
+                   <p className="text-gray-500 dark:text-gray-300 text-sm mt-1">{formatDate(selectedNews.date)}</p>
                  </div>
                  <button onClick={closeNewsDetail} className="text-gray-500 hover:text-gray-700 dark:text-gray-300 dark:hover:text-white">
                    ✕

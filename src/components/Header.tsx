@@ -8,10 +8,10 @@ const Header: React.FC = () => {
     { name: 'Home', href: '/' },
     { name: 'Research', href: '/research' },
     { name: 'Publications', href: '/publications' },
-    { name: 'Conference', href: '/conference' },
+    { name: 'Conferences', href: '/conference' },
     { name: 'Team', href: '/team' },
-    { name: 'Activities', href: '/activities' },
-    { name: 'Join us', href: '/contact' },
+    // { name: 'Activities', href: '/activities' },
+    { name: 'Contact Us', href: '/contact' },
   ];
 
   return (
@@ -23,7 +23,7 @@ const Header: React.FC = () => {
             <div className="flex items-center ml-16">
               <Link to="/" className="flex items-center">
                 <img src="/hku_logo_color.jpg" alt="HKU Logo" className="h-16 w-auto mr-3" />
-                <span className="text-black dark:text-white font-bold text-3xl">Laboratory of Ultrafast and Nonlinear Integrated Optics</span>
+                <span className="text-black dark:text-white font-bold text-3xl">Ultrafast Nonlinear Nanophotonics Laboratory</span>
               </Link>
             </div>
 

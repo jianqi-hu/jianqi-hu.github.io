@@ -33,7 +33,7 @@ const Home: React.FC = () => {
              <p className="text-2xl font-bold leading-8">
              Welcome to the UNIO Lab at the University of Hong Kong!
              </p>
-             <p className="text-base leading-7 mt-4">
+             <p className="text-base leading-7 mt-4 text-justify">
              We are a group of researchers exploring the frontiers of ultrafast and nonlinear nanophotonics. Building on the fundamentals of linear and nonlinear optics, we leverage the programmable and multimode control of light in integrated photonics to customize light generation and ultrafast nonlinear interactions, for their applications in information processing and computation.
              </p>
            </div>
@@ -89,12 +89,19 @@ const Home: React.FC = () => {
         <div className="border-t border-gray-200 dark:border-gray-700 my-12" />
 
         {/* Join Us card */}
-        <div className="max-w-2xl mx-auto">
+        <div className="max-w-5xl w-[78%] mx-auto">
           <div className="rounded-lg p-8 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-sm text-gray-900 dark:text-white text-center">
             <h3 className="text-2xl font-bold mb-3">Join Us</h3>
-            <p className="mb-6 text-gray-600 dark:text-gray-300">
-              We welcome outstanding students and researchers to join our group.
-            </p>
+            <div className="space-y-4 mb-6 text-gray-600 dark:text-gray-300 text-justify">
+              <p>
+                We are always seeking highly motivated and talented students/postdocs/visitors to join our group. Prior experience in research areas such as integrated (nonlinear) photonics, lasers, photonic computing and structured light is preferred but not required.
+              </p>
+              <p>
+                If you are passionate about pushing the frontiers of photonics with us, please contact Dr. Jianqi Hu (
+                <a href="mailto:jianqi@hku.hk" className="text-hku-green hover:underline">jianqi@hku.hk</a>
+                ).
+              </p>
+            </div>
             <Link to="/contact#join-section" className="inline-block bg-hku-green hover:bg-hku-darkGreen text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200">Learn more</Link>
           </div>
         </div>

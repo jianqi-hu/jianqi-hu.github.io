@@ -15,7 +15,7 @@ export default {
         'hku-gold': '#C9A227',
       },
       fontFamily: {
-        'sans': ['Helvetica', 'Arial', 'sans-serif'],
+        'sans': ['Questrial', 'Inter', 'system-ui', 'sans-serif'],
       },
     },
   },

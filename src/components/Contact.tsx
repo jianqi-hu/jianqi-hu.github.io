@@ -31,15 +31,7 @@ const Contact: React.FC = () => {
       title: 'Email',
       content: 'jianqi@hku.hk'
     },
-    {
-      icon: (
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-        </svg>
-      ),
-      title: 'Office Hours',
-      content: 'Monday - Friday: 9:00-17:00\nSaturday: 9:00-12:00\nSunday: Closed'
-    }
+
   ];
 
 
@@ -51,19 +43,7 @@ const Contact: React.FC = () => {
           <h1 className="text-3xl font-bold">Contact Us</h1>
         </div>
 
-        <div id="join-section" className="max-w-5xl w-[78%] mx-auto -mt-8 scroll-mt-40">
-          <div className="space-y-4 text-gray-700 dark:text-gray-300 leading-relaxed">
-            <p>
-              We are always seeking highly motivated and talented students/postdocs/visitors to join our group. Prior experience in research areas such as integrated (nonlinear) photonics, lasers, photonic computing and structured light is preferred but not required.
-            </p>
-            <p>
-              If you are passionate about pushing the frontiers of photonics with us, please contact Dr. Jianqi Hu (
-              <a href="mailto:jianqi@hku.hk" className="text-hku-green hover:underline">jianqi@hku.hk</a>
-              ).
-            </p>
-          </div>
-          <div className="border-t border-gray-200 dark:border-gray-700 my-6" />
-        </div>
+
 
         <div className="grid lg:grid-cols-2 gap-x-8 gap-y-12 -mt-4 max-w-5xl w-[78%] mx-auto">
           {/* Contact info card and map card */}
@@ -107,6 +87,39 @@ const Contact: React.FC = () => {
             </div>
           </div>
         </div>
+
+        {/* Useful links */}
+        <div className="max-w-5xl w-[78%] mx-auto mt-12">
+          <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Useful links</h3>
+          <ul className="space-y-3 list-disc list-inside text-gray-700 dark:text-gray-300">
+            <li>
+              <a className="text-hku-green hover:underline" href="https://www.eee.hku.hk/" target="_blank" rel="noopener noreferrer">
+                Department of Electrical and Electronic Engineering
+              </a>
+            </li>
+            <li>
+              <a className="text-hku-green hover:underline" href="https://www.ugc.edu.hk/eng/rgc/funding_opport/hkpfs/index.html" target="_blank" rel="noopener noreferrer">
+                Hong Kong PhD Fellowship
+              </a>
+            </li>
+            <li>
+              <a className="text-hku-green hover:underline" href="https://gradsch.hku.hk/prospective_students/fees_scholarships_and_financial_support/hku_presidential_phd_scholar_programme" target="_blank" rel="noopener noreferrer">
+                HKU Presidential PhD Scholar Programme
+              </a>
+            </li>
+            <li>
+              <a className="text-hku-green hover:underline" href="https://gradsch.hku.hk/prospective_students/fees_scholarships_and_financial_support/postgraduate_scholarships" target="_blank" rel="noopener noreferrer">
+                Postgraduate Scholarship (PGS)
+              </a>
+            </li>
+            <li>
+              <a className="text-hku-green hover:underline" href="https://www.ugc.edu.hk/eng/rgc/funding_opport/pdfs/" target="_blank" rel="noopener noreferrer">
+                RGC Postdoctoral Fellowship
+              </a>
+            </li>
+          </ul>
+        </div>
+
       </div>
     </section>
   );

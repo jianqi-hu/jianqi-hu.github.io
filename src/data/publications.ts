@@ -7,6 +7,8 @@ export interface Publication {
   type: string;
   note?: string;
   details?: string; // volume/pages/article number, e.g. "volume 4, Article number: 18"
+  url?: string; // optional direct link to the paper
+  links?: Record<string, string>; // optional per-tag links like { 'EPFL News': '...' }
 }
 
 export const preprints: Publication[] = [];
@@ -30,7 +32,8 @@ export const publications: Publication[] = [
     year: 2025,
     category: 'Photonics',
     type: 'journal',
-    details: '14, 245'
+    details: '14, 245',
+    url: 'https://www.nature.com/articles/s41377-025-01927-6'
   },
   {
     title: 'Self-organized spatiotemporal quasi-phase-matching in microresonators',
@@ -39,7 +42,8 @@ export const publications: Publication[] = [
     year: 2025,
     category: 'Photonics',
     type: 'journal',
-    details: '16, 4083'
+    details: '16, 4083',
+    url: 'https://www.nature.com/articles/s41467-025-59215-1'
   },
   {
     title: 'Photonics Breakthroughs 2024: Nonlinear Photonic Computing at Scale',
@@ -48,7 +52,8 @@ export const publications: Publication[] = [
     year: 2025,
     category: 'Photonics',
     type: 'journal',
-    details: '17 [Invited]'
+    details: '17 [Invited]',
+    url: 'https://ieeexplore.ieee.org/document/10909496/'
   },
   {
     title: 'Generalized angle-orbital-angular-momentum Talbot effect and modulo mode sorting',
@@ -57,7 +62,14 @@ export const publications: Publication[] = [
     year: 2025,
     category: 'Photonics',
     type: 'journal',
-    details: '19, 392–399 [News & Views] [Phys.org] [EurekAlert] [Tampere University]'
+    details: '19, 392–399 [News & Views] [Phys.org] [EurekAlert] [Tampere University]',
+    url: 'https://www.nature.com/articles/s41566-025-01622-3',
+    links:{
+      'News & Views':'https://www.nature.com/articles/s41566-025-01652-x',
+      'Phys.org':'https://phys.org/news/2025-02-imaging-cylindrical-unveils-space-duality.html',
+      'EurekAlert':'https://www.eurekalert.org/news-releases/1074557',
+      'Tampere University':'https://www.tuni.fi/en/news/self-imaging-structured-light-new-dimensions'
+    }
   },
   {
     title: 'Large-scale photonic computing with nonlinear disordered media',
@@ -66,7 +78,14 @@ export const publications: Publication[] = [
     year: 2024,
     category: 'Photonics',
     type: 'journal',
-    details: '4, 429–439 [News & Views] [Issue Cover] [ETH News] [CREF News]'
+    details: '4, 429–439 [News & Views] [Issue Cover] [ETH News] [CREF News]',
+    url: 'https://www.nature.com/articles/s43588-024-00644-1',
+    links:{
+      'News & Views':'https://www.nature.com/articles/s43588-024-00648-x',
+      'Issue Cover':'https://www.nature.com/natcomputsci/volumes/4/issues/6',
+      'ETH News':'https://www.phys.ethz.ch/news-and-events/d-phys-news/2024/07/nonlinearity-makes-photonic-neural-networks-smarter.html',
+      'CREF News':'https://www.cref.it/en/news-en/new-materials-for-photonic-computers/'
+    }
   },
   {
     title: 'Single-shot Kramers-Kronig complex orbital angular momentum spectrum retrieval',
@@ -75,7 +94,13 @@ export const publications: Publication[] = [
     year: 2023,
     category: 'Photonics',
     type: 'journal',
-    details: '5, 036006 [SPIE News] [Phys.org] [EurekAlert]'
+    details: '5, 036006 [SPIE News] [Phys.org] [EurekAlert]',
+    url: 'https://www.spiedigitallibrary.org/journals/advanced-photonics/volume-5/issue-3/036006/Single-shot-KramersKronig-complex-orbital-angular-momentum-spectrum-retrieval/10.1117/1.AP.5.3.036006.full',
+    links:{
+      'SPIE News':'https://spie.org/news/new-technique-measures-structured-light-in-a-single-shot',
+      'Phys.org':'https://phys.org/news/2023-08-technique-shot.html',
+      'EurekAlert':'https://www.eurekalert.org/news-releases/998043'
+    }
   },
   {
     title: 'Photo-induced cascaded harmonic and comb generation in silicon nitride microresonators',
@@ -84,7 +109,8 @@ export const publications: Publication[] = [
     year: 2022,
     category: 'Photonics',
     type: 'journal',
-    details: '8, eadd8252'
+    details: '8, eadd8252',
+    url: 'https://www.science.org/doi/10.1126/sciadv.add8252'
   },
   {
     title: 'Temporal Talbot effect of optical dark pulse trains',
@@ -93,7 +119,8 @@ export const publications: Publication[] = [
     year: 2022,
     category: 'Photonics',
     type: 'journal',
-    details: '47, 953-956 [Editor’s Pick] [Top Downloads]'
+    details: '47, 953-956 [Editor’s Pick] [Top Downloads]',
+    url:'https://opg.optica.org/ol/abstract.cfm?uri=OL-47-4-953'
   },
   {
     title: 'Optically reconfigurable quasi-phase-matching in silicon nitride microresonators',
@@ -102,7 +129,12 @@ export const publications: Publication[] = [
     year: 2022,
     category: 'Photonics',
     type: 'journal',
-    details: '16, 134-141 [EPFL News] [Phys.org]'
+    details: '16, 134-141 [EPFL News] [Phys.org]',
+    url:'https://www.nature.com/articles/s41566-021-00925-5',
+    links:{
+      'EPFL News':'https://actu.epfl.ch/news/an-optical-chip-improved-by-light/',
+      'Phys.org':'https://phys.org/news/2022-01-optical-chip.html'
+    }
   },
   {
     title: 'Spectral self-imaging of optical orbital angular momentum modes',
@@ -111,7 +143,8 @@ export const publications: Publication[] = [
     year: 2021,
     category: 'Photonics',
     type: 'journal',
-    details: '6, 111302'
+    details: '6, 111302',
+    url:'https://pubs.aip.org/aip/app/article/6/11/111302/123462'
   },
   {
     title: 'Reconfigurable radiofrequency filters based on versatile soliton microcombs',
@@ -120,7 +153,12 @@ export const publications: Publication[] = [
     year: 2020,
     category: 'Photonics',
     type: 'journal',
-    details: '11, 4377 [EPFL News] [Phys.org]'
+    details: '11, 4377 [EPFL News] [Phys.org]',
+    url:'https://www.nature.com/articles/s41467-020-18215-z',
+    links:{
+      'EPFL News':'https://actu.epfl.ch/news/reconfiguring-microwave-photonic-filters-without-a/',
+      'Phys.org':'https://phys.org/news/2020-09-reconfiguring-microwave-photonic-filters-external.html'
+    }
   },
   {
     title: 'Investigation of temporal Talbot effect in a conventional optical tapped delay line structure',
@@ -129,7 +167,8 @@ export const publications: Publication[] = [
     year: 2019,
     category: 'Photonics',
     type: 'journal',
-    details: '27, 7922-7934'
+    details: '27, 7922-7934',
+    url:'https://opg.optica.org/oe/fulltext.cfm?uri=oe-27-6-7922'
   },
   {
     title: 'Talbot effect on orbital angular momentum beams: azimuthal intensity repetition-rate multiplication',
@@ -138,7 +177,8 @@ export const publications: Publication[] = [
     year: 2018,
     category: 'Photonics',
     type: 'journal',
-    details: '43, 4033-4036 [Top downloads]'
+    details: '43, 4033-4036 [Top downloads]',
+    url:'https://opg.optica.org/ol/abstract.cfm?uri=ol-43-16-4033'
   },
   {
     title: 'A photonic integrated dispersion-managed mode-locked laser',
@@ -172,7 +212,9 @@ export const publications: Publication[] = [
     year: 2025,
     category: 'Photonics',
     type: 'journal',
-    details: 'in revision'
+    details: 'in revision',
+    url: ' https://arxiv.org/abs/2504.13662'
+    
   },
   {
     title: 'Dispersion-Engineered Compact Twisted Metasurfaces Enabling 3D Frequency-Reconfigurable Holography',
@@ -181,7 +223,8 @@ export const publications: Publication[] = [
     year: 2025,
     category: 'Photonics',
     type: 'journal',
-    details: '6, 33'
+    details: '6, 33',
+    url:'https://link.springer.com/article/10.1186/s43074-025-00192-5'
   },
   {
     title: 'Computational field-resolved coherent chemical imaging',
@@ -190,7 +233,8 @@ export const publications: Publication[] = [
     year: 2025,
     category: 'Photonics',
     type: 'journal',
-    details: '16, 7406'
+    details: '16, 7406',
+    url: 'https://www.nature.com/articles/s41467-025-62716-8'
   },
 
   {
@@ -200,7 +244,8 @@ export const publications: Publication[] = [
     year: 2025,
     category: 'Photonics',
     type: 'journal',
-    details: '12, 978-984'
+    details: '12, 978-984',
+    url: 'https://doi.org/10.1364/OPTICA.565570'
   },
   {
     title: 'Boosting Brillouin fiber sensing via precise raw data acquisition and image denoising',
@@ -209,7 +254,8 @@ export const publications: Publication[] = [
     year: 2025,
     category: 'Photonics',
     type: 'journal',
-    details: '12, 216-227'
+    details: '12, 216-227',
+    url: 'https://doi.org/10.1364/OPTICA.540409'
   },
   {
     title: 'Ultrabroadband integrated electro-optic frequency comb in lithium tantalate',
@@ -218,7 +264,12 @@ export const publications: Publication[] = [
     year: 2025,
     category: 'Photonics',
     type: 'journal',
-    details: '637, 1096–1103 [EPFL News] [Phys.org]'
+    details: '637, 1096–1103 [EPFL News] [Phys.org]',
+    url: 'https://www.nature.com/articles/s41586-024-08354-4',
+    links:{
+      'EPFL News':'https://news.epfl.ch/news/compact-comb-lights-the-way-for-next-gen-photonics/',
+      'Phys.org':'https://phys.org/news/2025-01-compact-gen-photonics.html'
+    }
   },
   {
     title: 'Azimuthal beam shaping in orbital angular momentum basis',
@@ -227,7 +278,8 @@ export const publications: Publication[] = [
     year: 2024,
     category: 'Photonics',
     type: 'journal',
-    details: '3, 026001'
+    details: '3, 026001',
+    url: 'https://infoscience.epfl.ch/server/api/core/bitstreams/9eae6970-714a-4d3a-9f22-df560aa1f8d6/content'
   },
   {
     title: 'Integrated backward second-harmonic generation through optically induced quasi-phase matching',
@@ -236,7 +288,8 @@ export const publications: Publication[] = [
     year: 2023,
     category: 'Photonics',
     type: 'journal',
-    details: '131, 143802'
+    details: '131, 143802',
+    url:'https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.131.143802'
   },
   {
     title: 'Bright and dark Talbot pulse trains on a chip',
@@ -245,7 +298,8 @@ export const publications: Publication[] = [
     year: 2023,
     category: 'Photonics',
     type: 'journal',
-    details: '6, 249'
+    details: '6, 249',
+    url:'https://www.nature.com/articles/s42005-023-01375-x'
   },
   {
     title: 'Cost-effective equalization of electro-optic frequency combs in a Sagnac interferometer',
@@ -254,7 +308,8 @@ export const publications: Publication[] = [
     year: 2023,
     category: 'Photonics',
     type: 'journal',
-    details: '31, 18356-18364'
+    details: '31, 18356-18364',
+    url:'https://opg.optica.org/oe/fulltext.cfm?uri=oe-31-11-18356'
   },
   {
     title: 'Tunable photo-induced second-harmonic generation in a mode-engineered silicon nitride microresonator',
@@ -263,7 +318,8 @@ export const publications: Publication[] = [
     year: 2023,
     category: 'Photonics',
     type: 'journal',
-    details: '31, 14442-14453'
+    details: '31, 14442-14453',
+    url:'https://opg.optica.org/oe/fulltext.cfm?uri=oe-31-9-14442'
   },
   {
     title: 'Generalized coherent photogalvanic effect in coherently seeded waveguides',
@@ -272,7 +328,8 @@ export const publications: Publication[] = [
     year: 2022,
     category: 'Photonics',
     type: 'journal',
-    details: '2200294'
+    details: '2200294',
+    url:'https://onlinelibrary.wiley.com/doi/full/10.1002/lpor.202200294'
   },
   {
     title: 'Deep-learning-assisted communication capacity enhancement by non-orthogonal state recognition of structured light',
@@ -281,7 +338,8 @@ export const publications: Publication[] = [
     year: 2022,
     category: 'Photonics',
     type: 'journal',
-    details: '30, 29781-29795'
+    details: '30, 29781-29795',
+    url:'https://opg.optica.org/oe/fulltext.cfm?uri=oe-30-16-29781'
   },
   {
     title: 'Linearly chirped mid-infrared supercontinuum in all-normal-dispersion chalcogenide photonic crystal fibers',
@@ -290,7 +348,8 @@ export const publications: Publication[] = [
     year: 2018,
     category: 'Photonics',
     type: 'journal',
-    details: '26, 19627-19636'
+    details: '26, 19627-19636',
+    url:'https://opg.optica.org/oe/fulltext.cfm?uri=oe-26-15-19627'
   },
   {
     title: 'Fiber fuse in Chalcogenide photonic crystal fiber',
@@ -299,7 +358,8 @@ export const publications: Publication[] = [
     year: 2018,
     category: 'Photonics',
     type: 'journal',
-    details: '43, 1443-1446'
+    details: '43, 1443-1446',
+    url:'https://opg.optica.org/ol/abstract.cfm?uri=ol-43-7-1443'
   },
   {
     title: 'A photonic circuit for complementary frequency shifting, in-phase quadrature/single sideband modulation and frequency multiplication: analysis and integration feasibility',
@@ -308,8 +368,15 @@ export const publications: Publication[] = [
     year: 2017,
     category: 'Photonics',
     type: 'journal',
-    details: '64, 1386-1397'
+    details: '64, 1386-1397',
+    url:'https://www.tandfonline.com/doi/abs/10.1080/09500340.2017.1288837'
   },
+
+
+
+
+  //下面是会议
+
   {
     title: 'Kerr-comb-driven Widely-tunable Integrated Green Light Source',
     authors: ['G. Wang', 'O. Yakar', 'X. Ji', 'M. Clementi', 'J. Zhou', 'C. Lafforgue', 'J. Wu', 'J. Hu', 'T. J. Kippenberg', 'C.-S. Brès'],

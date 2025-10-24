@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,8 +7,8 @@
 
 @layer base {
   html {
-    font-family: 'Inter', 'SimSun', '宋体', system-ui, sans-serif;
-    font-weight: 500;
+    font-family: 'Questrial', 'Inter', 'Noto Sans SC', 'Microsoft YaHei', 'PingFang SC', 'SimSun', '宋体', system-ui, sans-serif;
+    font-weight: 400; /* Questrial 为 Regular 权重，默认 400 更匹配 */
   }
 }
 
@@ -26,6 +27,7 @@
 
   .section-title {
     @apply text-3xl font-bold text-gray-900 dark:text-white mb-4;
+    font-family: 'Questrial', 'Inter', system-ui, sans-serif;
   }
 
   .section-subtitle {
