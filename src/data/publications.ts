@@ -13,6 +13,14 @@ export interface Publication {
 
 export const preprints: Publication[] = [
   {
+    title: 'High-pulse-energy integrated mode-locked lasers based on a Mamyshev oscillator',
+    authors: ['Z. Qiu†', 'J. Hu†', 'X. Yang†', 'Z. Liu', 'Y. Zhang', 'X. Ji', 'J. Sun', 'G. Lihachev', 'X. Li', 'Z. Li', 'U. Kentsch', 'T. J. Kippenberg∗'],
+    journal: 'submitted',
+    year: 2025,
+    category: 'Photonics',
+    type: 'preprint'
+  },
+  {
     title: 'Integrated tunable green light source on silicon nitride',
     authors: ['G. Wang', 'O. Yakar', 'X. Ji', 'M. Clementi', 'J. Zhou', 'C. Lafforgue', 'J. Wu', 'J. Hu', 'T. J. Kippenberg', 'C.-S. Brès'],
     journal: 'arXiv:2504.13662',
@@ -27,14 +35,7 @@ export const preprints: Publication[] = [
 export const publications: Publication[] = [
 
 
-  {
-    title: 'High-pulse-energy integrated mode-locked lasers based on a Mamyshev oscillator',
-    authors: ['Z. Qiu†', 'J. Hu†', 'X. Yang†', 'Z. Liu', 'Y. Zhang', 'X. Ji', 'J. Sun', 'G. Lihachev', 'X. Li', 'Z. Li', 'U. Kentsch', 'T. J. Kippenberg∗'],
-    journal: 'submitted',
-    year: 2025,
-    category: 'Photonics',
-    type: 'journal'
-  },
+
   {
     title: 'Optical next generation reservoir computing',
     authors: ['H. Wang†', 'J. Hu†,∗', 'Y. Baek', 'K. Tsuchiyama', 'M. Joly', 'Q. Liu∗', 'S. Gigan∗'],
