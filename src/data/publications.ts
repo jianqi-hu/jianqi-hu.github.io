@@ -11,7 +11,17 @@ export interface Publication {
   links?: Record<string, string>; // optional per-tag links like { 'EPFL News': '...' }
 }
 
-export const preprints: Publication[] = [];
+export const preprints: Publication[] = [
+  {
+    title: 'Integrated tunable green light source on silicon nitride',
+    authors: ['G. Wang', 'O. Yakar', 'X. Ji', 'M. Clementi', 'J. Zhou', 'C. Lafforgue', 'J. Wu', 'J. Hu', 'T. J. Kippenberg', 'C.-S. Brès'],
+    journal: 'arXiv:2504.13662',
+    year: 2025,
+    category: 'Photonics',
+    type: 'preprint',
+    url: 'https://arxiv.org/abs/2504.13662'
+  }
+];
 
 
 export const publications: Publication[] = [
@@ -205,17 +215,7 @@ export const publications: Publication[] = [
     type: 'journal',
     details: '[Invited review]'
   },
-  {
-    title: 'Integrated tunable green light source on silicon nitride',
-    authors: ['G. Wang', 'O. Yakar', 'X. Ji', 'M. Clementi', 'J. Zhou', 'C. Lafforgue', 'J. Wu', 'J. Hu', 'T. J. Kippenberg', 'C.-S. Brès'],
-    journal: 'Light: Science & Applications',
-    year: 2025,
-    category: 'Photonics',
-    type: 'journal',
-    details: 'in revision',
-    url: ' https://arxiv.org/abs/2504.13662'
-    
-  },
+
   {
     title: 'Dispersion-Engineered Compact Twisted Metasurfaces Enabling 3D Frequency-Reconfigurable Holography',
     authors: ['C. Pang∗', 'Y. Wang∗,†', 'P. Wang', 'A. Yu', 'Y. Liu', 'Z. Yue', 'M. Hu', 'J. Hu', 'Y. Dong', 'J. Qi†'],
