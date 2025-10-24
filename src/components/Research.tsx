@@ -20,8 +20,8 @@ const Research: React.FC = () => {
               <p>
                 Integrated nonlinear photonics merges the principles of nonlinear optics with photonic integrated circuits. With highly nonlinear optical materials, tightly confined modes, and flexible dispersion engineering, integrated photonics provides an ideal platform for studying nonlinear optics phenomena. Our research focuses on the fundamentals and applications of various χ^((2)) and  χ^((3)) nonlinear effects in microresonators across different material platform. One of our interests is on photo-induced χ^((2)) nonlinear effects in silicon nitride photonics.
               </p>
-              <div className="mt-2 text-sm text-gray-700 dark:text-gray-300">
-                <span>Further reading:</span>
+              <div className="mt-2 text-base text-gray-700 dark:text-gray-300">
+                <span>Related publications:</span>
                 <div>
                   <a href="https://www.nature.com/articles/s41467-025-59215-1" target="_blank" rel="noopener noreferrer" className="text-hku-green hover:underline">Nature Communications (2025)</a>
                 </div>
@@ -52,8 +52,8 @@ const Research: React.FC = () => {
               <p>
                 Integrated ultrafast photonics enables the generation and processing of ultrafast optical waveforms in integrated photonics platforms. To date, the performance of chipscale mode-locked lasers still lag behind their bulk counterparts, limiting their wide range of applications. We aim to fill this gap by developing femtosecond lasers based on ion-doped integrated waveguides. In addition, we are also interested in leveraging photonic integrated circuits for ultrafast information processing. 
               </p>
-              <div className="mt-2 text-sm text-gray-700 dark:text-gray-300">
-                <span>Further reading:</span>
+              <div className="mt-2 text-base text-gray-700 dark:text-gray-300">
+                <span>Related publications:</span>
                 <div>
                   <a href="https://arxiv.org/abs/2509.05133" target="_blank" rel="noopener noreferrer" className="text-hku-green hover:underline">arXiv (2025)</a>
                 </div>
@@ -75,8 +75,8 @@ const Research: React.FC = () => {
               <p>
                 Photonic computing harnesses photons to perform computation. Compared to conventional electronic processors, photonics offers potential advantages in speed, bandwidth and energy efficiency, making it a promising platform for neuromorphic computing. Our research focuses on developing next-generation photonic computing systems, preferably based on photonic integrated circuits. 
               </p>
-              <div className="mt-2 text-sm text-gray-700 dark:text-gray-300">
-                <span>Further reading:</span>
+              <div className="mt-2 text-base text-gray-700 dark:text-gray-300">
+                <span>Related publications:</span>
                 <div>
                   <a href="https://www.nature.com/articles/s41377-025-01927-6" target="_blank" rel="noopener noreferrer" className="text-hku-green hover:underline">Light: Science & Applications (2025)</a>
                 </div>
@@ -101,8 +101,8 @@ const Research: React.FC = () => {
               <p>
                 Structured light refers to the shaping of light waves across one or more degrees of freedom. By controlling optical fields in space and/or time, structured light finds applications in optical imaging, classical and quantum information processing. Our approach leverages the famous space-time duality to develop new methods for generating, processing and measuring structured light fields. We are also keen in realizing these functions with integrated photonics. 
               </p>
-              <div className="mt-2 text-sm text-gray-700 dark:text-gray-300">
-                <span>Further reading:</span>
+              <div className="mt-2 text-base text-gray-700 dark:text-gray-300">
+                <span>Related publications:</span>
                 <div>
                   <a href="https://www.nature.com/articles/s41566-025-01622-3" target="_blank" rel="noopener noreferrer" className="text-hku-green hover:underline">Nature Photonics (2025)</a>
                 </div>
