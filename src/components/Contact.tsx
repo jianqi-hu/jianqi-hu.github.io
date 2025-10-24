@@ -40,7 +40,7 @@ const Contact: React.FC = () => {
     <section id="contact-us" className="pt-40 scroll-mt-40">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h1 className="text-3xl font-bold">Contact Us</h1>
+          <h1 className="text-3xl font-bold text-gray-900 dark:text-white">Contact Us</h1>
         </div>
 
 
