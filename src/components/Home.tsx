@@ -46,7 +46,7 @@ const Home: React.FC = () => {
         <div className="max-w-5xl w-[78%] mx-auto">
           <div className="text-gray-900 dark:text-white">
              <p className="text-2xl font-bold leading-8">
-             Welcome to the UNN Lab at the University of Hong Kong!
+             Welcome to the UNN Lab in the University of Hong Kong!
              </p>
              <p className="text-base leading-7 mt-4 text-justify">
              We are a group of researchers exploring the frontiers of ultrafast and nonlinear nanophotonics. Building on the fundamentals of linear and nonlinear optics, we leverage the programmable and multimode control of light in integrated photonics to customize light generation and ultrafast nonlinear interactions, for their applications in information processing and computation.
