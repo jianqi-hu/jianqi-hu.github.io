@@ -11,13 +11,13 @@ interface NewsItem {
   author: string;
 }
 
-// 辅助：固定为 yyyy/M/d 显示格式
+// 辅助：固定为 MM/YYYY 显示格式
 const formatDate = (iso: string) => {
   const d = new Date(iso);
   const y = d.getFullYear();
   const m = d.getMonth() + 1;
-  const day = d.getDate();
-  return `${y}/${m}/${day}`;
+  const mm = m < 10 ? `0${m}` : String(m);
+  return `${mm}/${y}`;
 };
 
 const News: React.FC<{ embedded?: boolean }> = ({ embedded = false }) => {
@@ -36,9 +36,9 @@ const News: React.FC<{ embedded?: boolean }> = ({ embedded = false }) => {
   const newsItems: NewsItem[] = [
     {
       id: 1,
-      title: 'UNN Lab has been established!',
+      title: 'UNN Lab starts in HKU !',
       summary: '',
-      content: '',
+      content: 'UNN Lab starts in HKU !',
       date: '2025-08-01',
       category: 'Announcement',
       image: '',

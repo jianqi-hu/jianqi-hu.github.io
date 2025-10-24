@@ -79,12 +79,13 @@ const Contact: React.FC = () => {
                 title="The University of Hong Kong Location"
               ></iframe>
             </div>
-            <div className="mt-4 text-center">
+            {/* Remove address text under the map as requested */}
+            {/* <div className="mt-4 text-center">
               <p className="text-sm text-gray-600 dark:text-gray-300">
                 Room 719, Building Chow Yei Ching ，<br />
                 The University of Hong Kong
               </p>
-            </div>
+            </div> */}
           </div>
         </div>
 
