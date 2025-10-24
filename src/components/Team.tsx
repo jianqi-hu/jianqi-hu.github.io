@@ -4,13 +4,15 @@ const Team: React.FC = () => {
   const teamMembers = [
     {
       name: 'Dr. Jianqi Hu',
-      chineseName: '胡剑琦',
+      chineseName: '胡劍琦',
       title: '',
       role: 'Assistant Professor',
-      education: [
+      employment: [
         '08/2025 Assistant Professor, Department of Electrical and Electronic Engineering, The University of Hong Kong',
         'Postdoc, École Polytechnique Fédérale de Lausanne',
-        'Postdoc, Ecole Normale Supérieure',
+        'Postdoc, Ecole Normale Supérieure'
+      ],
+      education: [
         'Ph.D., École Polytechnique Fédérale de Lausanne',
         'B.E., University of Electronic Science and Technology of China'
       ],
@@ -41,7 +43,7 @@ const Team: React.FC = () => {
     },
     {
       name: 'Shaoyuan Ou',
-      title: '欧绍源',
+      title: '歐紹源',
       role: 'PhD Student',
       education: ['B.E., Sun Yat-Sen University','M.S., University of Southern California'],
       research: ['Optical computing', 'Integrated photonics'],
@@ -126,7 +128,24 @@ const Team: React.FC = () => {
                   </div>
 
                   <div className="space-y-3">
-                    {category.name !== 'Professors' && member.education && (
+                    {member.employment && (
+                      <div>
+                        <p className="text-sm font-medium text-gray-700 dark:text-gray-300">Employment</p>
+                        {Array.isArray(member.employment) ? (
+                          <div className="text-sm text-gray-600 dark:text-gray-400 space-y-1">
+                            {member.employment.map((job: string, i: number) => (
+                              <p key={i}>{job}</p>
+                            ))}
+                          </div>
+                        ) : (
+                          <p className="text-sm text-gray-600 dark:text-gray-400">
+                            {String(member.employment)}
+                          </p>
+                        )}
+                      </div>
+                    )}
+
+                    {member.education && (
                       <div>
                         <p className="text-sm font-medium text-gray-700 dark:text-gray-300">Education</p>
                         {Array.isArray(member.education) ? (

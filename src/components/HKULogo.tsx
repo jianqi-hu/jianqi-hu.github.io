@@ -9,7 +9,7 @@ const HKULogo: React.FC<HKULogoProps> = ({ className = "h-20 w-auto" }) => {
   return (
     <img
       src={hkuLogoSvg}
-      alt="香港大学校徽"
+      alt="香港大學校徽"
       className={className}
     />
   );

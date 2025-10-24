@@ -222,30 +222,32 @@ const Publications: React.FC = () => {
             </div>
           </div>
 
-          {/* 2025 年文献（置顶） */}
-          <div className="mb-12">
-            <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">2025</h3>
-            <div className="space-y-6">
-              {currentPublications.map((pub, index) => (
-                <div key={`2025-${index}`}>
-                  <div className="text-lg font-normal text-gray-800 dark:text-gray-200">
-                    {getNumber(pub) !== undefined && (
-                      <span className="mr-2">[{getNumber(pub)}]</span>
-                    )}
-                    "{pub.title}"
+          {/* 2025 年度（仅当存在当前年份论文时显示） */}
+          {currentPublications.length > 0 && (
+            <div className="mb-12">
+              <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">2025</h3>
+              <div className="space-y-6">
+                {currentPublications.map((pub, index) => (
+                  <div key={`2025-${index}`}>
+                    <div className="text-lg font-normal text-gray-800 dark:text-gray-200">
+                      {getNumber(pub) !== undefined && (
+                        <span className="mr-2">[{getNumber(pub)}]</span>
+                      )}
+                      "{pub.title}"
+                    </div>
+                    <div className="text-base text-gray-700 dark:text-gray-300">
+                      {pub.authors.map((name, i) => (
+                        <span key={i}>
+                          {formatAuthor(name)}{i < pub.authors.length - 1 ? ', ' : ''}
+                        </span>
+                      ))}
+                    </div>
+                    {renderJournal(pub)}
                   </div>
-                  <div className="text-base text-gray-700 dark:text-gray-300">
-                    {pub.authors.map((name, i) => (
-                      <span key={i}>
-                        {formatAuthor(name)}{i < pub.authors.length - 1 ? ', ' : ''}
-                      </span>
-                    ))}
-                  </div>
-                  {renderJournal(pub)}
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
-          </div>
+          )}
 
           {/* Prior to HKU 大标题 */}
           <div className="mb-6">
