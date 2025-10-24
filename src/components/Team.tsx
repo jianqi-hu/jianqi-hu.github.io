@@ -77,94 +77,124 @@ const Team: React.FC = () => {
   const categories = [
     { name: 'Principal Investigator', members: teamMembers.filter(m => m.role.includes('Professor')) },
     { name: 'PhD Students', members: teamMembers.filter(m => m.role.includes('Student') && !m.role.includes('Visiting')) },
-    { name: 'Postdoctoral Researchers', members: teamMembers.filter(m => m.role.includes('Postdoctoral')) },
-    { name: 'Visiting PhD Students', members: teamMembers.filter(m => m.role.includes('Visiting')) },
-    { name: 'Senior Engineers', members: teamMembers.filter(m => m.role.includes('Engineer')) },
+    { name: 'Visitors', members: teamMembers.filter(m => m.role.includes('Visiting')) }
   ];
 
+  const isChinese = (txt?: string) => !!txt && /[\u4e00-\u9fff]/.test(txt);
+
+
+
   return (
-    <section className="pt-40 pb-20 bg-white dark:bg-gray-900 transition-colors duration-300 scroll-mt-40">
+    <section className="py-20 bg-white dark:bg-gray-900 transition-colors duration-300 pt-40 scroll-mt-40">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h2 className="section-title">Our Team</h2>
+        <div className="text-center mb-16">
+          <h2 className="section-title">Team Members</h2>
+          {/* 副标题移除 */}
         </div>
 
-        <div className="max-w-6xl mx-auto">
-          {categories.map((category) => (
-            <div key={category.name} className="mb-12">
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">{category.name}</h3>
+        {/* Team Statistics removed per request */}
 
-              {/* 使用网格布局，随屏幕大小自适应，每行最多 3 个卡片 */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                {category.members.map((member) => (
-                  <div
-                    key={member.name}
-                    className="group bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl shadow-sm overflow-hidden flex flex-col"
-                  >
-                    {/* 顶部头像图片 */}
-                    <div className="relative h-48 bg-gray-100 dark:bg-gray-700">
+        {/* Team Members by Category */}
+        {categories.map((category, categoryIndex) => (
+          <div
+            key={categoryIndex}
+            className={`mb-16 ${categoryIndex === 0 ? '-mt-4' : ''}`}
+          >
+            <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6 border-b pb-2">{category.name}</h2>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {category.members.map((member, memberIndex) => (
+                <div key={memberIndex} className="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-6 border border-gray-200 dark:border-gray-700">
+                  <div className="text-center mb-4">
+                    <div className="w-80 aspect-square max-w-full mx-auto mb-3 rounded-lg overflow-hidden bg-gray-200">
                       <img
-                        src={member.avatar}
-                        alt={`${member.name}'s avatar`}
+                        src={member.avatar || "/professor-avatar.jpg?v=6502cb1"}
+                        alt={`${member.name} Avatar`}
                         className="w-full h-full object-cover"
                       />
                     </div>
+                    <h3 className="text-lg font-semibold text-gray-700 dark:text-gray-300">{member.name}</h3>
+                    {member.chineseName && (
+                      <p className="text-sm text-gray-600 dark:text-gray-400">
+                        <span className="font-hei">{member.chineseName}</span>
+                      </p>
+                    )}
+                    <p className="text-sm text-gray-600 dark:text-gray-400">
+                      {isChinese(member.title) ? (
+                        <span className="font-hei">{member.title}</span>
+                      ) : (
+                        member.title
+                      )}
+                    </p>
+                  </div>
 
-                    {/* 下方内容区域 */}
-                    <div className="flex-1 p-6">
-                      <div className="flex items-center justify-between mb-2">
-                        <h4 className="text-xl font-bold text-gray-900 dark:text-white">
-                          {member.name}
-                          {member.title && (
-                            <span className="ml-2 text-base text-gray-600 dark:text-gray-300">{member.title}</span>
-                          )}
-                        </h4>
-                        {/* 邮件图标仅在成员有邮箱时显示 */}
-                        {member.email && (
-                          <a
-                            href={`mailto:${member.email}`}
-                            className="text-hku-green hover:text-hku-darkGreen"
-                            aria-label={`Email ${member.name}`}
-                          >
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
-                              <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25H4.5a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15A2.25 2.25 0 002.25 6.75m19.5 0v.243a2.25 2.25 0 01-1.03 1.916l-6.9 4.312a2.25 2.25 0 01-2.44 0L4.78 8.909a2.25 2.25 0 01-1.03-1.916V6.75" />
-                            </svg>
-                          </a>
+                  <div className="space-y-3">
+                    {member.employment && (
+                      <div>
+                        <p className="text-sm font-medium text-gray-700 dark:text-gray-300">Employment</p>
+                        {Array.isArray(member.employment) ? (
+                          <div className="text-sm text-gray-600 dark:text-gray-400 space-y-1">
+                            {member.employment.map((job: string, i: number) => (
+                              <p key={i}>{job}</p>
+                            ))}
+                          </div>
+                        ) : (
+                          <p className="text-sm text-gray-600 dark:text-gray-400">
+                            {String(member.employment)}
+                          </p>
                         )}
                       </div>
+                    )}
 
-                      {/* 职位信息和研究方向 */}
-                      <p className="text-gray-700 dark:text-gray-300">
-                        <span className="font-medium">{member.role}</span>
-                      </p>
-
-                      {/* 教育背景：支持字符串或数组显示，不显示未提供的信息 */}
-                      {member.education && (
-                        Array.isArray(member.education) ? (
-                          <p className="text-gray-700 dark:text-gray-300 mt-2">
-                            {member.education.join(', ')}
-                          </p>
+                    {member.education && (
+                      <div>
+                        <p className="text-sm font-medium text-gray-700 dark:text-gray-300">Education</p>
+                        {Array.isArray(member.education) ? (
+                          <div className="text-sm text-gray-600 dark:text-gray-400 space-y-1">
+                            {member.education.map((edu: string, i: number) => (
+                              <p key={i}>{edu}</p>
+                            ))}
+                          </div>
                         ) : (
-                          <p className="text-gray-700 dark:text-gray-300 mt-2">{member.education}</p>
-                        )
-                      )}
+                          <p className="text-sm text-gray-600 dark:text-gray-400">
+                            {String(member.education)}
+                          </p>
+                        )}
+                      </div>
+                    )}
 
-                      {/* 研究方向：数组展示为逗号分隔 */}
-                      {member.research && (
-                        <p className="text-gray-700 dark:text-gray-300 mt-2">
-                          {Array.isArray(member.research) ? member.research.join(', ') : member.research}
-                        </p>
-                      )}
-                    </div>
+                    {category.name === 'Principal Investigator' && member.email && (
+                      <div>
+                        <p className="text-sm font-medium text-gray-700 dark:text-gray-300">Email</p>
+                        <p className="text-sm text-gray-600 dark:text-gray-400">{member.email}</p>
+                      </div>
+                    )}
+
+                    {category.name === 'PhD Students' && member.email && (
+                      <div>
+                        <p className="text-sm font-medium text-gray-700 dark:text-gray-300">Email</p>
+                        <p className="text-sm text-gray-600 dark:text-gray-400">{member.email}</p>
+                      </div>
+                    )}
+
+                    {category.name === 'Visitors' && member.email && (
+                      <div>
+                        <p className="text-sm font-medium text-gray-700 dark:text-gray-300">Email</p>
+                        <p className="text-sm text-gray-600 dark:text-gray-400">{member.email}</p>
+                      </div>
+                    )}
                   </div>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
 
-        {/* 页脚分割线 */}
-        <div className="border-t border-gray-200 dark:border-gray-700 my-12" />
+                  {/* Email icon for non-students */}
+                  {category.name !== 'PhD Students' && category.name !== 'Visitors' && member.email && (
+                    null
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+
+
       </div>
     </section>
   );
