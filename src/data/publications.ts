@@ -29,6 +29,16 @@ export const preprints: Publication[] = [
     category: 'Photonics',
     type: 'preprint',
     url: 'https://arxiv.org/abs/2504.13662'
+  },
+  {
+    title: 'Roadmap on Neuromorphic Photonics',
+    authors: ['D. Brunner∗', 'B. J. Shastri∗', '... J. Hu', '... W. Zhang'],
+    journal: 'arXiv:2501.07917',
+    year: 2025,
+    category: 'Photonics',
+    type: 'preprint',
+    details: '[Invited review]',
+    url: 'https://arxiv.org/abs/2501.07917'
   }
 ];
 
@@ -208,15 +218,7 @@ export const publications: Publication[] = [
     category: 'Photonics',
     type: 'journal'
   },
-  {
-    title: 'Roadmap on Neuromorphic Photonics',
-    authors: ['D. Brunner∗', 'B. J. Shastri∗', '... J. Hu', '... W. Zhang'],
-    journal: 'submitted',
-    year: 2025,
-    category: 'Photonics',
-    type: 'journal',
-    details: '[Invited review]'
-  },
+
 
   {
     title: 'Dispersion-Engineered Compact Twisted Metasurfaces Enabling 3D Frequency-Reconfigurable Holography',
