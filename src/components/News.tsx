@@ -74,7 +74,7 @@ const News: React.FC<{ embedded?: boolean }> = ({ embedded = false }) => {
   const showSummary = !embedded;
 
   return (
-    <section className={`${embedded ? 'py-8' : 'py-20 pt-40 scroll-mt-40'} bg-white dark:bg-gray-800 transition-colors duration-300`}>
+    <section className={`${embedded ? 'py-8 bg-transparent' : 'py-20 pt-40 scroll-mt-40 bg-white dark:bg-gray-800'} transition-colors duration-300`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {!embedded && (
           <div className="text-center mb-8">
