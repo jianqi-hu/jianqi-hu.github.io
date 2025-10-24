@@ -5,14 +5,17 @@ const Team: React.FC = () => {
     {
       name: 'Dr. Jianqi Hu',
       chineseName: '胡剑琦',
-      title: 'Research Group Leader',
+      title: '',
       role: 'Assistant Professor',
       education: [
-        'PhD in Photonics, École Polytechnique Fédérale de Lausanne (EPFL), 2021',
-        'BSc in Electronic Engineering, University of Electronic Science and Technology of China, 2016'
+        '08/2025 Assistant Professor, Department of Electrical and Electronic Engineering, The University of Hong Kong',
+        'Postdoc, École Polytechnique Fédérale de Lausanne',
+        'Postdoc, Ecole Normale Supérieure',
+        'Ph.D., École Polytechnique Fédérale de Lausanne',
+        'B.E., University of Electronic Science and Technology of China'
       ],
       research: ['Integrated Optics', 'Nonlinear Photonics', 'Photonic Computing', 'Structured Light'],
-      email: 'jqhu@hku.hk',
+      email: 'jianqi@hku.hk',
       publications: 15,
       avatar: '/professor-avatar.jpg'
     },
@@ -70,9 +73,9 @@ const Team: React.FC = () => {
   ];
 
   const categories = [
-    { name: 'Professors', members: teamMembers.filter(m => m.role.includes('Professor')) },
+    { name: 'Principal investigator', members: teamMembers.filter(m => m.role.includes('Professor')) },
     { name: 'PhD Students', members: teamMembers.filter(m => m.role.includes('Student') && !m.role.includes('Visiting')) },
-    { name: 'Visiting Students', members: teamMembers.filter(m => m.role.includes('Visiting')) }
+    { name: 'Visitors', members: teamMembers.filter(m => m.role.includes('Visiting')) }
   ];
 
   const isChinese = (txt?: string) => !!txt && /[\u4e00-\u9fff]/.test(txt);
@@ -147,7 +150,8 @@ const Team: React.FC = () => {
                         {Array.isArray(member.education) ? (
                           <div className="text-sm text-gray-600 dark:text-gray-400 space-y-1">
                             {member.education.map((edu: string, i: number) => (
-                              <p key={i}>{formatEdu(edu)}</p>
+                            -                              <p key={i}>{formatEdu(edu)}</p>
+                            +                              <p key={i}>{edu}</p>
                             ))}
                           </div>
                         ) : (
@@ -158,7 +162,7 @@ const Team: React.FC = () => {
                       </div>
                     )}
 
-                    {category.name === 'Professors' && member.email && (
+                    {category.name === 'Principal investigator' && member.email && (
                       <div>
                         <p className="text-sm font-medium">Email</p>
                         <p className="text-sm text-gray-600 dark:text-gray-400">{member.email}</p>
@@ -172,7 +176,7 @@ const Team: React.FC = () => {
                       </div>
                     )}
 
-                    {category.name === 'Visiting Students' && member.email && (
+                    {category.name === 'Visitors' && member.email && (
                       <div>
                         <p className="text-sm font-medium">Email</p>
                         <p className="text-sm text-gray-600 dark:text-gray-400">{member.email}</p>
@@ -181,7 +185,7 @@ const Team: React.FC = () => {
                   </div>
 
                   {/* Email icon for non-students */}
-                  {category.name !== 'PhD Students' && category.name !== 'Visiting Students' && member.email && (
+                  {category.name !== 'PhD Students' && category.name !== 'Visitors' && member.email && (
                     <div className="mt-4">
                       <a
                         href={`mailto:${member.email}`}
@@ -202,7 +206,6 @@ const Team: React.FC = () => {
                             d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25H4.5a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.06 1.916l-7.5 4.5a2.25 2.25 0 01-2.28 0l-7.5-4.5A2.25 2.25 0 012.25 6.993V6.75"
                           />
                         </svg>
-                        <span className="ml-2 text-sm">Send email</span>
                       </a>
                     </div>
                   )}
