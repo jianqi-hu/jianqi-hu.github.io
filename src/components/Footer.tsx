@@ -3,17 +3,6 @@ import React from 'react';
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
 
-  const quickLinks = [
-    { name: 'Google Scholar', href: 'https://scholar.google.com/citations?user=LYfEMQYAAAAJ&hl=zh-CN' },
-    { name: "Prof. Jianqi Hu's Homepage", href: 'https://www.eee.hku.hk/people/jianqi/' },
-    { name: 'The University of Hong Kong', href: 'https://www.hku.hk/' },
-    { name: 'Department of Electrical and Electronic Engineering', href: 'https://www.eee.hku.hk/' },
-    { name: 'Hong Kong PhD Fellowship', href: 'https://www.ugc.edu.hk/eng/rgc/funding_opport/hkpfs/index.html' },
-    { name: 'HKU Presidential PhD Scholar Programme', href: 'https://gradsch.hku.hk/prospective_students/fees_scholarships_and_financial_support/hku_presidential_phd_scholar_programme' },
-    { name: 'Postgraduate Scholarship (PGS)', href: 'https://gradsch.hku.hk/prospective_students/fees_scholarships_and_financial_support/postgraduate_scholarships' },
-    { name: 'RGC Postdoctoral Fellowship', href: 'https://www.ugc.edu.hk/eng/rgc/funding_opport/pdfs/' }
-  ];
-
 
   return (
     <footer className="mt-8 md:mt-12 bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200 transition-colors duration-300">

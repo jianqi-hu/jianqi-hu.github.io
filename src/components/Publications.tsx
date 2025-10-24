@@ -19,7 +19,7 @@ const Publications: React.FC = () => {
 
   // 生成 Google Scholar 搜索链接（如果没有具体链接）
   const scholarLink = (title: string) => `https://scholar.google.com/scholar?q=${encodeURIComponent(title)}`;
-  const journalText = (pub: Publication) => `${pub.journal}${pub.details ? ' ' + pub.details : ''} (${pub.year})`;
+
   // helper: render author name with superscript markers
   const formatAuthor = (name: string) => {
     const parts = name.split(/(†|∗|\*)/);
