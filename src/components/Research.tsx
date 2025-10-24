@@ -37,7 +37,7 @@ const Research: React.FC = () => {
               </div>
             </div>
             <div className="rounded-lg overflow-hidden bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 -mt-8 md:-mt-10 lg:-mt-12">
-              <img src="/Integrated nonlinear photonics.png" alt="Integrated nonlinear photonics" className="w-full h-full object-cover" />
+              <img src="/Integrated nonlinear photonics.png?v=6502cb1" alt="Integrated nonlinear photonics" className="w-full h-full object-cover" />
             </div>
           </div>
         </div>
@@ -86,7 +86,7 @@ const Research: React.FC = () => {
               </div>
             </div>
             <div className="rounded-lg overflow-hidden bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 -mt-8 md:-mt-10 lg:-mt-12 h-[240px] sm:h-[280px] md:h-[320px] lg:h-[360px]">
-              <img src="/Photonic computing.png" alt="Photonic computing" className="w-full h-full object-cover" />
+              <img src="/Photonic computing.png?v=6502cb1" alt="Photonic computing" className="w-full h-full object-cover" />
             </div>
           </div>
         </div>
@@ -112,7 +112,7 @@ const Research: React.FC = () => {
               </div>
             </div>
             <div className="rounded-lg overflow-hidden bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 -mt-8 md:-mt-10 lg:-mt-12">
-              <img src="/Structured light.png" alt="Structured light" className="w-full h-full object-cover" />
+              <img src="/Structured light.png?v=6502cb1" alt="Structured light" className="w-full h-full object-cover" />
             </div>
           </div>
         </div>

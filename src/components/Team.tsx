@@ -17,7 +17,7 @@ const Team: React.FC = () => {
       research: ['Integrated Optics', 'Nonlinear Photonics', 'Photonic Computing', 'Structured Light'],
       email: 'jianqi@hku.hk',
       publications: 15,
-      avatar: '/professor-avatar.jpg'
+      avatar: '/professor-avatar.jpg?v=6502cb1'
     },
     {
       name: 'Dr. Wang',
@@ -105,7 +105,7 @@ const Team: React.FC = () => {
                   <div className="text-center mb-4">
                     <div className="w-80 aspect-square max-w-full mx-auto mb-3 rounded-lg overflow-hidden bg-gray-200">
                       <img
-                        src={member.avatar || "/professor-avatar.jpg"}
+                        src={member.avatar || "/professor-avatar.jpg?v=6502cb1"}
                         alt={`${member.name} Avatar`}
                         className="w-full h-full object-cover"
                       />

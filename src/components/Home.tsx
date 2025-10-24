@@ -9,7 +9,8 @@ import { Link } from 'react-router-dom';
 
 const Home: React.FC = () => {
   // Intro slider images (from public/)
-  const images = ['/slider-1.png', '/slider-2.png', '/slider-3.png', '/slider-4.png'];
+  const assetVersion = '?v=6502cb1';
+  const images = [`/slider-1.png${assetVersion}`, `/slider-2.png${assetVersion}`, `/slider-3.png${assetVersion}`, `/slider-4.png${assetVersion}`];
   const fallbackImages = ['/integrated-optics.jpg', '/nonlinear-photonics.jpg', '/photonic-computing.png', '/structured-light.png'];
   const [currentIndex, setCurrentIndex] = useState(0);
 
