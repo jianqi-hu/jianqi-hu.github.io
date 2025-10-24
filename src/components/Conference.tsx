@@ -6,7 +6,17 @@ const Conference: React.FC = () => {
   const conferencePublications = publications.filter(p => p.type === 'conference');
   const years = Array.from(new Set(conferencePublications.map(p => p.year))).sort((a, b) => b - a);
 
-  const journalText = (pub: Publication) => `${pub.journal}${pub.details ? ' ' + pub.details : ''} (${pub.year})`;
+  // Split details into main code and bracket tags like [postdeadline]
+  const splitDetails = (details?: string) => {
+    if (!details) return { main: '', tags: [] as string[] };
+    const tags: string[] = [];
+    const main = details.replace(/\s*\[([^\]]+)\]/g, (_m, tag) => {
+      const clean = String(tag).trim();
+      if (clean) tags.push(clean);
+      return '';
+    }).trim();
+    return { main, tags };
+  };
 
   // helper: render author name with superscript markers
   const formatAuthor = (name: string) => {
@@ -60,9 +70,19 @@ const Conference: React.FC = () => {
                         </span>
                       ))}
                     </div>
-                    <span className="text-green-800 dark:text-green-400">
-                      {journalText(pub)}
-                    </span>
+                    {(() => {
+                      const { main, tags } = splitDetails(pub.details);
+                      return (
+                        <>
+                          <span className="text-green-800 dark:text-green-400">
+                            {pub.journal}{main ? ' ' + main : ''} ({pub.year})
+                          </span>
+                          {tags.length > 0 && (
+                            <div className="text-green-800 dark:text-green-400">[{tags.join('] [')}]</div>
+                          )}
+                        </>
+                      );
+                    })()}
                   </div>
                 ))}
               </div>
