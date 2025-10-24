@@ -113,7 +113,7 @@ const Publications: React.FC = () => {
   // descriptor tags shown as plain text (no link)
   const isDescriptorTag = (tag: string) => {
     const t = tag.trim().toLowerCase();
-    return t === "editor’s pick" || t === "editor's pick" || t === 'top downloads' || t === 'invited';
+    return t === "editor’s pick" || t === "editor's pick" || t === 'top downloads' || t === 'invited' || t === 'invited review';
   };
 
   // Build external link for known tags; fallback to Google search
@@ -206,15 +206,15 @@ const Publications: React.FC = () => {
             <div className="space-y-6">
               {preprints.map((pub, index) => (
                 <div key={`preprint-${index}`}>
+                  <div className="text-lg font-normal text-gray-800 dark:text-gray-200">
+                    "{pub.title}"
+                  </div>
                   <div className="text-base text-gray-700 dark:text-gray-300">
                     {pub.authors.map((name, i) => (
                       <span key={i}>
                         {formatAuthor(name)}{i < pub.authors.length - 1 ? ', ' : ''}
                       </span>
                     ))}
-                  </div>
-                  <div className="text-lg font-normal text-gray-800 dark:text-gray-200">
-                    "{pub.title}"
                   </div>
                   {renderJournal(pub)}
                 </div>
