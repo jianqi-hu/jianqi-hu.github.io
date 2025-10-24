@@ -27,12 +27,29 @@ const Publications: React.FC = () => {
     return [...list].sort((a, b) => (order[a.journal] ?? 999) - (order[b.journal] ?? 999));
   };
 
-  // Get list for a year with custom 2022 sorting
+  // Helper to sort 2023 publications in desired order (PRL → Comm Phys → Adv Phot → OPEX cost-effective → OPEX tunable)
+  const sort2023 = (list: Publication[]) => {
+    const rank = (p: Publication) => {
+      if (p.journal === 'Physical Review Letters') return 0;
+      if (p.journal === 'Communication Physics') return 1;
+      if (p.journal === 'Advanced Photonics') return 2;
+      if (p.journal === 'Optics Express') {
+        const t = p.title.toLowerCase();
+        if (t.includes('cost-effective equalization')) return 3;
+        if (t.includes('tunable photo-induced')) return 4;
+        return 5;
+      }
+      return 999;
+    };
+    return [...list].sort((a, b) => rank(a) - rank(b));
+  };
+
+  // Get list for a year with custom sorting
   const getYearList = (year: number) => {
     const base = (year === currentYear
       ? journalPublications.filter(p => p.year === year)
       : priorPublications.filter(p => p.year === year));
-    return year === 2022 ? sort2022(base) : base;
+    return year === 2023 ? sort2023(base) : (year === 2022 ? sort2022(base) : base);
   };
 
   // 仅保留期刊视图，不在页面内展示 Conference 菜单
