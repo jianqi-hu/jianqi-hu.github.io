@@ -44,12 +44,37 @@ const Publications: React.FC = () => {
     return [...list].sort((a, b) => rank(a) - rank(b));
   };
 
+  // Helper to sort 2025 publications in desired order
+  // Desired order: PhotoniX → NC(computational) → Optica(AWG) → NC(self-organized) → IEEE Photonics Journal → Nature Photonics → Optica(Brillouin) → Nature
+  const sort2025 = (list: Publication[]) => {
+    const rank = (p: Publication) => {
+      const j = p.journal;
+      const t = p.title.toLowerCase();
+      if (j === 'PhotoniX') return 0;
+      if (j === 'Nature Communications') {
+        if (t.includes('computational field-resolved coherent chemical imaging')) return 1;
+        if (t.includes('self-organized spatiotemporal quasi-phase-matching')) return 4;
+        return 50;
+      }
+      if (j === 'Optica') {
+        if (t.includes('arrayed waveguide gratings')) return 2;
+        if (t.includes('brillouin')) return 7;
+        return 51;
+      }
+      if (j === 'IEEE Photonics Journal') return 5;
+      if (j === 'Nature Photonics') return 6;
+      if (j === 'Nature') return 8;
+      return 999;
+    };
+    return [...list].sort((a, b) => rank(a) - rank(b));
+  };
+
   // Get list for a year with custom sorting
   const getYearList = (year: number) => {
     const base = (year === currentYear
       ? journalPublications.filter(p => p.year === year)
       : priorPublications.filter(p => p.year === year));
-    return year === 2023 ? sort2023(base) : (year === 2022 ? sort2022(base) : base);
+    return year === 2025 ? sort2025(base) : (year === 2023 ? sort2023(base) : (year === 2022 ? sort2022(base) : base));
   };
 
   // 仅保留期刊视图，不在页面内展示 Conference 菜单
