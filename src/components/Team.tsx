@@ -80,25 +80,7 @@ const Team: React.FC = () => {
 
   const isChinese = (txt?: string) => !!txt && /[\u4e00-\u9fff]/.test(txt);
 
-  const formatEdu = (raw: string) => {
-    const s = raw.replace(/\s+/g, ' ').trim();
-    let degree = '';
-    if (/\b(Doctor of Philosophy|Ph\.?D\.?)\b/i.test(s)) degree = 'PhD';
-    else if (/\b(Master|M\.?Sc\.?|M\.?S\.?|Master of Science)\b/i.test(s)) degree = 'MS';
-    else if (/\b(Bachelor|B\.?Sc\.?|B\.?S\.?|Bachelor of Science)\b/i.test(s)) degree = 'BS';
-    else if (/\b(M\.?Eng\.?|Master of Engineering|MEng)\b/i.test(s)) degree = 'MEng';
 
-    const yearMatch = s.match(/\b(19|20)\d{2}\b/);
-    const year = yearMatch ? yearMatch[0] : '';
-
-    let noParens = s.replace(/\([^)]*\)/g, '').trim();
-    noParens = noParens.replace(/,?\s*\b(19|20)\d{2}\b/, '').trim();
-
-    const parts = noParens.split(',');
-    const university = parts.length > 1 ? parts[parts.length - 1].trim() : noParens;
-
-    return `${degree ? degree + ', ' : ''}${university}${year ? ` (${year})` : ''}`;
-  };
 
   return (
     <section className="py-20 bg-white dark:bg-gray-900 transition-colors duration-300 pt-40 scroll-mt-40">
