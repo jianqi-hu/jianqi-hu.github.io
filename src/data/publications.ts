@@ -283,7 +283,7 @@ export const publications: Publication[] = [
     category: 'Photonics',
     type: 'journal',
     details: '3, 026001',
-    url: 'https://infoscience.epfl.ch/server/api/core/bitstreams/9eae6970-714a-4d3a-9f22-df560aa1f8d6/content'
+    url: 'https://www.spiedigitallibrary.org/journals/advanced-photonics-nexus/volume-3/issue-2/026001/Azimuthal-beam-shaping-in-orbital-angular-momentum-basis/10.1117/1.APN.3.2.026001.full'
   },
   {
     title: 'Integrated backward second-harmonic generation through optically induced quasi-phase matching',
