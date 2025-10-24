@@ -110,7 +110,7 @@ const Team: React.FC = () => {
                         className="w-full h-full object-cover"
                       />
                     </div>
-                    <h3 className="text-lg font-semibold">{member.name}</h3>
+                    <h3 className="text-lg font-semibold text-gray-700 dark:text-gray-300">{member.name}</h3>
                     {member.chineseName && (
                       <p className="text-sm text-gray-600 dark:text-gray-400">
                         <span className="font-hei">{member.chineseName}</span>
@@ -128,7 +128,7 @@ const Team: React.FC = () => {
                   <div className="space-y-3">
                     {category.name !== 'Professors' && member.education && (
                       <div>
-                        <p className="text-sm font-medium">Education</p>
+                        <p className="text-sm font-medium text-gray-700 dark:text-gray-300">Education</p>
                         {Array.isArray(member.education) ? (
                           <div className="text-sm text-gray-600 dark:text-gray-400 space-y-1">
                             {member.education.map((edu: string, i: number) => (
@@ -145,21 +145,21 @@ const Team: React.FC = () => {
 
                     {category.name === 'Principal investigator' && member.email && (
                       <div>
-                        <p className="text-sm font-medium">Email</p>
+                        <p className="text-sm font-medium text-gray-700 dark:text-gray-300">Email</p>
                         <p className="text-sm text-gray-600 dark:text-gray-400">{member.email}</p>
                       </div>
                     )}
 
                     {category.name === 'PhD Students' && member.email && (
                       <div>
-                        <p className="text-sm font-medium">Email</p>
+                        <p className="text-sm font-medium text-gray-700 dark:text-gray-300">Email</p>
                         <p className="text-sm text-gray-600 dark:text-gray-400">{member.email}</p>
                       </div>
                     )}
 
                     {category.name === 'Visitors' && member.email && (
                       <div>
-                        <p className="text-sm font-medium">Email</p>
+                        <p className="text-sm font-medium text-gray-700 dark:text-gray-300">Email</p>
                         <p className="text-sm text-gray-600 dark:text-gray-400">{member.email}</p>
                       </div>
                     )}
