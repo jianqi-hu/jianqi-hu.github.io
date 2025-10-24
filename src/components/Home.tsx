@@ -109,7 +109,7 @@ const Home: React.FC = () => {
             <h3 className="text-2xl font-bold mb-3">Join Us</h3>
             <div className="space-y-4 mb-6 text-gray-600 dark:text-gray-300 text-justify">
               <p>
-                We are always seeking highly motivated and talented students/postdocs/visitors to join our group. Prior experience in research areas such as integrated (nonlinear) photonics, lasers, photonic computing and structured light is preferred but not required.
+                We are always seeking motivated and talented students/postdocs/visitors to join our group. Prior experience in research areas such as integrated (nonlinear) photonics, lasers, photonic computing and structured light is preferred but not required.
               </p>
               <p>
                 If you are passionate about pushing the frontiers of photonics with us, please contact Dr. Jianqi Hu (

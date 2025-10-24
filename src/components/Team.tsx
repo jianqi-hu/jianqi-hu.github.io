@@ -75,7 +75,7 @@ const Team: React.FC = () => {
   ];
 
   const categories = [
-    { name: 'Principal investigator', members: teamMembers.filter(m => m.role.includes('Professor')) },
+    { name: 'Principal Investigator', members: teamMembers.filter(m => m.role.includes('Professor')) },
     { name: 'PhD Students', members: teamMembers.filter(m => m.role.includes('Student') && !m.role.includes('Visiting')) },
     { name: 'Visitors', members: teamMembers.filter(m => m.role.includes('Visiting')) }
   ];
@@ -162,7 +162,7 @@ const Team: React.FC = () => {
                       </div>
                     )}
 
-                    {category.name === 'Principal investigator' && member.email && (
+                    {category.name === 'Principal Investigator' && member.email && (
                       <div>
                         <p className="text-sm font-medium text-gray-700 dark:text-gray-300">Email</p>
                         <p className="text-sm text-gray-600 dark:text-gray-400">{member.email}</p>
