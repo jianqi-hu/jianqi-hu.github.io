@@ -43,7 +43,7 @@ const Team: React.FC = () => {
       name: 'Shaoyuan Ou',
       title: '欧绍源',
       role: 'PhD Student',
-      education: ['Bachelor in Optoelectronic Information Science and Engineering, Sun Yat-Sen University(SYSU)','Master in Electrical Engineering, University of Southern California(USC)'],
+      education: ['B.E., Sun Yat-Sen University','M.S., University of Southern California'],
       research: ['Optical computing', 'Integrated photonics'],
       email: 'oushaoyu@usc.edu',
       publications: 8,
@@ -54,7 +54,7 @@ const Team: React.FC = () => {
       name: 'Yuzhong Wang',
       title: '王禹忠',
       role: 'Visiting PhD Student',
-      education: ['Bachelor in Electromagnetic Fields and Wireless Technologies, HIT'],
+      education: ['B.E. HIT'],
       research: ['Microwave Photonics', 'Optical Computing', 'Electromagnetic Sensing'],
       email: 'hitwyz@stu.hit.edu.cn',
       publications: 3,
@@ -64,7 +64,7 @@ const Team: React.FC = () => {
       name: 'Xiaofu Pan',
       title: '潘孝夫',
       role: 'PhD Student',
-      education: ['Bachelor in Optoelectronic Information Science and Engineering, HUST','Master in Electronic Information, ZJU'],
+      education: ['B.E., HUST','M.E., ZJU'],
       research: ['Integrated photonics', 'Optical comunication'],
       email: 'xiaofupan@connect.hku.hk',
       publications: 3,
@@ -150,13 +150,12 @@ const Team: React.FC = () => {
                         {Array.isArray(member.education) ? (
                           <div className="text-sm text-gray-600 dark:text-gray-400 space-y-1">
                             {member.education.map((edu: string, i: number) => (
-                            -                              <p key={i}>{formatEdu(edu)}</p>
-                            +                              <p key={i}>{edu}</p>
+                              <p key={i}>{edu}</p>
                             ))}
                           </div>
                         ) : (
                           <p className="text-sm text-gray-600 dark:text-gray-400">
-                            {formatEdu(String(member.education))}
+                            {String(member.education)}
                           </p>
                         )}
                       </div>
@@ -186,28 +185,7 @@ const Team: React.FC = () => {
 
                   {/* Email icon for non-students */}
                   {category.name !== 'PhD Students' && category.name !== 'Visitors' && member.email && (
-                    <div className="mt-4">
-                      <a
-                        href={`mailto:${member.email}`}
-                        className="inline-flex items-center text-hku-green hover:text-hku-darkGreen"
-                        aria-label={`Email ${member.name}`}
-                      >
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          strokeWidth={1.5}
-                          stroke="currentColor"
-                          className="w-5 h-5"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25H4.5a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.06 1.916l-7.5 4.5a2.25 2.25 0 01-2.28 0l-7.5-4.5A2.25 2.25 0 012.25 6.993V6.75"
-                          />
-                        </svg>
-                      </a>
-                    </div>
+                    null
                   )}
                 </div>
               ))}
