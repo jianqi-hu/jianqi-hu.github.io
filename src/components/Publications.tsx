@@ -45,7 +45,7 @@ const Publications: React.FC = () => {
   };
 
   // Helper to sort 2025 publications in desired order
-  // Desired order: PhotoniX → NC(computational) → Optica(AWG) → NC(self-organized) → IEEE Photonics Journal → Nature Photonics → Optica(Brillouin) → Nature
+  // Desired order: PhotoniX → NC(computational) → LSA(reservoir computing) → Optica(AWG) → NC(self-organized) → IEEE Photonics Journal → Nature Photonics → Optica(Brillouin) → Nature
   const sort2025 = (list: Publication[]) => {
     const rank = (p: Publication) => {
       const j = p.journal;
@@ -56,8 +56,10 @@ const Publications: React.FC = () => {
         if (t.includes('self-organized spatiotemporal quasi-phase-matching')) return 4;
         return 50;
       }
+      // Place Light: Science & Applications (Optical next generation reservoir computing) between NC(computational) and Optica(AWG)
+      if (j === 'Light: Science & Applications') return 2;
       if (j === 'Optica') {
-        if (t.includes('arrayed waveguide gratings')) return 2;
+        if (t.includes('arrayed waveguide gratings')) return 3;
         if (t.includes('brillouin')) return 7;
         return 51;
       }
