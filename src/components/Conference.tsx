@@ -18,20 +18,24 @@ const Conference: React.FC = () => {
     return { main, tags };
   };
 
-  // helper: render author name with superscript markers
+  // helper: render author name with superscript markers; group punctuation with markers
   const formatAuthor = (name: string) => {
-    const parts = name.split(/(†|∗|\*)/);
-    return (
-      <>
-        {parts.map((p, idx) =>
-          p === '†' || p === '∗' || p === '*' ? (
-            <sup key={idx}>{p === '*' ? '*' : p}</sup>
-          ) : (
-            <span key={idx}>{p}</span>
-          )
-        )}
-      </>
-    );
+    const nodes: React.ReactNode[] = [];
+    const re = /(†|\*|∗)(?:[,\s]*(?:†|\*|∗))*/g;
+    let last = 0;
+    let m: RegExpExecArray | null;
+    while ((m = re.exec(name)) !== null) {
+      const start = m.index;
+      if (start > last) {
+        nodes.push(<span key={`text-${last}`}>{name.slice(last, start)}</span>);
+      }
+      nodes.push(<sup key={`sup-${start}`}>{m[0].replace(/\s+/g, '')}</sup>);
+      last = re.lastIndex;
+    }
+    if (last < name.length) {
+      nodes.push(<span key={`text-${last}`}>{name.slice(last)}</span>);
+    }
+    return <>{nodes}</>;
   };
 
   // 计算会议编号：底部为 [C1]，向上递增

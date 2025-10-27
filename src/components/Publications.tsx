@@ -82,20 +82,24 @@ const Publications: React.FC = () => {
   // 生成 Google Scholar 搜索链接（如果没有具体链接）
   const scholarLink = (title: string) => `https://scholar.google.com/scholar?q=${encodeURIComponent(title)}`;
 
-  // helper: render author name with superscript markers
+  // helper: render author name with superscript markers; group punctuation with markers
   const formatAuthor = (name: string) => {
-    const parts = name.split(/(†|∗|\*)/);
-    return (
-      <>
-        {parts.map((p, idx) =>
-          p === '†' || p === '∗' || p === '*' ? (
-            <sup key={idx}>{p === '*' ? '*' : p}</sup>
-          ) : (
-            <span key={idx}>{p}</span>
-          )
-        )}
-      </>
-    );
+    const nodes: React.ReactNode[] = [];
+    const re = /(†|\*|∗)(?:[,\s]*(?:†|\*|∗))*/g;
+    let last = 0;
+    let m: RegExpExecArray | null;
+    while ((m = re.exec(name)) !== null) {
+      const start = m.index;
+      if (start > last) {
+        nodes.push(<span key={`text-${last}`}>{name.slice(last, start)}</span>);
+      }
+      nodes.push(<sup key={`sup-${start}`}>{m[0].replace(/\s+/g, '')}</sup>);
+      last = re.lastIndex;
+    }
+    if (last < name.length) {
+      nodes.push(<span key={`text-${last}`}>{name.slice(last)}</span>);
+    }
+    return <>{nodes}</>;
   };
 
   // Split details into main (volume/pages) and bracket tags like [EPFL News]
