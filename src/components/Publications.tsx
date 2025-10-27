@@ -202,13 +202,13 @@ const Publications: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="section-title">Publications</h2>
-          {/* superscript legend between Publications and Preprints */}
-          <p className="text-sm text-gray-600 dark:text-gray-400 mt-2">
-            <sup>†</sup> equal contribution, <sup>*</sup> correspondence
-          </p>
         </div>
 
         <div className="max-w-3xl mx-auto">
+          {/* superscript legend: left-aligned, flush with content width */}
+          <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
+            <sup>†</sup> equal contribution, <sup>*</sup> correspondence
+          </p>
           {/* Preprints（置于 2025 年之前） */}
           <div className="mb-12 -mt-4">
             <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">Preprints</h3>
