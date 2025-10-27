@@ -11,7 +11,7 @@ const Contact: React.FC = () => {
         </svg>
       ),
       title: 'Address',
-      content: 'Room 719, Building Chow Yei Ching ，\nThe University of Hong Kong'
+      content: 'Room 719, Building Chow Yei Ching,\nThe University of Hong Kong'
     },
     {
       icon: (

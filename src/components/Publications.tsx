@@ -200,15 +200,16 @@ const Publications: React.FC = () => {
   return (
     <section className="pt-40 pb-20 bg-white dark:bg-gray-900 transition-colors duration-300 scroll-mt-40">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
+        <div className="text-center mb-8">
           <h2 className="section-title">Publications</h2>
+          <div className="max-w-3xl mx-auto">
+            <p className="text-sm text-gray-600 dark:text-gray-400 mt-2 text-left">
+              <sup>†</sup> equal contribution, <sup>*</sup> correspondence
+            </p>
+          </div>
         </div>
 
         <div className="max-w-3xl mx-auto">
-          {/* superscript legend: left-aligned, flush with content width */}
-          <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
-            <sup>†</sup> equal contribution, <sup>*</sup> correspondence
-          </p>
           {/* Preprints（置于 2025 年之前） */}
           <div className="mb-12 -mt-4">
             <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">Preprints</h3>
