@@ -29,7 +29,14 @@ const Conference: React.FC = () => {
       if (start > last) {
         nodes.push(<span key={`text-${last}`}>{name.slice(last, start)}</span>);
       }
-      nodes.push(<sup key={`sup-${start}`}>{m[0].replace(/\s+/g, '')}</sup>);
+      const raw = m[0];
+      const markers = raw.match(/(†|\*|∗)/g) || [];
+      const hasComma = raw.includes(',');
+      const daggers = markers.filter(ch => ch === '†');
+      const stars = markers.filter(ch => ch === '*' || ch === '∗');
+      const ordered = [...daggers, ...stars];
+      const content = ordered.join(hasComma && ordered.length > 1 ? ',' : '');
+      nodes.push(<sup key={`sup-${start}`}>{content || raw.replace(/\s+/g, '')}</sup>);
       last = re.lastIndex;
     }
     if (last < name.length) {
