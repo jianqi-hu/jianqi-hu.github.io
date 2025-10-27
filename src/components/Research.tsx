@@ -18,7 +18,7 @@ const Research: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6 items-start">
             <div className="space-y-4 text-gray-700 dark:text-gray-300 leading-relaxed text-justify">
               <p>
-                Integrated nonlinear photonics merges the principles of nonlinear optics with photonic integrated circuits. With highly nonlinear optical materials, tightly confined modes, and flexible dispersion engineering, integrated photonics provides an ideal platform for studying nonlinear optics phenomena. Our research focuses on the fundamentals and applications of various χ^((2)) and  χ^((3)) nonlinear effects in microresonators across different material platform. One of our interests is on photo-induced χ^((2)) nonlinear effects in silicon nitride photonics.
+                Integrated nonlinear photonics merges the principles of nonlinear optics with photonic integrated circuits. With highly nonlinear optical materials, tightly confined modes, and flexible dispersion engineering, integrated photonics provides an ideal platform for studying nonlinear optics phenomena. Our research focuses on the fundamentals and applications of various χ<sup>(2)</sup> and χ<sup>(3)</sup> nonlinear effects in microresonators across different material platform. One of our interests is on photo-induced χ<sup>(2)</sup> nonlinear effects in silicon nitride photonics.
               </p>
               <div className="mt-2 text-base text-gray-700 dark:text-gray-300">
                 <span>Related publications:</span>
