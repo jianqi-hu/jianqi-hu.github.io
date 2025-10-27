@@ -23,7 +23,7 @@ export const preprints: Publication[] = [
   },
   {
     title: 'Integrated tunable green light source on silicon nitride',
-    authors: ['G. Wang', 'O. Yakar', 'X. Ji', 'M. Clementi', 'J. Zhou', 'C. Lafforgue', 'J. Wu', 'J. Hu', 'T. J. Kippenberg', 'C.-S. Brès'],
+    authors: ['G. Wang', 'O. Yakar', 'X. Ji', 'M. Clementi', 'J. Zhou', 'C. Lafforgue', 'J. Wu', 'J. Hu', 'T. J. Kippenberg', 'C.-S. Brès∗'],
     journal: 'arXiv:2504.13662',
     year: 2025,
     category: 'Photonics',
@@ -126,7 +126,7 @@ export const publications: Publication[] = [
   },
   {
     title: 'Photo-induced cascaded harmonic and comb generation in silicon nitride microresonators',
-    authors: ['J. Hu†', 'E. Nitiss†', 'J. He', 'J. Liu', 'O. Yakar', 'T. J. Kippenberg', 'C.-S. Brès∗'],
+    authors: ['J. Hu†', 'E. Nitiss†', 'J. He', 'J. Liu', 'O. Yakar', 'W. Weng', 'T. J. Kippenberg', 'C.-S. Brès∗'],
     journal: 'Science Advances',
     year: 2022,
     category: 'Photonics',
@@ -170,7 +170,7 @@ export const publications: Publication[] = [
   },
   {
     title: 'Reconfigurable radiofrequency filters based on versatile soliton microcombs',
-    authors: ['J. Hu†,∗', 'J. He†', 'J. Liu', 'A. S. Raja', 'M. Karpov', 'A. Lukashchuk', 'T. J. Kippenberg∗', 'C.-S. Brès∗'],
+    authors: ['J. Hu†', 'J. He†', 'J. Liu', 'A. S. Raja', 'M. Karpov', 'A. Lukashchuk', 'T. J. Kippenberg∗', 'C.-S. Brès∗'],
     journal: 'Nature Communications',
     year: 2020,
     category: 'Photonics',
@@ -184,7 +184,7 @@ export const publications: Publication[] = [
   },
   {
     title: 'Investigation of temporal Talbot effect in a conventional optical tapped delay line structure',
-    authors: ['J. Hu†', 'S. J. Fabbri', 'C.-B. Huang', 'C.-S. Brès'],
+    authors: ['J. Hu∗', 'S. J. Fabbri', 'C.-B. Huang', 'C.-S. Brès'],
     journal: 'Optics Express',
     year: 2019,
     category: 'Photonics',
@@ -222,7 +222,7 @@ export const publications: Publication[] = [
 
   {
     title: 'Dispersion-Engineered Compact Twisted Metasurfaces Enabling 3D Frequency-Reconfigurable Holography',
-    authors: ['C. Pang∗', 'Y. Wang∗,†', 'P. Wang', 'A. Yu', 'Y. Liu', 'Z. Yue', 'M. Hu', 'J. Hu', 'Y. Dong', 'J. Qi†'],
+    authors: ['C. Pang†', 'Y. Wang†,∗', 'P. Wang', 'A. Yu', 'Y. Liu', 'Z. Yue', 'M. Hu', 'J. Hu', 'Y. Dong', 'J. Qi∗'],
     journal: 'PhotoniX',
     year: 2025,
     category: 'Photonics',
@@ -243,7 +243,7 @@ export const publications: Publication[] = [
 
   {
     title: 'Arrayed waveguide gratings in lithium tantalate integrated photonics',
-    authors: ['S. U. Hulyal', 'J. Hu', 'C. Wang', 'J. Cai', 'G. Lihachev', 'T. J. Kippenberg'],
+    authors: ['S. U. Hulyal', 'J. Hu', 'C. Wang', 'J. Cai', 'G. Lihachev', 'T. J. Kippenberg∗'],
     journal: 'Optica',
     year: 2025,
     category: 'Photonics',
@@ -263,7 +263,7 @@ export const publications: Publication[] = [
   },
   {
     title: 'Ultrabroadband integrated electro-optic frequency comb in lithium tantalate',
-    authors: ['J. Zhang†', 'C. Wang†', 'C. Denney†', 'J. Riemensberger†', 'G. Lihachev', 'J. Hu', 'W. Kao', 'T. Blésin', 'N. Kuznetsov', 'Z. Li', 'M. Churaev', 'X. Ou', 'G. Santamaria-Botello∗', 'T. J. Kippenberg∗'],
+    authors: ['J. Zhang†', 'C. Wang†', 'C. Denney†', 'J. Riemensberger†', 'G. Lihachev', 'J. Hu', 'W. Kao', 'T. Blésin', 'N. Kuznetsov', 'Z. Li', 'M. Churaev', 'X. Ou∗', 'G. Santamaria-Botello∗', 'T. J. Kippenberg∗'],
     journal: 'Nature',
     year: 2025,
     category: 'Photonics',
