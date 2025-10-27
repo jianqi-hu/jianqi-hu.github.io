@@ -202,7 +202,10 @@ const Publications: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="section-title">Publications</h2>
-          {/* 副标题移除：原有 Google Scholar 提示文字删除 */}
+          {/* superscript legend between Publications and Preprints */}
+          <p className="text-sm text-gray-600 dark:text-gray-400 mt-2">
+            <sup>†</sup> equal contribution, <sup>*</sup> correspondence
+          </p>
         </div>
 
         <div className="max-w-3xl mx-auto">
