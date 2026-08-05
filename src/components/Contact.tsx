@@ -95,7 +95,7 @@ const Contact: React.FC = () => {
           <ul className="space-y-3 list-disc list-inside text-gray-700 dark:text-gray-300">
             <li>
               <a className="text-hku-green hover:underline" href="https://www.eee.hku.hk/" target="_blank" rel="noopener noreferrer">
-                Department of Electrical and Electronic Engineering
+                Department of Electrical and Computer Engineering
               </a>
             </li>
             <li>
