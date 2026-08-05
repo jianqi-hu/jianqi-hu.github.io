@@ -8,7 +8,7 @@ const Team: React.FC = () => {
       title: '',
       role: 'Assistant Professor',
       employment: [
-        '08/2025 Assistant Professor, Department of Electrical and Electronic Engineering, The University of Hong Kong',
+        '08/2025 Assistant Professor, Department of Electrical and Computer Engineering, The University of Hong Kong',
         'Postdoc, École Polytechnique Fédérale de Lausanne',
         'Postdoc, Ecole Normale Supérieure'
       ],
