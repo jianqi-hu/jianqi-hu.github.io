@@ -42,6 +42,16 @@ const Team: React.FC = () => {
       avatar: 'https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=150&h=150&fit=crop&crop=face'
     },
     {
+      name: 'Xiaofu Pan',
+      title: '潘孝夫',
+      role: 'PhD Student',
+      education: ['B.E., Huazhong University of Science and Technology','M.E., Zhejiang University'],
+      research: ['Integrated photonics', 'Optical comunication'],
+      email: 'xiaofupan@connect.hku.hk',
+      publications: 3,
+      avatar: '/Xiaofu.jpg'
+    },
+    {
       name: 'Shaoyuan Ou',
       title: '歐紹源',
       role: 'PhD Student',
@@ -51,7 +61,26 @@ const Team: React.FC = () => {
       publications: 8,
       avatar: '/Shaoyuan.jpg'
     },
-
+    // ================= 1. 在这里填入新增的 PhD 学生信息 =================
+    {
+      name: 'Zhengyuan Bao',
+      title: '鮑正源',
+      role: 'PhD Student',
+      education: ['B.E., Zhejiang University','M.E., Zhejiang University'],
+      research: ['Research Area 1', 'Research Area 2'],
+      email: '1417817315@qq.com',
+      avatar: '/Zhengyuan.jpg' // 图片记得提前传到 public 文件夹
+    },
+    // ================= 2. 在这里填入新增的 Master 学生信息 =================
+    {
+      name: 'Jijia Luo',
+      title: '駱季佳',
+      role: 'Master Student',
+      education: ['B.E.，Wuhan University'],
+      research: ['Research Area 1'],
+      email: 'logic271828@gmail.com',
+      avatar: '/Jijia.jpg' // 图片记得提前传到 public 文件夹
+    },
     {
       name: 'Yuzhong Wang',
       title: '王禹忠',
@@ -61,28 +90,18 @@ const Team: React.FC = () => {
       email: 'hitwyz@stu.hit.edu.cn',
       publications: 3,
       avatar: '/Yuzhong.jpg'
-    },
-    {
-      name: 'Xiaofu Pan',
-      title: '潘孝夫',
-      role: 'PhD Student',
-      education: ['B.E., Huazhong University of Science and Technology','M.E., Zhejiang University'],
-      research: ['Integrated photonics', 'Optical comunication'],
-      email: 'xiaofupan@connect.hku.hk',
-      publications: 3,
-      avatar: '/Xiaofu.jpg'
     }
   ];
 
+  // 严格保持原有的过滤方式，仅把名字换成 'Others' 和新增 'Master Students'
   const categories = [
     { name: 'Principal Investigator', members: teamMembers.filter(m => m.role.includes('Professor')) },
-    { name: 'PhD Students', members: teamMembers.filter(m => m.role.includes('Student') && !m.role.includes('Visiting')) },
-    { name: 'Visitors', members: teamMembers.filter(m => m.role.includes('Visiting')) }
+    { name: 'PhD Students', members: teamMembers.filter(m => m.role.includes('Student') && !m.role.includes('Visiting') && !m.role.includes('Master')) },
+    { name: 'Master Students', members: teamMembers.filter(m => m.role.includes('Master')) },
+    { name: 'Others', members: teamMembers.filter(m => m.role.includes('Visiting')) }
   ];
 
   const isChinese = (txt?: string) => !!txt && /[\u4e00-\u9fff]/.test(txt);
-
-
 
   return (
     <section className="py-20 bg-white dark:bg-gray-900 transition-colors duration-300 pt-40 scroll-mt-40">
@@ -91,8 +110,6 @@ const Team: React.FC = () => {
           <h2 className="section-title">Team Members</h2>
           {/* 副标题移除 */}
         </div>
-
-        {/* Team Statistics removed per request */}
 
         {/* Team Members by Category */}
         {categories.map((category, categoryIndex) => (
@@ -176,7 +193,14 @@ const Team: React.FC = () => {
                       </div>
                     )}
 
-                    {category.name === 'Visitors' && member.email && (
+                    {category.name === 'Master Students' && member.email && (
+                      <div>
+                        <p className="text-sm font-medium text-gray-700 dark:text-gray-300">Email</p>
+                        <p className="text-sm text-gray-600 dark:text-gray-400">{member.email}</p>
+                      </div>
+                    )}
+
+                    {category.name === 'Others' && member.email && (
                       <div>
                         <p className="text-sm font-medium text-gray-700 dark:text-gray-300">Email</p>
                         <p className="text-sm text-gray-600 dark:text-gray-400">{member.email}</p>
@@ -185,7 +209,7 @@ const Team: React.FC = () => {
                   </div>
 
                   {/* Email icon for non-students */}
-                  {category.name !== 'PhD Students' && category.name !== 'Visitors' && member.email && (
+                  {category.name !== 'PhD Students' && category.name !== 'Master Students' && category.name !== 'Others' && member.email && (
                     null
                   )}
                 </div>
@@ -193,8 +217,6 @@ const Team: React.FC = () => {
             </div>
           </div>
         ))}
-
-
       </div>
     </section>
   );
