@@ -13,40 +13,76 @@ export interface Publication {
 
 export const preprints: Publication[] = [
   {
-    title: 'High-pulse-energy integrated mode-locked lasers based on a Mamyshev oscillator',
-    authors: ['Z. Qiu†', 'J. Hu†', 'X. Yang†', 'Z. Liu', 'Y. Zhang', 'X. Ji', 'J. Sun', 'G. Lihachev', 'X. Li', 'Z. Li', 'U. Kentsch', 'T. J. Kippenberg∗'],
-    journal: 'arXiv:2509.05133',
-    year: 2025,
-    category: 'Photonics',
-    type: 'preprint',
-    url: 'https://arxiv.org/abs/2509.05133'
+    title: "TRON: Trainable, architecture-reconfigurable random optical neural networks",
+    authors: ["Z. Wang†", "F. Xia†,*", "L. G. Wright", "T. Onodera", "M. Stein", "J. Hu", "P. McMahon", "S. Gigan*"],
+    journal: "arXiv:2604.16228",
+    year: 2026,
+    url: "https://arxiv.org/abs/2604.16228",
+    type: "preprint"
   },
   {
-    title: 'Integrated tunable green light source on silicon nitride',
-    authors: ['G. Wang', 'O. Yakar', 'X. Ji', 'M. Clementi', 'J. Zhou', 'C. Lafforgue', 'J. Wu', 'J. Hu', 'T. J. Kippenberg', 'C.-S. Brès∗'],
-    journal: 'arXiv:2504.13662',
-    year: 2025,
-    category: 'Photonics',
-    type: 'preprint',
-    url: 'https://arxiv.org/abs/2504.13662'
+    title: "Self-Configuring Universal Multichannel and Multidimensional Integrated Photonic Processing Engine",
+    authors: ["Z. Chen†", "W. Zhou†", "H. Chen†", "K. Lu", "Y. Cui", "Y. Yin", "M. Zhang", "X. Pan", "J. Hu", "Y. Tong*"],
+    journal: "Optica, arXiv:2604.11763",
+    year: 2026,
+    url: "https://arxiv.org/abs/2604.11763",
+    type: "preprint"
   },
   {
-    title: 'Roadmap on Neuromorphic Photonics',
-    authors: ['D. Brunner∗', 'B. J. Shastri∗', '... J. Hu', '... W. Zhang'],
-    journal: 'arXiv:2501.07917',
+    title: "Training deep physical neural networks with local physical information bottleneck",
+    authors: ["H. Wang†", "Z. Wang†", "X. Liang", "H. Zhao", "J. Hu", "J. Jiang", "X. Fu", "J. Tang", "H. Wu", "S. Gigan*", "Q. Liu*"],
+    journal: "arXiv:2602.09569",
+    year: 2026,
+    url: "https://arxiv.org/abs/2602.09569",
+    type: "preprint"
+  },
+  {
+    title: "Uncertainty Reasoning with Photonic Bayesian Machines",
+    authors: ["F. Brückerhoff-Plückelmann†", "H. Borras†", "S. U. Hulyal†", "L. Meyer", "X. Ji", "J. Hu", "J. Sun", "B. Klein", "F. Ebert", "J. Dijkstra", "L. McRae", "P. Schmidt", "T. J. Kippenberg", "H. Fröning", "W. Pernice*"],
+    journal: "arXiv:2512.02217",
     year: 2025,
-    category: 'Photonics',
-    type: 'preprint',
-    details: '[Invited review]',
-    url: 'https://arxiv.org/abs/2501.07917'
+    url: "https://arxiv.org/abs/2512.02217",
+    type: "preprint"
+  },
+  {
+    title: "Roadmap on Neuromorphic Photonics",
+    authors: ["D. Brunner*", "B. J. Shastri*", "... J. Hu", "... W. Zhang"],
+    journal: "arXiv:2501.07917",
+    year: 2025,
+    details: "[Invited review]",
+    url: "https://arxiv.org/abs/2501.07917",
+    type: "preprint"
   }
 ];
 
 
 export const publications: Publication[] = [
 
-
-
+{
+    title: "Large-scale integrated optoelectronic chaos for machine learning acceleration",
+    authors: ["Z. Pan†", "Z. Zheng†", "P. Li", "H. Wang", "J. Guo", "D. Cui", "Z. Li", "J. Shen", "L. Wang", "M. Zong", "S. Li", "Z. Kang", "Y. Yuan", "J. Hu", "J. He*", "Y. Liang*", "D. Zhu*", "S. Pan*"],
+    journal: "Nature Communications",
+    details: "17, 7488",
+    year: 2026,
+    type: "journal"
+  },
+  {
+    title: "High-pulse-energy integrated mode-locked lasers based on a Mamyshev oscillator",
+    authors: ["Z. Qiu†", "X. Yang†", "X. Li†", "J. Hu†", "Z. Liu", "Y. Zhang", "X. Ji", "J. Sun", "G. Lihachev", "X. Li", "Z. Li", "U. Kentsch", "T. J. Kippenberg*"],
+    journal: "Nature",
+    details: "654, 57–63",
+    year: 2026,
+    type: "journal"
+  },
+  {
+    title: "Integrated tunable green light source on silicon nitride",
+    authors: ["G. Wang", "O. Yakar", "X. Ji", "M. Clementi", "J. Zhou", "C. Lafforgue", "J. Wu", "J. Hu", "T. J. Kippenberg", "C.-S. Brès*"],
+    journal: "Light: Science & Applications",
+    details: "15, 136",
+    year: 2026,
+    type: "journal"
+  },
+// ... 保留之前原本已有的 2025、2024 等年份的论文数据
   {
     title: 'Optical next generation reservoir computing',
     authors: ['H. Wang†', 'J. Hu†,∗', 'Y. Baek', 'K. Tsuchiyama', 'M. Joly', 'Q. Liu∗', 'S. Gigan∗'],
