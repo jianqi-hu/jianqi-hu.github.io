@@ -70,7 +70,8 @@ export const publications: Publication[] = [
     details: "17, 7488",
     year: 2026,
     type: "journal",
-    category: "journal"  // <--- 加上这一行！
+    category: "journal" ,
+    url: 'https://www.nature.com/articles/s41467-026-73440-2'
   },
   {
     title: "High-pulse-energy integrated mode-locked lasers based on a Mamyshev oscillator",
@@ -79,7 +80,8 @@ export const publications: Publication[] = [
     details: "654, 57–63",
     year: 2026,
     type: "journal",
-    category: "journal"  // <--- 加上这一行！
+    category: "journal",
+    url: 'https://www.nature.com/articles/s41586-026-10517-4'
   },
   {
     title: "Integrated tunable green light source on silicon nitride",
@@ -88,7 +90,8 @@ export const publications: Publication[] = [
     details: "15, 136",
     year: 2026,
     type: "journal",
-    category: "journal"  // <--- 加上这一行！
+    category: "journal" ,
+    url: 'https://www.nature.com/articles/s41377-026-02222-8'
   },
 // ... 保留之前原本已有的 2025、2024 等年份的论文数据
   {
