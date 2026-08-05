@@ -18,7 +18,8 @@ export const preprints: Publication[] = [
     journal: "arXiv:2604.16228",
     year: 2026,
     url: "https://arxiv.org/abs/2604.16228",
-    type: "preprint"
+    type: "preprint",
+    category: "journal"  // <--- 加上这一行！
   },
   {
     title: "Self-Configuring Universal Multichannel and Multidimensional Integrated Photonic Processing Engine",
@@ -26,7 +27,8 @@ export const preprints: Publication[] = [
     journal: "Optica, arXiv:2604.11763",
     year: 2026,
     url: "https://arxiv.org/abs/2604.11763",
-    type: "preprint"
+    type: "preprint",
+    category: "journal"  // <--- 加上这一行！
   },
   {
     title: "Training deep physical neural networks with local physical information bottleneck",
@@ -34,7 +36,8 @@ export const preprints: Publication[] = [
     journal: "arXiv:2602.09569",
     year: 2026,
     url: "https://arxiv.org/abs/2602.09569",
-    type: "preprint"
+    type: "preprint",
+    category: "journal"  // <--- 加上这一行！
   },
   {
     title: "Uncertainty Reasoning with Photonic Bayesian Machines",
@@ -42,7 +45,8 @@ export const preprints: Publication[] = [
     journal: "arXiv:2512.02217",
     year: 2025,
     url: "https://arxiv.org/abs/2512.02217",
-    type: "preprint"
+    type: "preprint",
+    category: "journal"  // <--- 加上这一行！
   },
   {
     title: "Roadmap on Neuromorphic Photonics",
@@ -51,7 +55,8 @@ export const preprints: Publication[] = [
     year: 2025,
     details: "[Invited review]",
     url: "https://arxiv.org/abs/2501.07917",
-    type: "preprint"
+    type: "preprint",
+    category: "journal"  // <--- 加上这一行！
   }
 ];
 
@@ -64,7 +69,8 @@ export const publications: Publication[] = [
     journal: "Nature Communications",
     details: "17, 7488",
     year: 2026,
-    type: "journal"
+    type: "journal",
+    category: "journal"  // <--- 加上这一行！
   },
   {
     title: "High-pulse-energy integrated mode-locked lasers based on a Mamyshev oscillator",
@@ -72,7 +78,8 @@ export const publications: Publication[] = [
     journal: "Nature",
     details: "654, 57–63",
     year: 2026,
-    type: "journal"
+    type: "journal",
+    category: "journal"  // <--- 加上这一行！
   },
   {
     title: "Integrated tunable green light source on silicon nitride",
@@ -80,7 +87,8 @@ export const publications: Publication[] = [
     journal: "Light: Science & Applications",
     details: "15, 136",
     year: 2026,
-    type: "journal"
+    type: "journal",
+    category: "journal"  // <--- 加上这一行！
   },
 // ... 保留之前原本已有的 2025、2024 等年份的论文数据
   {
