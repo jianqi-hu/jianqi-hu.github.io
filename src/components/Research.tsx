@@ -55,7 +55,7 @@ const Research: React.FC = () => {
               <div className="mt-2 text-base text-gray-700 dark:text-gray-300">
                 <span>Related publications:</span>
                 <div>
-                  <a href="https://arxiv.org/abs/2509.05133" target="_blank" rel="noopener noreferrer" className="text-hku-green hover:underline">arXiv (2025)</a>
+                  <a href="https://www.nature.com/articles/s41586-026-10517-4" target="_blank" rel="noopener noreferrer" className="text-hku-green hover:underline">Nature (2026)</a>
                 </div>
               </div>
             </div>
