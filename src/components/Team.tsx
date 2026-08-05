@@ -76,7 +76,7 @@ const Team: React.FC = () => {
       name: 'Jijia Luo',
       title: '駱季佳',
       role: 'Master Student',
-      education: ['B.E.，Wuhan University'],
+      education: ['B.E., Wuhan University'],
       research: ['Research Area 1'],
       email: 'logic271828@gmail.com',
       avatar: '/Jijia.jpg' // 图片记得提前传到 public 文件夹
@@ -86,7 +86,7 @@ const Team: React.FC = () => {
       title: '王禹忠',
       role: 'Visiting PhD Student',
       education: [
-        'Ph.D. Harbin Institute of Technology',
+        'Ph.D., Harbin Institute of Technology',
         'B.E., Harbin Institute of Technology'
       ],
       research: ['Microwave Photonics', 'Optical Computing', 'Electromagnetic Sensing'],
