@@ -69,7 +69,7 @@ const Team: React.FC = () => {
       education: ['M.E., Zhejiang University'，'B.E., Zhejiang University'],
       research: ['Research Area 1', 'Research Area 2'],
       email: '1417817315@qq.com',
-      avatar: '/Zhengyuan.jpg' // 图片记得提前传到 public 文件夹
+      avatar: '/zhengyuan.jpg' // 图片记得提前传到 public 文件夹
     },
     // ================= 2. 在这里填入新增的 Master 学生信息 =================
     {
