@@ -45,7 +45,7 @@ const Team: React.FC = () => {
       name: 'Xiaofu Pan',
       title: '潘孝夫',
       role: 'PhD Student',
-      education: ['B.E., Huazhong University of Science and Technology','M.E., Zhejiang University'],
+      education: ['M.E., Zhejiang University'，'B.E., Huazhong University of Science and Technology'],
       research: ['Integrated photonics', 'Optical comunication'],
       email: 'xiaofupan@connect.hku.hk',
       publications: 3,
@@ -55,7 +55,7 @@ const Team: React.FC = () => {
       name: 'Shaoyuan Ou',
       title: '歐紹源',
       role: 'PhD Student',
-      education: ['B.E., Sun Yat-Sen University','M.S., University of Southern California'],
+      education: ['M.S., University of Southern California'，'B.E., Sun Yat-Sen University',],
       research: ['Optical computing', 'Integrated photonics'],
       email: 'oushaoyu@usc.edu',
       publications: 8,
@@ -66,7 +66,7 @@ const Team: React.FC = () => {
       name: 'Zhengyuan Bao',
       title: '鮑正源',
       role: 'PhD Student',
-      education: ['B.E., Zhejiang University','M.E., Zhejiang University'],
+      education: ['M.E., Zhejiang University'，'B.E., Zhejiang University'],
       research: ['Research Area 1', 'Research Area 2'],
       email: '1417817315@qq.com',
       avatar: '/Zhengyuan.jpg' // 图片记得提前传到 public 文件夹
@@ -85,7 +85,10 @@ const Team: React.FC = () => {
       name: 'Yuzhong Wang',
       title: '王禹忠',
       role: 'Visiting PhD Student',
-      education: ['B.E., Harbin Institute of Technology'],
+      education: [
+        'Ph.D. Harbin Institute of Technology',
+        'B.E., Harbin Institute of Technology'
+      ],
       research: ['Microwave Photonics', 'Optical Computing', 'Electromagnetic Sensing'],
       email: 'hitwyz@stu.hit.edu.cn',
       publications: 3,
