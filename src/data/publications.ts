@@ -427,6 +427,54 @@ export const publications: Publication[] = [
 
 
   //下面是会议
+  // ==================== 2026年 会议论文 ====================
+  {
+    title: 'Turn-key photonic integrated mode-locked lasers based on a Mamyshev oscillator',
+    authors: ['Z. Qiu', 'J. Hu', 'X. Yang', 'X. Li', 'Z. Liu', 'Y. Zhang', 'X. Ji', 'J. Sun', 'G. Lihachev', 'Z. Li', 'U. Kentsch', 'T. J. Kippenberg'],
+    journal: 'CLEO',
+    year: 2026,
+    category: 'Photonics',
+    type: 'conference',
+    details: 'STU1F.6'
+  },
+  {
+    title: 'A photonic integrated mode-locked laser with dispersion-managed soliton mode-locking',
+    authors: ['X. Li', 'Z. Qiu', 'X. Yang', 'X. Ji', 'J. Sun', 'J. Hu', 'G. Lihachev', 'U. Kentsch', 'T. Kippenberg'],
+    journal: 'CLEO',
+    year: 2026,
+    category: 'Photonics',
+    type: 'conference',
+    details: 'STU1F.4'
+  },
+  {
+    title: 'A photonic integrated mode-locked laser based on dispersion-managed mode-locking architecture',
+    authors: ['X. Li', 'Z. Qiu', 'X. Yang', 'X. Ji', 'J. Sun', 'J. Hu', 'G. Lihachev', 'U. Kentsch', 'T. Kippenberg'],
+    journal: 'OFC',
+    year: 2026,
+    category: 'Photonics',
+    type: 'conference',
+    details: 'Th1F [Top-scored]'
+  },
+
+  // ==================== 2025年 会议论文（合并到原有2025区块） ====================
+  {
+    title: 'Optical Physical Learning Machines with Multiple Light Scattering Media',
+    authors: ['H. Wang', 'Z. Wang', 'J. Hu', 'Q. Liu', 'S. Gigan'],
+    journal: 'PIERS',
+    year: 2025,
+    category: 'Photonics',
+    type: 'conference',
+    details: '[Invited]'
+  },
+  {
+    title: 'On-Chip Reconfigurable Wavefront Shaper for Precise Spatial and Polarization Control',
+    authors: ['Z. Chen', 'W. Zhou', 'H. Chen', 'K. Lu', 'W. Tian', 'Y. Cui', 'Y. Yin', 'M. Zhang', 'X. Pan', 'J. Hu', 'Y. Tong'],
+    journal: 'OFC',
+    year: 2025,
+    category: 'Photonics',
+    type: 'conference',
+    details: 'W2A.29'
+  },
 
   {
     title: 'Kerr-comb-driven Widely-tunable Integrated Green Light Source',
