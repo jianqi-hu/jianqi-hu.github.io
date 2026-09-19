@@ -13,20 +13,29 @@ export interface Publication {
 
 export const preprints: Publication[] = [
   {
+    title: "Programmable generation of optical skyrmions on a silicon photonic chip",
+    authors: ["M. Zhang†", "X. Pan†", "W. Zhou†", "W. Tian", "Z. Chen", "Y. Cui", "Y. Shen", "Y. Tong*", "J. Hu*"],
+    journal: "arXiv:2608.29551",
+    year: 2026,
+    url: "https://arxiv.org/abs/2608.29551",
+    type: "preprint",
+    category: "journal"
+  },
+  {
+    title: "Autonomous multifunctional image processing via programmable multimode lasing",
+    authors: ["J. Wu", "Y. Yu", "J. Hu", "H. Wang*", "X. Fu*", "Q. Liu*"],
+    journal: "arXiv:2609.12534",
+    year: 2026,
+    url: "https://arxiv.org/abs/2609.12534",
+    type: "preprint",
+    category: "journal"
+  }
+  {
     title: "TRON: Trainable, architecture-reconfigurable random optical neural networks",
     authors: ["Z. Wang†", "F. Xia†,*", "L. G. Wright", "T. Onodera", "M. Stein", "J. Hu", "P. McMahon", "S. Gigan*"],
     journal: "arXiv:2604.16228",
     year: 2026,
     url: "https://arxiv.org/abs/2604.16228",
-    type: "preprint",
-    category: "journal"  // <--- 加上这一行！
-  },
-  {
-    title: "Self-Configuring Universal Multichannel and Multidimensional Integrated Photonic Processing Engine",
-    authors: ["Z. Chen†", "W. Zhou†", "H. Chen†", "K. Lu", "Y. Cui", "Y. Yin", "M. Zhang", "X. Pan", "J. Hu", "Y. Tong*"],
-    journal: "Optica, arXiv:2604.11763",
-    year: 2026,
-    url: "https://arxiv.org/abs/2604.11763",
     type: "preprint",
     category: "journal"  // <--- 加上这一行！
   },
@@ -63,6 +72,38 @@ export const preprints: Publication[] = [
 
 export const publications: Publication[] = [
 
+{
+    title: "Heterogeneous photonic integration of single-crystalline nanomembranes",
+    authors: [
+      "Y. Meng†", "W. Mao†", "Z. Xu†", "D. Jia†", "M. Lin", 
+      "J. Seo", "B. Kim", "X. Zhang", "E. Park", "S. Lee", "J. Kim", "S. Han", 
+      "J.-Y. Moon", "W. Xu", "Q. Zhang", "X. He", "M. Chen", "S. H. Nam", 
+      "J. Hu", "J. S. Kim", "S. Lee", "S. Bae", "S. H. Choi", "T. H. Kim", 
+      "Y. Choi", "S.-I. Kim", "K. Kim", "M. Jin", "C. Jiang", "Y. Zhang", 
+      "Y.-H. Kim", "J.-H. Lee", "H. Kim", "S. Ran", "X. Wang", "C.-W. Qiu", 
+      "F. M. Ross", "J. Kim", "M. L. Lee", "H. Kim", "T. J. Kippenberg", 
+      "L. Yang*", "S.-H. Bae*"
+    ],
+    journal: "Nature",
+    details: "657, 638–645",
+    year: 2026,
+    type: "journal",
+    category: "journal",
+    url: "https://www.nature.com/articles/s41586-026-11000-w"
+  },
+  {
+    title: "Self-Configuring Universal Multichannel and Multidimensional Integrated Photonic Processing Engine",
+    authors: [
+      "Z. Chen†", "W. Zhou†", "H. Chen†", "W. Tian", "K. Lu", 
+      "Y. Cui", "Y. Yin", "M. Zhang", "X. Pan", "J. Hu", "Y. Tong*"
+    ],
+    journal: "Optica",
+    details: "13, 1769-1778",
+    year: 2026,
+    type: "journal",
+    category: "journal",
+    url: "https://opg.optica.org/optica/fulltext.cfm?uri=optica-13-9-1769"
+  }
 {
     title: "Large-scale integrated optoelectronic chaos for machine learning acceleration",
     authors: ["Z. Pan†", "Z. Zheng†", "P. Li", "H. Wang", "J. Guo", "D. Cui", "Z. Li", "J. Shen", "L. Wang", "M. Zong", "S. Li", "Z. Kang", "Y. Yuan", "J. Hu", "J. He*", "Y. Liang*", "D. Zhu*", "S. Pan*"],
