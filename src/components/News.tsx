@@ -33,7 +33,17 @@ const News: React.FC<{ embedded?: boolean }> = ({ embedded = false }) => {
     return () => { document.body.style.overflow = ''; };
   }, [selectedNews]);
 
-  const newsItems: NewsItem[] = [
+const newsItems: NewsItem[] = [
+    {
+      id: 2,
+      title:  'Dr. Hu receives the NSFC Type B fund in 2026.', 
+      summary: '',
+      content: 'Dr. Hu receives the NSFC Type B fund in 2026.', 
+      date: '2026-09', 
+      category: 'Announcement',
+      image:  '',
+      author: 'UNN Lab'
+    },
     {
       id: 1,
       title: 'UNN Lab starts in HKU !',
