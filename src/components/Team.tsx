@@ -78,7 +78,7 @@ const Team: React.FC = () => {
       role: 'Master Student',
       education: ['B.E., Wuhan University'],
       research: ['Research Area 1'],
-      email: 'logic271828@gmail.com',
+      email: 'jjialuo1@connect.hku.hk',
       avatar: '/Jijia.jpg' // 图片记得提前传到 public 文件夹
     },
     {
