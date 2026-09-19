@@ -29,7 +29,7 @@ export const preprints: Publication[] = [
     url: "https://arxiv.org/abs/2609.12534",
     type: "preprint",
     category: "journal"
-  }
+  },
   {
     title: "TRON: Trainable, architecture-reconfigurable random optical neural networks",
     authors: ["Z. Wang†", "F. Xia†,*", "L. G. Wright", "T. Onodera", "M. Stein", "J. Hu", "P. McMahon", "S. Gigan*"],
@@ -103,7 +103,7 @@ export const publications: Publication[] = [
     type: "journal",
     category: "journal",
     url: "https://opg.optica.org/optica/fulltext.cfm?uri=optica-13-9-1769"
-  }
+  },
 {
     title: "Large-scale integrated optoelectronic chaos for machine learning acceleration",
     authors: ["Z. Pan†", "Z. Zheng†", "P. Li", "H. Wang", "J. Guo", "D. Cui", "Z. Li", "J. Shen", "L. Wang", "M. Zong", "S. Li", "Z. Kang", "Y. Yuan", "J. Hu", "J. He*", "Y. Liang*", "D. Zhu*", "S. Pan*"],
